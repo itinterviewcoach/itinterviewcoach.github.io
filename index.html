@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Interview Coach — AI Interview Preparation</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="description" content="AI-powered Telegram bot for technical interview preparation. Подготовка к техническому интервью с ИИ: mock interviews, CV analysis, ATS scoring.">
 <link rel="canonical" href="https://itinterviewcoach.com/">
 
@@ -35,14 +38,14 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0c0f;
-    --bg2: #0f1318;
-    --bg3: #151a22;
-    --border: #1e2730;
-    --text: #e8edf2;
-    --muted: #6b7a8d;
-    --accent: #00c896;
-    --accent2: #0091ff;
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
     --warn: #ff6b35;
     --mono: 'JetBrains Mono', monospace;
     --sans: 'Sora', sans-serif;
@@ -402,6 +405,15 @@
     color: var(--muted);
   }
 
+  .plan-stars {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+
   .plan-period {
     font-size: 13px;
     color: var(--muted);
@@ -682,11 +694,10 @@
 
     <div class="plan">
       <p class="plan-name">Free</p>
-      <div class="plan-price">0 ⭐</div>
+      <div class="plan-price">€0<span class="plan-stars">0 ⭐</span></div>
       <p class="plan-period">forever</p>
       <ul class="plan-features">
         <li>3 practice sessions / month</li>
-        <li>5 questions per session</li>
         <li>1 CV analysis / day</li>
         <li>RU + EN interface</li>
         <li class="inactive">Interviews in English</li>
@@ -698,11 +709,10 @@
 
     <div class="plan">
       <p class="plan-name">Basic</p>
-      <div class="plan-price">650 ⭐</div>
-      <p class="plan-period">or €10 · per month · 7-day free trial</p>
+      <div class="plan-price">€10<span class="plan-stars">650 ⭐</span></div>
+      <p class="plan-period">per month · 7-day free trial</p>
       <ul class="plan-features">
         <li>20 practice sessions / month</li>
-        <li>10 questions per session</li>
         <li>3 CV analyses / day</li>
         <li>RU + EN interface</li>
         <li class="inactive">Interviews in English</li>
@@ -715,11 +725,10 @@
     <div class="plan featured">
       <span class="plan-badge">Most Popular</span>
       <p class="plan-name">Premium</p>
-      <div class="plan-price">1250 ⭐</div>
-      <p class="plan-period">or €20 · per month</p>
+      <div class="plan-price">€20<span class="plan-stars">1250 ⭐</span></div>
+      <p class="plan-period">per month</p>
       <ul class="plan-features">
         <li>Unlimited sessions</li>
-        <li>15 questions per session</li>
         <li>5 CV analyses / day</li>
         <li>RU + EN interface</li>
         <li>Interviews in English</li>
