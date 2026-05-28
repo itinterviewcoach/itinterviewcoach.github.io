@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Interview Coach — Подготовка к техническому интервью с ИИ</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="description" content="AI-ассистент в Telegram для подготовки к техническому интервью. Mock interview, анализ резюме с ATS-оценкой, прожарка опыта, live coding — для Backend, QA и ML-инженеров.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/">
+<link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/">
+<meta name="keywords" content="подготовка к техническому интервью, mock interview онлайн, симулятор собеседования, анализ резюме ATS, прожарка опыта, live coding тренировка, системный дизайн, алгоритмы для интервью, Backend собеседование, QA собеседование, ML собеседование, Telegram бот для IT">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/">
+<meta property="og:title" content="IT Interview Coach — Подготовка к техническому интервью с ИИ">
+<meta property="og:description" content="AI-ассистент в Telegram для подготовки к техническому интервью. Mock interview, анализ резюме, live coding — для Backend, QA и ML.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "IT Interview Coach",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Telegram",
+  "url": "https://itinterviewcoach.com/ru/",
+  "inLanguage": "ru",
+  "description": "AI-ассистент в Telegram для подготовки к техническому интервью. Mock interview, анализ резюме с ATS-оценкой, прожарка опыта, live coding.",
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Basic", "price": "10", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Premium", "price": "20", "priceCurrency": "EUR" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* GRID BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(0,200,150,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  h1 span {
+    display: block;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,200,150,0.3); }
+
+  .btn-secondary {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text); border-color: var(--muted); }
+
+  /* STATS */
+  .stats {
+    position: relative; z-index: 1;
+    padding: 0 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stat {
+    background: var(--bg);
+    padding: 32px;
+  }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SECTION */
+  section {
+    position: relative; z-index: 1;
+    padding: 80px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin-bottom: 56px;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .feature {
+    background: var(--bg);
+    padding: 36px;
+    transition: background 0.2s;
+  }
+
+  .feature:hover { background: var(--bg3); }
+
+  .feature-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .feature h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .plan {
+    background: var(--bg);
+    padding: 36px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .plan:hover { background: var(--bg3); }
+
+  .plan.featured {
+    background: var(--bg3);
+    outline: 1px solid var(--accent);
+    outline-offset: -1px;
+  }
+
+  .plan-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #000;
+    background: var(--accent);
+    padding: 3px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 1px;
+  }
+
+  .plan-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .plan-price {
+    font-family: var(--mono);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .plan-price sup {
+    font-size: 20px;
+    vertical-align: super;
+    color: var(--muted);
+  }
+
+  .plan-stars {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+
+  .plan-period {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    font-family: var(--mono);
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .plan-features li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .plan-features li:last-child { border-bottom: none; }
+
+  .plan-features li::before {
+    content: '—';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .plan-features li.inactive {
+    opacity: 0.35;
+  }
+
+  .plan-features li.inactive::before {
+    color: var(--muted);
+  }
+
+  .plan-cta {
+    display: block;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s;
+    border-radius: 1px;
+  }
+
+  .plan-cta:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .plan.featured .plan-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+  }
+
+  .plan.featured .plan-cta:hover {
+    background: #00e0aa;
+    box-shadow: 0 4px 16px rgba(0,200,150,0.3);
+  }
+
+  /* TRIAL BANNER */
+  .trial-banner {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .trial-banner span {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .trial-banner strong {
+    color: var(--accent);
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* DIVIDER */
+  .divider {
+    position: relative; z-index: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero, section { padding-left: 24px; padding-right: 24px; }
+    .stats { margin-left: 24px; margin-right: 24px; grid-template-columns: 1fr; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 36px; }
+  }
+
+  /* SCROLL ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="#features">Возможности</a></li>
+    <li><a href="#pricing">Тарифы</a></li>
+    <li><a href="/legal/privacy-policy">Конфиденциальность</a></li>
+    <li><a href="/legal/terms-of-service">Условия</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">На базе ИИ · Доступен 24/7</div>
+  <h1>
+    Пройди следующее<br>
+    <em>техническое интервью</em>
+    <span>с обратной связью от ИИ</span>
+  </h1>
+  <p class="hero-sub">
+    Telegram-бот для подготовки IT-специалистов к техническим интервью — mock-сессии, анализ резюме, тренировка live coding и аудит LinkedIn.
+  </p>
+  <div class="hero-cta">
+    <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">
+      ▶ Начать в Telegram
+    </a>
+    <a href="#pricing" class="btn-secondary">Посмотреть тарифы</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats fade-in">
+  <div class="stat">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Специализации</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">0 ⭐</span>
+    <span class="stat-label">Старт бесплатно</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">7 дней</span>
+    <span class="stat-label">Пробный период Basic</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section id="features">
+  <p class="section-label">// Что входит</p>
+  <h2>Всё для подготовки<br>к интервью</h2>
+  <p class="section-sub">От mock interview до анализа резюме — всё в одном Telegram-боте, без установки приложений.</p>
+
+  <div class="features-grid fade-in">
+    <div class="feature">
+      <span class="feature-icon">🎯</span>
+      <h3>Mock Interviews</h3>
+      <p>Практика вопросов по твоему стеку и уровню. Мгновенная оценка каждого ответа от ИИ.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🧠</span>
+      <h3>Прожарка опыта</h3>
+      <p>ИИ разбирает каждую позицию в резюме так, как это делает интервьюер — глубокие вопросы по реальному опыту.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📚</span>
+      <h3>Подготовка по темам</h3>
+      <p>Выбери тему — алгоритмы, системный дизайн, базы данных — и тренируй её целенаправленными вопросами.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">💻</span>
+      <h3>Live Coding</h3>
+      <p>Решай реальные задачи с разбором от ИИ, подсказками по edge-кейсам и уточняющими вопросами.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📄</span>
+      <h3>Анализ резюме</h3>
+      <p>Загрузи резюме один раз. ATS-скоринг, выявление ошибок и структурированные данные для всех модулей.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">💼</span>
+      <h3>Аудит LinkedIn</h3>
+      <p>Проверка профиля LinkedIn, отслеживание метрик и конкретные рекомендации. Только Premium.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🌐</span>
+      <h3>Интервью на английском</h3>
+      <p>Переключи весь процесс на английский — вопросы, оценку и обратную связь. Только Premium.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🎙️</span>
+      <h3>Голосовой ввод</h3>
+      <p>Отвечай на вопросы голосом. Распознавание речи с оценкой от ИИ. Только Premium.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <p class="section-label">// Тарифы</p>
+  <h2>Простые и прозрачные<br>тарифы</h2>
+  <p class="section-sub">Начни бесплатно. Переходи на следующий уровень когда готов. Отмена в любое время.</p>
+
+  <div class="trial-banner fade-in">
+    <span>🎁 <strong>7 дней бесплатно</strong> на тарифе Basic — оплата не нужна для старта. &nbsp;|&nbsp; ⭐ Оплата звёздами Telegram &nbsp;·&nbsp; 💳 Карта через <a href="https://store.dodopayments.com/interviewcoach" style="color:var(--accent);text-decoration:none">Dodo Payments</a></span>
+  </div>
+
+  <div class="pricing-grid fade-in">
+
+    <div class="plan">
+      <p class="plan-name">Free</p>
+      <div class="plan-price">€0<span class="plan-stars">0 ⭐</span></div>
+      <p class="plan-period">навсегда</p>
+      <ul class="plan-features">
+        <li>3 сессии в месяц</li>
+        <li>1 анализ резюме в день</li>
+        <li>Интерфейс RU + EN</li>
+        <li class="inactive">Интервью на английском</li>
+        <li class="inactive">Голосовой ввод</li>
+        <li class="inactive">Аудит LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Начать бесплатно</a>
+    </div>
+
+    <div class="plan">
+      <p class="plan-name">Basic</p>
+      <div class="plan-price">€10<span class="plan-stars">650 ⭐</span></div>
+      <p class="plan-period">в месяц · 7 дней бесплатно</p>
+      <ul class="plan-features">
+        <li>20 сессий в месяц</li>
+        <li>3 анализа резюме в день</li>
+        <li>Интерфейс RU + EN</li>
+        <li class="inactive">Интервью на английском</li>
+        <li class="inactive">Голосовой ввод</li>
+        <li class="inactive">Аудит LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Попробовать бесплатно</a>
+    </div>
+
+    <div class="plan featured">
+      <span class="plan-badge">Популярный</span>
+      <p class="plan-name">Premium</p>
+      <div class="plan-price">€20<span class="plan-stars">1250 ⭐</span></div>
+      <p class="plan-period">в месяц</p>
+      <ul class="plan-features">
+        <li>Безлимитные сессии</li>
+        <li>5 анализов резюме в день</li>
+        <li>Интерфейс RU + EN</li>
+        <li>Интервью на английском</li>
+        <li>Голосовой ввод (STT)</li>
+        <li>Аудит LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Получить Premium</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
