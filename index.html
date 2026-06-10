@@ -4,24 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Interview Coach — AI Interview Preparation</title>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="description" content="AI-powered Telegram bot for technical interview preparation. Подготовка к техническому интервью с ИИ: mock interviews, CV analysis, ATS scoring.">
-<link rel="canonical" href="https://itinterviewcoach.com/">
-<link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/">
-<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/">
-<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/">
+<meta name="description" content="AI-powered Telegram bot for technical interview preparation. Practice mock interviews, get CV analysis, and land your dream job.">
 <meta name="keywords" content="подготовка к техническому интервью, mock interview, собеседование IT, анализ резюме, ATS, live coding, системный дизайн, алгоритмы, Backend интервью, QA интервью, ML интервью, Telegram бот для IT, IT interview preparation, technical interview practice">
-
-<!-- Open Graph -->
+<link rel="canonical" href="https://itinterviewcoach.com/">
+<meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://itinterviewcoach.com/">
 <meta property="og:title" content="IT Interview Coach — AI Interview Preparation">
 <meta property="og:description" content="AI-powered Telegram bot for technical interview preparation. Practice mock interviews, get CV analysis, and land your dream job.">
 <meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
-
-<!-- Schema.org -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IT Interview Coach — AI Interview Preparation">
+<meta name="twitter:description" content="AI-powered Telegram bot for technical interview preparation. Practice mock interviews, get CV analysis, and land your dream job.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,12 +23,27 @@
   "name": "IT Interview Coach",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Telegram",
+  "description": "AI-powered Telegram bot for technical interview preparation — mock interviews, CV analysis, live coding, LinkedIn audit.",
   "url": "https://itinterviewcoach.com",
-  "description": "AI-powered Telegram bot for technical interview preparation. Practice mock interviews, get CV analysis with ATS scoring, and land your dream job.",
   "offers": [
-    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Basic", "price": "9.99", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Premium", "price": "19.99", "priceCurrency": "USD" }
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Basic",
+      "price": "10",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium",
+      "price": "20",
+      "priceCurrency": "EUR"
+    }
   ]
 }
 </script>
@@ -409,15 +418,6 @@
     color: var(--muted);
   }
 
-  .plan-stars {
-    display: block;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-top: 2px;
-    letter-spacing: 0;
-  }
-
   .plan-period {
     font-size: 13px;
     color: var(--muted);
@@ -456,6 +456,16 @@
 
   .plan-features li.inactive::before {
     color: var(--muted);
+  }
+
+  .plan-price-stars {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   .plan-cta {
@@ -590,8 +600,8 @@
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="/legal/privacy-policy">Privacy</a></li>
-    <li><a href="/legal/terms-of-service">Terms</a></li>
+    <li><a href="https://itinterviewcoach.com/legal/privacy-policy">Privacy</a></li>
+    <li><a href="https://itinterviewcoach.com/legal/terms-of-service">Terms</a></li>
   </ul>
 </nav>
 
@@ -621,7 +631,7 @@
     <span class="stat-label">Specializations</span>
   </div>
   <div class="stat">
-    <span class="stat-num">0 ⭐</span>
+    <span class="stat-num">€0</span>
     <span class="stat-label">To start — free plan</span>
   </div>
   <div class="stat">
@@ -667,17 +677,17 @@
     <div class="feature">
       <span class="feature-icon">💼</span>
       <h3>LinkedIn Audit</h3>
-      <p>Audit your LinkedIn profile, track weekly metrics, and get actionable advice. Premium &amp; Team only.</p>
+      <p>Audit your LinkedIn profile, track weekly metrics, and get actionable advice. Premium only.</p>
     </div>
     <div class="feature">
       <span class="feature-icon">🌐</span>
       <h3>English Mode</h3>
-      <p>Switch the entire interview flow to English — questions, evaluation, and feedback. Premium &amp; Team only.</p>
+      <p>Switch the entire interview flow to English — questions, evaluation, and feedback. Premium only.</p>
     </div>
     <div class="feature">
       <span class="feature-icon">🎙️</span>
       <h3>Voice Input (STT)</h3>
-      <p>Answer interview questions by voice. Speech-to-text transcription with AI evaluation. Premium &amp; Team only.</p>
+      <p>Answer interview questions by voice. Speech-to-text transcription with AI evaluation. Premium only.</p>
     </div>
   </div>
 </section>
@@ -691,14 +701,15 @@
   <p class="section-sub">Start free. Upgrade when you're ready. Cancel anytime.</p>
 
   <div class="trial-banner fade-in">
-    <span>🎁 <strong>7-day free trial</strong> on Basic — no payment required to start. &nbsp;|&nbsp; ⭐ Pay with Telegram Stars &nbsp;·&nbsp; 💳 Card via <a href="https://store.dodopayments.com/interviewcoach" style="color:var(--accent);text-decoration:none">Dodo Payments</a></span>
+    <span>🎁 <strong>7-day free trial</strong> on Basic — no payment required to start. &nbsp;|&nbsp; 💳 Card via <a href="https://store.dodopayments.com/interviewcoach" style="color:var(--accent);text-decoration:none">Dodo Payments</a> &nbsp;·&nbsp; ⭐ or Telegram Stars</span>
   </div>
 
   <div class="pricing-grid fade-in">
 
     <div class="plan">
       <p class="plan-name">Free</p>
-      <div class="plan-price">€0<span class="plan-stars">0 ⭐</span></div>
+      <div class="plan-price">€0</div>
+      <span class="plan-price-stars">650 ⭐ Basic · 1250 ⭐ Premium</span>
       <p class="plan-period">forever</p>
       <ul class="plan-features">
         <li>3 practice sessions / month</li>
@@ -713,8 +724,9 @@
 
     <div class="plan">
       <p class="plan-name">Basic</p>
-      <div class="plan-price">€10<span class="plan-stars">650 ⭐</span></div>
-      <p class="plan-period">per month · 7-day free trial</p>
+      <div class="plan-price">€10<sup>/mo</sup></div>
+      <span class="plan-price-stars">or 650 ⭐ · 7-day free trial</span>
+      <p class="plan-period">per month · cancel anytime</p>
       <ul class="plan-features">
         <li>20 practice sessions / month</li>
         <li>3 CV analyses / day</li>
@@ -729,8 +741,9 @@
     <div class="plan featured">
       <span class="plan-badge">Most Popular</span>
       <p class="plan-name">Premium</p>
-      <div class="plan-price">€20<span class="plan-stars">1250 ⭐</span></div>
-      <p class="plan-period">per month</p>
+      <div class="plan-price">€20<sup>/mo</sup></div>
+      <span class="plan-price-stars">or 1250 ⭐</span>
+      <p class="plan-period">per month · cancel anytime</p>
       <ul class="plan-features">
         <li>Unlimited sessions</li>
         <li>5 CV analyses / day</li>
@@ -741,6 +754,8 @@
       </ul>
       <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Get Premium</a>
     </div>
+
+  </div><!-- /.pricing-grid -->
 </section>
 
 <div class="divider"></div>
@@ -753,12 +768,11 @@
     itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
   </div>
   <div class="footer-links">
-    <a href="/legal/privacy-policy">Privacy Policy</a>
-    <a href="/legal/terms-of-service">Terms of Service</a>
-    <a href="/legal/public-offer">Public Offer</a>
-    <a href="/legal/pricing">Pricing</a>
+    <a href="https://itinterviewcoach.com/legal/privacy-policy">Privacy Policy</a>
+    <a href="https://itinterviewcoach.com/legal/terms-of-service">Terms of Service</a>
+    <a href="https://itinterviewcoach.com/legal/public-offer">Public Offer</a>
+    <a href="https://itinterviewcoach.com/legal/pricing">Pricing</a>
   </div>
-  <div style="font-size:11px;color:#2a3540;margin-top:32px;line-height:1.8;padding:0 48px 24px;">Подготовка к техническому интервью с помощью ИИ. Практика mock interview, анализ резюме и ATS-скоринг, разбор опыта, live coding. Для Backend, QA, ML-инженеров. AI-ассистент в Telegram для IT-специалистов. Тренировка ответов на вопросы по алгоритмам, системному дизайну, поведенческому интервью.</div>
 </footer>
 
 <script>
