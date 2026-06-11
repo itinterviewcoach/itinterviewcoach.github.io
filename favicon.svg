@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Background -->
+  <rect width="120" height="120" rx="16" fill="#1d242b"/>
+  <!-- Accent border -->
+  <rect width="120" height="120" rx="16" fill="none" stroke="#5065b9" stroke-width="4"/>
+  <!-- Terminal prompt: > -->
+  <text
+    x="12"
+    y="78"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="58"
+    font-weight="700"
+    fill="#5065b9"
+    letter-spacing="-2"
+  >&gt;_</text>
+</svg>
