@@ -9,8 +9,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="description" content="AI-powered Telegram bot for technical interview preparation. Practice mock interviews, get CV analysis, and land your dream job.">
-<meta name="keywords" content="подготовка к техническому интервью, mock interview, собеседование IT, анализ резюме, ATS, live coding, системный дизайн, алгоритмы, Backend интервью, QA интервью, ML интервью, Telegram бот для IT, IT interview preparation, technical interview practice">
+<meta name="keywords" content="mock interview preparation, technical interview practice, AI interview coach, ATS resume checker, live coding practice, backend interview questions, QA interview preparation, ML engineer interview, LinkedIn profile audit, Telegram bot for IT professionals">
 <link rel="canonical" href="https://itinterviewcoach.com/">
+<link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://itinterviewcoach.com/">
@@ -158,7 +161,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid rgba(0,200,150,0.3);
+    border: 1px solid rgba(80,101,185,0.3);
     padding: 6px 14px;
     border-radius: 2px;
     margin-bottom: 32px;
@@ -241,7 +244,7 @@
   }
 
   .btn-primary:hover::after { transform: translateX(0); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,200,150,0.3); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
 
   .btn-secondary {
     font-family: var(--mono);
@@ -500,8 +503,8 @@
   }
 
   .plan.featured .plan-cta:hover {
-    background: #00e0aa;
-    box-shadow: 0 4px 16px rgba(0,200,150,0.3);
+    background: var(--accent2);
+    box-shadow: 0 4px 16px rgba(80,101,185,0.35);
   }
 
   /* TRIAL BANNER */
@@ -595,6 +598,50 @@
     opacity: 1;
     transform: translateY(0);
   }
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 28px 36px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-item { padding: 20px 24px; }
+  }
 </style>
 </head>
 <body>
@@ -604,8 +651,10 @@
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="https://itinterviewcoach.com/legal/privacy-policy">Privacy</a></li>
     <li><a href="https://itinterviewcoach.com/legal/terms-of-service">Terms</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
   </ul>
 </nav>
 
@@ -666,7 +715,7 @@
     <div class="feature">
       <span class="feature-icon">📚</span>
       <h3>Topic Preparation</h3>
-      <p>Choose a specific topic — algorithms, system design, databases — and drill it with targeted questions.</p>
+      <p>Choose a specific topic — algorithms, databases, concurrency — and drill it with targeted questions.</p>
     </div>
     <div class="feature">
       <span class="feature-icon">💻</span>
@@ -763,6 +812,179 @@
 </section>
 
 <div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <p class="section-label">// FAQ</p>
+  <h2>Frequently asked<br>questions</h2>
+  <p class="section-sub">Everything you need to know before starting your interview prep.</p>
+
+  <div class="faq-list fade-in">
+
+    <div class="faq-item">
+      <p class="faq-q">What is a mock interview and why do I need one?</p>
+      <p class="faq-a">A mock interview is a simulated technical interview session. You answer questions while the AI evaluates each response — what was correct, what was incomplete, what was missed. It helps you identify weak areas before they surface in a real interview, and builds the muscle memory of explaining technical concepts under pressure.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What specializations does IT Interview Coach support?</p>
+      <p class="faq-a">The bot supports three tracks: Backend engineering, QA engineering, and ML/Data Science. Questions are calibrated to your level — Junior, Middle, or Senior — and adapt to the skills and experience listed in your uploaded CV.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How is this different from courses or prep books?</p>
+      <p class="faq-a">Courses teach you concepts. The bot tests whether you can explain them clearly and handle follow-up questions. The AI probes your specific answer, identifies exactly what's missing, and asks clarifying questions — the same way a real interviewer would. No passive reading, only active practice.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Can I prepare for FAANG, Google, or Meta technical interviews?</p>
+      <p class="faq-a">Yes. The bot covers topics common at top tech companies: algorithms, data structures, databases, concurrency, API design, and ML systems. Use Topic Preparation mode to focus on specific areas most relevant to your target role.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How does resume / CV analysis work?</p>
+      <p class="faq-a">Upload a PDF or DOCX file. The bot gives you an ATS score from 0 to 100, flags specific issues (non-standard section headers, multi-column layout, missing contacts, weak job titles, clichés), and provides recommendations. After the analysis you can start a conversational CV consultation where the AI helps you rewrite each bullet point.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is ATS and why do resumes get filtered out?</p>
+      <p class="faq-a">ATS (Applicant Tracking System) ranks resumes before a recruiter sees them. Common reasons for a low score: non-standard section headers, multi-column layouts, missing contact info, generic job titles, and overused phrases. The bot runs 9 deterministic checks and outputs a concrete list of issues with an overall score from 0 to 100.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What is the Experience Deep-Dive mode?</p>
+      <p class="faq-a">Experience Deep-Dive is a behavioural interview simulator built on your actual CV. The AI picks positions from your resume and asks probing questions: what exactly you did, what the outcome was, how you made decisions, what challenges you faced. It's the hardest part of most interviews — and the one most candidates skip when preparing.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I practice live coding for technical interviews?</p>
+      <p class="faq-a">Live Coding mode runs in four phases: you clarify the problem requirements (just like in a real screen), submit your solution, receive a review with edge-case hints, then discuss your approach with the AI. After the session you get a debrief covering what went well, risk areas, and what to practice next.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What do Backend Python interviews typically cover?</p>
+      <p class="faq-a">Backend interviews test databases, concurrency, REST API design, security, observability, and event-driven architecture. In Topic Preparation mode you pick the specific area you want to drill. If you upload your CV, the bot adapts questions to your actual tech stack.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What do ML engineer interviews cover?</p>
+      <p class="faq-a">ML interviews cover statistics and linear algebra, classical ML algorithms, neural networks, data pipelines, and production ML systems. The bot also covers LLM and NLP topics, time series, and model deployment — across Middle and Senior difficulty levels.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What do QA engineer interviews cover?</p>
+      <p class="faq-a">QA interviews typically include test design, defect management, API testing, and automation frameworks. The bot supports all these areas plus mobile testing, contract testing, security testing, and test data management — calibrated to your experience level.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Can I switch interview sessions to English?</p>
+      <p class="faq-a">Yes. On the Premium plan you can switch interview sessions to English — questions, AI evaluation, and feedback. Useful if you're preparing for interviews at an international company or want to practise technical vocabulary in English. Free and Basic plans support Russian only.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How does voice input work?</p>
+      <p class="faq-a">On Premium you can answer interview questions by voice directly in Telegram. The bot transcribes your speech and passes the text to the AI for evaluation. Available in Mock Interview, Topic Preparation, and Experience Deep-Dive modes — so you practise not just your knowledge but your ability to articulate answers out loud.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Why audit my LinkedIn profile and what does it check?</p>
+      <p class="faq-a">LinkedIn is the main channel for inbound recruiter contact. The audit analyses your headline, about section, experience, and skills, tracks metrics (SSI, profile views, search appearances), and gives specific improvement advice. There's also a post tone checker for active LinkedIn users. Available on Premium.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How long does a typical session take?</p>
+      <p class="faq-a">A standard mock interview session takes 15–30 minutes. Live Coding runs 20 minutes to an hour. An Experience Deep-Dive on one position takes around 10–15 minutes. Everything runs in Telegram — you can practise during a commute or coffee break, from your phone.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a mock interview and why do I need one?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A mock interview is a simulated technical interview session. The AI evaluates each response — what was correct, what was incomplete, what was missed — helping you identify weak areas before a real interview." }
+    },
+    {
+      "@type": "Question",
+      "name": "What specializations does IT Interview Coach support?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The bot supports three tracks: Backend engineering, QA engineering, and ML/Data Science. Questions are calibrated to Junior, Middle, or Senior level and adapt to your uploaded CV." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from courses or prep books?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Courses teach concepts. The bot tests whether you can explain them clearly under follow-up questions — the same way a real interviewer would. Active practice, not passive reading." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prepare for FAANG, Google, or Meta technical interviews?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The bot covers algorithms, data structures, databases, concurrency, API design, and ML systems — topics common at top tech companies." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does resume / CV analysis work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload a PDF or DOCX. The bot gives an ATS score from 0 to 100, flags specific issues, and provides recommendations. You can then start a conversational CV consultation with the AI." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ATS and why do resumes get filtered out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ATS ranks resumes before a recruiter sees them. Common issues: non-standard headers, multi-column layouts, missing contacts, generic job titles, clichés. The bot runs 9 checks and outputs a score from 0 to 100." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Experience Deep-Dive mode?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Experience Deep-Dive is a behavioural interview simulator built on your actual CV. The AI probes each position: what you did, the outcome, how you made decisions. The hardest interview type — and the most skipped in preparation." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I practice live coding for technical interviews?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Live Coding runs in four phases: clarify requirements, submit solution, receive edge-case review, discuss approach with AI. You get a full debrief at the end." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do Backend Python interviews typically cover?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Databases, concurrency, REST API design, security, observability, and event-driven architecture. Questions adapt to your tech stack from your uploaded CV." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do ML engineer interviews cover?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Statistics, classical ML algorithms, neural networks, data pipelines, production ML systems, LLM and NLP topics, and time series — across Middle and Senior levels." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do QA engineer interviews cover?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Test design, API testing, automation, mobile testing, contract testing, security testing, and test data management — calibrated to your experience level." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch interview sessions to English?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. On Premium you can switch sessions to English — questions, evaluation, and feedback. Free and Basic plans support Russian only." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does voice input work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On Premium you can answer by voice in Telegram. The bot transcribes your speech and passes it to the AI for evaluation. Available in Mock Interview, Topic Preparation, and Experience Deep-Dive modes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why audit my LinkedIn profile and what does it check?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The audit analyses your headline, experience, and skills, tracks metrics (SSI, profile views, search appearances), and gives specific advice. Includes a post tone checker. Available on Premium." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical session take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mock interview: 15–30 minutes. Live Coding: 20 minutes to an hour. Experience Deep-Dive per position: 10–15 minutes. Everything runs in Telegram, from your phone." }
+    }
+  ]
+}
+</script>
 
 <!-- FOOTER -->
 <footer>
