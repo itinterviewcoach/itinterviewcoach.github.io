@@ -1,38 +1,37 @@
 # IT Interview Coach
 
-AI-powered interview preparation for IT professionals.
+AI-powered Telegram bot for technical interview preparation.
+Bot: https://t.me/ITInterviewCoach_Bot
+Website: https://itinterviewcoach.com
 
----
+## What it does
 
-**IT Interview Coach** is a Telegram bot that helps software engineers prepare for technical interviews at international companies.
-
-- 🎯 Mock interview practice with AI feedback
-- 📄 CV analysis with ATS scoring
-- 🧠 Professional experience deep-dives
-- 💼 LinkedIn profile auditing
-- 💻 Live coding practice
-
-👉 **[Start in Telegram](https://t.me/ITInterviewCoachBot)**
-
----
+- Mock interviews with AI evaluation — Backend, QA, ML/Data Science
+- CV/resume analysis with ATS scoring (0–100) and 9 penalty detectors
+- Experience Deep-Dive — behavioural interview on your actual CV positions
+- Live Coding — 4-phase sessions with debrief
+- LinkedIn profile audit with metric tracking
+- Voice input (STT) for interview answers
 
 ## Pricing
 
-[View all plans and pricing](https://itinterviewcoach.github.io/legal/pricing)
+- Free: €0 — 3 sessions/month, 1 CV/day
+- Basic: €10/mo or 650 Telegram Stars — 20 sessions/month, 7-day free trial
+- Premium: €20/mo or 1250 Telegram Stars — unlimited sessions, English mode, voice, LinkedIn
 
-Free plan available. Paid plans from €10/month.
+## Supported specializations
 
----
+Backend, QA, ML — Junior / Middle / Senior levels
+
+## Languages
+
+Russian (all plans), English (Premium only)
+
+## Payment methods
+
+Card via Dodo Payments, Telegram Stars
 
 ## Legal
 
-- [Privacy Policy](https://itinterviewcoach.github.io/legal/privacy-policy)
-- [Terms of Service](https://itinterviewcoach.github.io/legal/terms-of-service)
-- [Public Offer Agreement](https://itinterviewcoach.github.io/legal/public-offer)
-- [Pricing](https://itinterviewcoach.github.io/legal/pricing)
-
----
-
-**Operator:** Aleksandr Nifontov, Individual Entrepreneur, Georgia, IN 300455148
-**Contact:** itinterviewcoach@outlook.com
-**Support:** @ITInterviewCoachSupport_bot
+Privacy Policy: https://itinterviewcoach.com/legal/privacy-policy
+Terms: https://itinterviewcoach.com/legal/terms-of-service
