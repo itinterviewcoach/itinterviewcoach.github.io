@@ -1,0 +1,56 @@
+# IT Interview Coach
+
+> AI-powered Telegram bot for technical interview preparation. Targets Russian-speaking IT professionals (CIS market). Available at https://t.me/ITInterviewCoach_Bot
+
+## Product
+
+IT Interview Coach is a Telegram bot that simulates technical job interviews and helps IT professionals prepare for them. It supports Backend engineers, QA engineers, and ML/Data Science specialists at Junior, Middle, and Senior levels.
+
+## Core features
+
+- **Mock interviews** — AI-generated questions tailored to specialization and level, with instant evaluation of each answer
+- **Experience Deep-Dive** (Прожарка опыта) — behavioural interview simulator based on positions from the user's uploaded CV
+- **Topic Preparation** — targeted practice on specific topics (databases, concurrency, API design, algorithms, etc.)
+- **Live Coding** — 4-phase coding sessions: clarify → solve → review → discuss, with full debrief
+- **CV / Resume Analysis** — ATS score 0–100, 9 deterministic penalty detectors, structured recommendations, and conversational CV consultation
+- **LinkedIn Audit** — profile analysis, weekly metric tracking (SSI, profile views, search appearances), post tone checker
+- **Voice Input (STT)** — answer interview questions by voice in Telegram (Premium)
+- **English Mode** — full interview flow in English (Premium)
+
+## Supported specializations
+
+- Backend (Python, databases, concurrency, REST, observability, security, event-driven architecture)
+- QA (test design, API testing, automation, mobile, contract testing, security testing)
+- ML / Data Science (statistics, classical ML, neural networks, LLM/NLP, time series, production systems)
+
+## Pricing
+
+- **Free** — €0 forever. 3 sessions/month, 1 CV analysis/day, Russian interface
+- **Basic** — €10/month or 650 Telegram Stars. 20 sessions/month, 3 CV analyses/day, 7-day free trial
+- **Premium** — €20/month or 1250 Telegram Stars. Unlimited sessions, 5 CV analyses/day, English mode, voice input, LinkedIn audit
+
+Payment methods: card via Dodo Payments (EUR), Telegram Stars (XTR).
+
+## Languages
+
+- Interface: Russian and English
+- Interview sessions: Russian (Free/Basic), Russian + English (Premium)
+- Primary market: Russian-speaking IT professionals (Russia, CIS, Georgia, Eastern Europe)
+
+## Links
+
+- Bot: https://t.me/ITInterviewCoach_Bot
+- Website: https://itinterviewcoach.com
+- Russian landing page: https://itinterviewcoach.com/ru/
+- Privacy Policy: https://itinterviewcoach.com/legal/privacy-policy
+- Terms of Service: https://itinterviewcoach.com/legal/terms-of-service
+
+## Company
+
+Individual Entrepreneur, Georgia (Саქართველო). Registration: IN 300455148.
+Contact: itinterviewcoach@outlook.com
+Support: @ITInterviewCoachSupport_bot
+
+## Optional: full product description
+
+For a machine-readable summary: https://itinterviewcoach.com/index.md
