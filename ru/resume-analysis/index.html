@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анализ резюме с ATS-оценкой: почему резюме не проходит отбор | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="ATS-анализ резюме для IT-специалистов: 9 автоматических проверок, конкретные штрафы за типичные ошибки и оценка от 0 до 100. Разбираем, почему резюме не проходит автоматический скрининг и как это исправить.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/resume-analysis/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/resume-analysis/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/resume-analysis/">
+<meta property="og:title" content="Анализ резюме с ATS-оценкой: почему резюме не проходит отбор">
+<meta property="og:description" content="9 автоматических проверок резюме с конкретными штрафами: HH-шаблон, фото, вёрстка, контакты, клише. Оценка от 0 до 100 и конкретный план исправлений.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Анализ резюме с ATS-оценкой: почему резюме не проходит отбор",
+  "description": "Как работает автоматический скрининг резюме: 9 проверок с конкретными штрафами, типичные ошибки IT-специалистов и как поднять ATS-скор.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/resume-analysis/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* PENALTY CARDS */
+  .penalty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .penalty-item {
+    background: var(--bg);
+    padding: 22px 26px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .penalty-item:hover { background: var(--bg2); }
+
+  .penalty-score {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--warn);
+    flex-shrink: 0;
+    min-width: 64px;
+  }
+
+  .penalty-body h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .penalty-body p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .verdict-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .verdict-table th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .verdict-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #c5cede;
+    vertical-align: top;
+  }
+
+  .verdict-table td:first-child {
+    font-family: var(--mono);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+    .penalty-item { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Анализ резюме</div>
+  <h1>Анализ резюме с ATS-оценкой: <em>почему резюме не проходит отбор</em></h1>
+  <p class="article-lead">Большинство резюме отсеиваются до того, как их прочитает человек. Разбираем, как работает автоматический скрининг, какие 9 проверок проходит резюме в IT Interview Coach и как поднять оценку с конкретными шагами.</p>
+</div>
+
+<article>
+
+<h2>Что такое ATS и почему это важно</h2>
+
+<p><strong>ATS (Applicant Tracking System)</strong> — программное обеспечение, через которое компании обрабатывают входящие отклики. Когда ты отправляешь резюме через сайт компании, HeadHunter или LinkedIn, его сначала обрабатывает алгоритм: парсит текст, извлекает навыки и опыт, сопоставляет с требованиями вакансии и ранжирует среди других кандидатов.</p>
+
+<p>Рекрутер видит отклики в порядке, который определила система. Резюме с плохой машиночитаемостью — сложной вёрсткой, нестандартными заголовками, отсутствующими ключевыми словами — оказывается внизу списка или парсится с ошибками. Кандидат может идеально подходить на позицию и не получить даже отказа: его резюме просто никто не открыл.</p>
+
+<div class="info-block">
+  <p><strong>Важное уточнение:</strong> ATS не «отклоняет» резюме автоматически — она ранжирует. Но на позицию с сотнями откликов рекрутер физически просматривает верхнюю часть списка. Низкий ранг на практике равен отказу.</p>
+</div>
+
+<h2>Как работает анализ резюме в IT Interview Coach</h2>
+
+<p>Загружаешь резюме в формате PDF или DOCX — бот прогоняет его через трёхступенчатый пайплайн:</p>
+
+<ol>
+  <li><strong>Парсинг и очистка.</strong> Извлечение текста из файла и удаление персональных данных перед обработкой — в LLM попадает только обезличенный текст.</li>
+  <li><strong>Структурный анализ.</strong> ИИ извлекает навыки, позиции, опыт и образование, определяет профессию и уровень, оценивает содержательное качество: конкретику формулировок, наличие результатов, релевантность.</li>
+  <li><strong>Детерминированные проверки.</strong> Девять алгоритмических детекторов проверяют форму резюме — то, обо что спотыкаются парсеры ATS. Эти проверки не зависят от ИИ и срабатывают одинаково при каждом запуске.</li>
+</ol>
+
+<p>Результат — <strong>ATS-скор от 0 до 100</strong>, вердикт (сильное / среднее / слабое) и конкретный список проблем с рекомендациями.</p>
+
+<h2>9 проверок: за что снижается оценка</h2>
+
+<p>Каждый детектор ищет конкретную проблему и снимает фиксированное количество баллов:</p>
+
+<div class="penalty-list">
+  <div class="penalty-item">
+    <span class="penalty-score">−15</span>
+    <div class="penalty-body">
+      <h4>Маркеры HH-шаблона</h4>
+      <p>Резюме, выгруженное из HeadHunter, распознаётся по характерным признакам. HH-формат создан для внутреннего поиска HH и плохо парсится западными и корпоративными ATS. Для откликов напрямую в компании нужна отдельная версия.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−15</span>
+    <div class="penalty-body">
+      <h4>Структурные признаки HH-шаблона</h4>
+      <p>Срабатывает при сочетании минимум двух из: фото + отметка «обновлено» + раздел хобби + колоночная вёрстка. Даже без явных маркеров структура выдаёт экспорт из HH.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Фотография на первой странице</h4>
+      <p>В международной практике фото в резюме — минус: парсеры спотыкаются о вставленные изображения, а во многих странах фото создаёт риск обвинений в дискриминации, поэтому такие резюме отсеивают перестраховываясь.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Многоколоночная вёрстка</h4>
+      <p>Парсеры читают текст построчно слева направо. Двухколоночный макет превращается в кашу: навыки из правой колонки перемешиваются с опытом из левой. Одна колонка — всегда безопаснее.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Отсутствие контактов</h4>
+      <p>Ни email, ни телефона, ни LinkedIn, ни GitHub, ни Telegram. Резюме без контактов — мёртвый документ: даже заинтересованный рекрутер не сможет связаться.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−8</span>
+    <div class="penalty-body">
+      <h4>Нестандартные заголовки разделов</h4>
+      <p>ATS ищет разделы по стандартным названиям: «Опыт работы», «Навыки», «Образование». Креативные заголовки вроде «Мой путь» или «Чем горжусь» парсер не распознаёт — содержимое раздела теряется.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−8</span>
+    <div class="penalty-body">
+      <h4>Мало технических навыков</h4>
+      <p>Если из резюме извлекается меньше 4 технических навыков — либо секция навыков отсутствует, либо написана так, что не парсится. Ключевые слова из навыков — основа сопоставления с вакансией.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−5×N</span>
+    <div class="penalty-body">
+      <h4>Лишние страницы</h4>
+      <p>За каждую страницу сверх нормы. Для IT-специалиста стандарт — 1–2 страницы. Резюме на 4–5 страниц не читают целиком, а важное тонет в деталях.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−5</span>
+    <div class="penalty-body">
+      <h4>Общая должность</h4>
+      <p>«Специалист», «Инженер», «Разработчик» без уточнения. ATS сопоставляет должность с названием вакансии — размытый заголовок снижает релевантность для любой конкретной позиции.</p>
+    </div>
+  </div>
+</div>
+
+<p>Отдельно детектор клише снимает <strong>−3 балла за каждое</strong> (максимум −15): «стрессоустойчивый», «командный игрок», «ответственный», «быстро обучаюсь» — фразы, которые не несут информации и занимают место конкретных фактов.</p>
+
+<div class="info-block">
+  <p><strong>Ограничение суммарного штрафа:</strong> общий вычет по всем детекторам не превышает 40 баллов. Это защита от каскадного обнуления — резюме с несколькими форматными проблемами, но сильным содержанием, не получит оценку ниже, чем заслуживает содержательно.</p>
+</div>
+
+<h2>Как читать итоговую оценку</h2>
+
+<table class="verdict-table">
+  <tr>
+    <th>Скор</th>
+    <th>Вердикт</th>
+    <th>Что делать</th>
+  </tr>
+  <tr>
+    <td>90–100</td>
+    <td>Сильное резюме</td>
+    <td>Точечные улучшения: недостающие навыки из рекомендаций, актуализация формулировок</td>
+  </tr>
+  <tr>
+    <td>70–89</td>
+    <td>Средний уровень</td>
+    <td>Исправить форматные штрафы (обычно быстро) и усилить формулировки опыта результатами</td>
+  </tr>
+  <tr>
+    <td>Ниже 70</td>
+    <td>Требует переработки</td>
+    <td>Системные проблемы: структура, полнота, машиночитаемость. Рекомендован пошаговый разбор с консультантом</td>
+  </tr>
+</table>
+
+<h2>Что происходит после анализа</h2>
+
+<p>Статический отчёт — только первый шаг. После него доступен <strong>диалоговый разбор резюме</strong>: ИИ-консультант проходит по каждому пункту опыта и помогает переформулировать его по принципу «действие → результат».</p>
+
+<p>Типичная трансформация формулировки:</p>
+
+<ul>
+  <li><strong>Было:</strong> «Занимался оптимизацией backend-сервисов»</li>
+  <li><strong>Стало:</strong> «Сократил время ответа основного API с 800 до 220 мс, переписав N+1-запросы и добавив кэширование на Redis»</li>
+</ul>
+
+<p>Консультант не выдумывает цифры за тебя — он задаёт вопросы о реальных результатах и помогает упаковать их в формулировку. Если в проекте не было измеримого результата, он поможет показать масштаб и сложность задачи другим способом.</p>
+
+<p>Загруженное резюме также используется остальными модулями бота: <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседования</a> адаптируют вопросы под твой стек, а «Прожарка опыта» строит поведенческое интервью по твоим реальным позициям.</p>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Сколько стоит проверка резюме?</p>
+    <p class="faq-a">На бесплатном тарифе — 1 анализ в день, этого достаточно для полного цикла: проверил, исправил, проверил снова на следующий день. На Basic — 3 анализа в день, на Premium — 5.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Безопасно ли загружать резюме с персональными данными?</p>
+    <p class="faq-a">Перед обработкой ИИ из текста автоматически удаляются персональные данные: имена, телефоны, email, адреса. В LLM попадает обезличенный текст. Полное удаление всех своих данных доступно командой /delete_my_data в любой момент.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Почему нельзя просто использовать резюме с HeadHunter?</p>
+    <p class="faq-a">HH-формат оптимизирован под поиск внутри HeadHunter и нормально работает там. Но при отклике напрямую в компанию (через сайт, LinkedIn, рекомендацию) это резюме попадает в корпоративную ATS, которая парсит его с ошибками. Рабочая стратегия — два резюме: HH-версия для HH и чистая одноколоночная версия для прямых откликов.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Гарантирует ли высокий ATS-скор приглашение на интервью?</p>
+    <p class="faq-a">Нет. Скор отражает машиночитаемость и структурное качество резюме — это необходимое условие, чтобы резюме дошло до рекрутера и было понято. Дальше решает содержание: релевантность опыта, конкретика результатов, соответствие требованиям вакансии.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/experience-deep-dive/">
+    <span class="rc-label">Прожарка опыта</span>
+    <span class="rc-title">Поведенческое интервью по твоему реальному CV</span>
+  </a>
+  <a class="related-card" href="/ru/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Как проходит live coding и как к нему тренироваться</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь своё резюме за 2 минуты</h3>
+  <p>Загрузи PDF или DOCX в бота — получи ATS-скор, список конкретных проблем и рекомендации. Первая проверка бесплатна, без регистрации на сайтах.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Проверить резюме</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит проверка резюме?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На бесплатном тарифе — 1 анализ в день. На Basic — 3 анализа в день, на Premium — 5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Безопасно ли загружать резюме с персональными данными?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Перед обработкой ИИ из текста автоматически удаляются персональные данные: имена, телефоны, email, адреса. Полное удаление своих данных доступно командой /delete_my_data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему нельзя просто использовать резюме с HeadHunter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HH-формат оптимизирован под поиск внутри HeadHunter. При отклике напрямую в компанию корпоративная ATS парсит его с ошибками. Рабочая стратегия — два резюме: HH-версия для HH и чистая одноколоночная для прямых откликов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Гарантирует ли высокий ATS-скор приглашение на интервью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Скор отражает машиночитаемость и структурное качество — необходимое условие, чтобы резюме дошло до рекрутера. Дальше решает содержание: релевантность опыта и конкретика результатов."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

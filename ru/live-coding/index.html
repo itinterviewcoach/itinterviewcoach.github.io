@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live coding на собеседовании: как проходит и как тренироваться | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Live coding на техническом собеседовании: из каких этапов состоит, что на самом деле оценивает интервьюер, типичные ошибки кандидатов и как тренировать формат — от уточнения условия до обсуждения решения.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/live-coding/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/live-coding/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/live-coding/">
+<meta property="og:title" content="Live coding на собеседовании: как проходит и как тренироваться">
+<meta property="og:description" content="Этапы live coding интервью, что оценивает интервьюер кроме работающего кода, типичные ошибки кандидатов и четырёхфазная методика тренировки.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Live coding на собеседовании: как проходит и как тренироваться",
+  "description": "Из каких этапов состоит live coding интервью, что оценивает интервьюер, типичные ошибки кандидатов и как тренировать формат системно.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/live-coding/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Live Coding</div>
+  <h1>Live coding на собеседовании: <em>как проходит и как тренироваться</em></h1>
+  <p class="article-lead">Решение задачи в реальном времени — самая стрессовая часть технического интервью. Разбираем, из каких этапов состоит live coding, что на самом деле оценивает интервьюер и почему «решил задачу» — не то же самое, что «прошёл секцию».</p>
+</div>
+
+<article>
+
+<h2>Что такое live coding</h2>
+
+<p><strong>Live coding</strong> — формат технического интервью, в котором кандидат решает задачу в реальном времени, проговаривая ход мыслей вслух. Интервьюер видит не только финальный код, но и весь процесс: как кандидат понял условие, как выбрал подход, как реагировал на подсказки, как проверял своё решение.</p>
+
+<p>Именно процесс — главный объект оценки. Работающий код, написанный молча, часто оценивается ниже, чем неидеальное решение с ясным рассуждением. Работодателя интересует, как ты будешь думать на реальных задачах, где условия неполны, а правильного ответа в конце учебника нет.</p>
+
+<h2>Что оценивает интервьюер</h2>
+
+<p>Формальный чек-лист различается по компаниям, но ядро оценки универсально:</p>
+
+<ul>
+  <li><strong>Работа с условием.</strong> Задал ли кандидат уточняющие вопросы или бросился писать код по первому впечатлению. Реальные задачи всегда недоопределены — умение выявить граничные условия до написания кода отличает опытного инженера.</li>
+  <li><strong>Структура рассуждения.</strong> Озвучил ли подход до реализации, разбил ли задачу на шаги, объяснил ли выбор структуры данных.</li>
+  <li><strong>Качество кода.</strong> Не олимпиадная краткость, а читаемость: осмысленные имена, обработка граничных случаев, отсутствие магических чисел.</li>
+  <li><strong>Реакция на обратную связь.</strong> Как кандидат воспринимает подсказку: встраивает в решение или защищается. Это прямой сигнал о том, каким он будет на код-ревью.</li>
+  <li><strong>Самопроверка.</strong> Прогнал ли решение по примерам, нашёл ли сам граничный случай с пустым входом — или объявил «готово» после последней строки.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Для Senior-кандидатов</strong> добавляется отдельный сигнал — самокоррекция: способность заметить проблему в собственном решении без внешней подсказки и исправить её. Интервьюеры фиксируют такие моменты явно, и они сильно влияют на итоговую оценку.</p>
+</div>
+
+<h2>Четыре фазы live coding: как устроена тренировка</h2>
+
+<p>В IT Interview Coach live coding воспроизводит структуру реального интервью — сессия проходит четыре фазы:</p>
+
+<ol class="steps-list">
+  <li><strong>Уточнение условия (clarify).</strong> Получив задачу, ты можешь задавать вопросы: какие ограничения на вход, что возвращать при пустых данных, важна ли производительность. ИИ отвечает как реальный интервьюер — уточняет условие, но не подсказывает решение. Уже сам факт вопросов — плюс к оценке: так формируется привычка не прыгать в код.</li>
+  <li><strong>Решение (solve).</strong> Пишешь код и отправляешь. Количество попыток не ограничено — как и на реальном интервью, где после замечания интервьюера можно исправиться.</li>
+  <li><strong>Разбор (review).</strong> ИИ оценивает решение: если есть проблемы — не даёт готовый ответ, а указывает направление через наводящий вопрос и намёк на упущенный граничный случай. Ровно так работает хороший интервьюер: проверяет, можешь ли ты докрутить решение с минимальной помощью.</li>
+  <li><strong>Обсуждение (discuss).</strong> После принятого решения — вопросы о подходе: почему выбрал эту структуру данных, какова сложность, что изменится при росте входа в тысячу раз. Эта фаза имитирует follow-up вопросы, на которых срезаются кандидаты, списавшие решение или дошедшие до него случайно.</li>
+</ol>
+
+<p>После сессии — <strong>структурированный дебриф</strong>: что разбирали, как шло решение по попыткам, зоны риска (из зафиксированных подсказок) и что тренировать дальше. Дебриф строится только на фактических данных сессии — попытках и подсказках, — а не на общих советах.</p>
+
+<h2>Типичные ошибки кандидатов</h2>
+
+<ul>
+  <li><strong>Код с первой секунды.</strong> Кандидат начинает печатать до того, как понял задачу. Через десять минут выясняется, что решается не та задача. Правило: сначала пример входа-выхода вслух, потом код.</li>
+  <li><strong>Молчаливое решение.</strong> Пять минут тишины — интервьюер не понимает, движется кандидат к решению или застрял. Проговаривание — навык, который тренируется только практикой.</li>
+  <li><strong>Игнорирование граничных случаев.</strong> Пустой массив, один элемент, дубликаты, отрицательные числа — типовой набор, о котором нужно спрашивать или который нужно обрабатывать до объявления «готово».</li>
+  <li><strong>Защитная реакция на подсказки.</strong> Интервьюер говорит «а что если вход пустой?» — кандидат оправдывается вместо «точно, сейчас поправлю». Подсказка — это помощь, а не обвинение.</li>
+  <li><strong>Сдача без самопроверки.</strong> Прогон решения по примеру из условия занимает минуту и ловит половину ошибок — но большинство кандидатов этого не делает.</li>
+</ul>
+
+<h2>Как тренироваться</h2>
+
+<ol>
+  <li><strong>Тренируй формат, не только задачи.</strong> Решение сотен задач на LeetCode молча не готовит к live coding: под давлением наблюдения и с необходимостью говорить решается иначе. Нужны сессии, воспроизводящие формат целиком — с уточнением условия и обсуждением после.</li>
+  <li><strong>Начни с задач своего уровня.</strong> В боте задачи калибруются по специализации (Backend, QA, ML) и уровню (Junior — Senior). Провал на слишком сложных задачах тренирует не навык, а фрустрацию.</li>
+  <li><strong>Работай с дебрифом.</strong> Зоны риска из дебрифа — конкретный список того, что тренировать. Если из сессии в сессию повторяется «не проверяет граничные случаи» — это и есть точка роста.</li>
+  <li><strong>Комбинируй с теорией.</strong> Live coding проверяет применение, <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседование</a> — понимание. На реальном интервью будут оба блока: тренируй оба.</li>
+</ol>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Live coding — это всегда алгоритмические задачи?</p>
+    <p class="faq-a">Нет. Алгоритмические секции характерны для крупных технологических компаний. В продуктовых компаниях чаще дают практические задачи: написать функцию обработки данных, отрефакторить фрагмент, найти баг. Для QA-автоматизаторов — написать или починить тест. Задачи в боте ближе ко второму типу: практика, а не олимпиада.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Можно ли пользоваться документацией и поиском во время live coding?</p>
+    <p class="faq-a">Зависит от компании — спроси в начале секции, это нормальный вопрос. Многие интервьюеры разрешают документацию: в реальной работе никто не пишет код без неё. Запрещено обычно только использование ИИ-ассистентов и готовых решений.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что делать, если решение не получается?</p>
+    <p class="faq-a">Проговаривать тупик вслух: «Вижу, что этот подход упирается в X, попробую зайти от Y». Интервьюер оценивает процесс — честное рассуждение в тупике даёт больше баллов, чем молчаливое застревание. Просить подсказку тоже нормально: важно, как ты её используешь.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Сколько задач нужно решить для подготовки?</p>
+    <p class="faq-a">Для формата live coding важнее полные циклы, чем количество: 10–15 сессий с уточнением условия, проговариванием и разбором дают больше, чем 100 задач, решённых молча. Если слабое место — сами алгоритмы, это отдельная подготовка параллельно.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Подготовка к Backend-собеседованию</span>
+  </a>
+  <a class="related-card" href="/ru/qa-interview/">
+    <span class="rc-label">QA</span>
+    <span class="rc-title">Подготовка к QA-собеседованию</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Попробуй live coding сессию</h3>
+  <p>Задача под твою специализацию и уровень, четыре фазы как на реальном интервью и дебриф с зонами риска в конце. Прямо в Telegram.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать сессию</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Live coding — это всегда алгоритмические задачи?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Алгоритмические секции характерны для крупных технологических компаний. В продуктовых чаще дают практические задачи: написать функцию, отрефакторить фрагмент, найти баг."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли пользоваться документацией и поиском во время live coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Зависит от компании — спроси в начале секции. Многие разрешают документацию. Запрещено обычно использование ИИ-ассистентов и готовых решений."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что делать, если решение не получается?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Проговаривать тупик вслух и пробовать другой подход. Честное рассуждение в тупике даёт больше баллов, чем молчаливое застревание. Просить подсказку нормально."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько задач нужно решить для подготовки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Важнее полные циклы, чем количество: 10–15 сессий с уточнением условия, проговариванием и разбором дают больше, чем 100 задач, решённых молча."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

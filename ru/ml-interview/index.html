@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подготовка к ML-собеседованию: темы, вопросы по уровням, стратегия | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Как подготовиться к собеседованию ML-инженера и Data Scientist: какие темы спрашивают — от статистики до LLM, примеры вопросов для Middle и Senior, типичные ошибки кандидатов и стратегия подготовки.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/ml-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/ml-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/ml-interview/">
+<meta property="og:title" content="Подготовка к ML-собеседованию: темы, вопросы по уровням, стратегия">
+<meta property="og:description" content="Какие темы спрашивают на интервью ML-инженера: статистика, классический ML, нейросети, LLM, продакшен. Примеры вопросов и типичные ошибки.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Подготовка к ML-собеседованию: темы, вопросы по уровням, стратегия",
+  "description": "Какие темы спрашивают на техническом интервью ML-инженера и Data Scientist, примеры вопросов по уровням, типичные ошибки кандидатов и стратегия подготовки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/ml-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / ML-собеседование</div>
+  <h1>Подготовка к ML-собеседованию: <em>темы, вопросы, стратегия</em></h1>
+  <p class="article-lead">Интервью ML-инженера — самое широкое по охвату в IT: от матстатистики до продакшена, от классических алгоритмов до LLM. Разбираем, что спрашивают, как меняется глубина по уровням и на чём срезаются кандидаты с сильным резюме.</p>
+</div>
+
+<article>
+
+<h2>Из чего состоит ML-собеседование</h2>
+
+<p>Интервью ML-инженера или Data Scientist обычно шире, чем у других инженерных специализаций, и включает до четырёх блоков:</p>
+
+<ul>
+  <li><strong>Математика и статистика</strong> — теорвер, проверка гипотез, линейная алгебра на уровне понимания. Блок, который заваливают чаще всего: после пары лет практики с готовыми библиотеками теория выветривается.</li>
+  <li><strong>Машинное обучение</strong> — от классических алгоритмов до нейросетей и LLM. Проверяется понимание механики, а не умение вызвать fit-predict.</li>
+  <li><strong>Практика и продакшен</strong> — как модель живёт после обучения: деплой, мониторинг, дрейф данных, переобучение на проде.</li>
+  <li><strong>Кодинг</strong> — Python и работа с данными; в некоторых компаниях полноценный <a href="/ru/live-coding/" style="color:var(--accent);">live coding</a>. Вопросы по собственным проектам из резюме тренирует <a href="/ru/experience-deep-dive/" style="color:var(--accent);">прожарка опыта</a>.</li>
+</ul>
+
+<h2>Темы ML-интервью</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Статистика и теорвер</h4>
+    <p>Проверка гипотез, p-value, доверительные интервалы, A/B-тесты, множественные сравнения, распределения, ЦПТ.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Классический ML</h4>
+    <p>Линейные модели, деревья и ансамбли, градиентный бустинг, кросс-валидация, регуляризация, метрики качества, дисбаланс классов.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Нейросети</h4>
+    <p>Backpropagation, оптимизаторы, батч-нормализация, переобучение и dropout, CNN, эмбеддинги, transfer learning.</p>
+  </div>
+  <div class="topic-card">
+    <h4>LLM и NLP</h4>
+    <p>Трансформеры и attention, токенизация, fine-tuning vs RAG, промптинг, оценка качества генерации, галлюцинации.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Временные ряды</h4>
+    <p>Стационарность, сезонность, лаговые признаки, валидация без утечки будущего, специфика метрик прогноза.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Продакшен ML</h4>
+    <p>Дрейф данных и концепций, мониторинг моделей, retraining-пайплайны, фичестор, A/B-раскатка моделей, latency-ограничения.</p>
+  </div>
+</div>
+
+<h2>Как меняются вопросы по уровням</h2>
+
+<p>ML-трек в боте калибруется на уровни Middle и Senior — специфика области в том, что джуниорские позиции чаще закрываются стажировками с академическими скринингами, а рынок вакансий начинается с уверенного Middle.</p>
+
+<h3>Middle — «как работает и когда применять»</h3>
+
+<div class="example-q">
+  <span class="q-label">Классический ML · Middle</span>
+  Модель показывает accuracy 0.97 на задаче с дисбалансом классов 1:50. Почему это ни о чём не говорит и какие метрики смотреть?
+  <span class="q-hint">понимание связи метрик с балансом классов: precision/recall, PR-AUC, и умение выбрать метрику под бизнес-задачу.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Статистика · Middle</span>
+  Ты запускаешь A/B-тест и через три дня видишь значимый результат. Продакт хочет остановить тест и раскатить фичу. Что ответишь?
+  <span class="q-hint">проблема подглядывания (peeking): рост ложноположительных при ранней остановке, зафиксированная длительность или sequential testing.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Временные ряды · Middle</span>
+  Почему обычная k-fold кросс-валидация не подходит для временных рядов и как валидировать правильно?
+  <span class="q-hint">понимание утечки будущего в прошлое и владение walk-forward валидацией.</span>
+</div>
+
+<h3>Senior — «границы применимости и продакшен»</h3>
+
+<div class="example-q">
+  <span class="q-label">Продакшен · Senior</span>
+  Модель показывает 0.95 AUC на валидации, но в проде метрики бизнеса не растут. Назови минимум три возможные причины и способ проверки каждой.
+  <span class="q-hint">системное мышление: train-serve skew, дрейф данных, разрыв между ML-метрикой и бизнес-метрикой, ошибки в пайплайне признаков.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">LLM · Senior</span>
+  Команда хочет дообучить LLM на внутренних документах. При каких условиях ты предложишь RAG вместо fine-tuning и наоборот?
+  <span class="q-hint">анализ компромиссов: частота обновления знаний, стоимость, галлюцинации, объём данных, требования к стилю ответов.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Статистика · Senior</span>
+  Вы прогнали 40 A/B-тестов за квартал, 3 показали значимый позитивный эффект. Сколько из них, вероятно, ложноположительные и что с этим делать?
+  <span class="q-hint">множественные сравнения на уровне процесса, а не одного теста: поправки, FDR, культура регистрации гипотез.</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Senior-специфика в ML:</strong> ключевой сигнал — умение связывать ML-метрики с бизнес-результатом. Кандидат, который на вопрос о качестве модели начинает с «а что мы оптимизируем для бизнеса», выигрывает у кандидата с идеальным знанием лоссов, но без этого вопроса.</p>
+</div>
+
+<h2>На чём срезаются кандидаты</h2>
+
+<ul>
+  <li><strong>Библиотеки без механики.</strong> Кандидат три года применяет градиентный бустинг, но не может объяснить, чем он отличается от случайного леса на уровне идеи. «Как работает» — стандартная проверка глубины.</li>
+  <li><strong>Провал по статистике.</strong> Самый частый: p-value объясняется неверно даже кандидатами с сильным DL-опытом. Статистика — фундамент, который спрашивают всегда.</li>
+  <li><strong>Ноль продакшен-мышления.</strong> Отличные ответы про обучение моделей — и тишина на вопрос «а что будет с моделью через полгода в проде». Для Middle+ позиций жизненный цикл модели обязателен.</li>
+  <li><strong>Хайп вместо понимания.</strong> Уверенные рассуждения про LLM при неспособности объяснить attention. Мода на тему повышает и планку проверки по ней.</li>
+  <li><strong>Метрики в отрыве от задачи.</strong> Перечисление всех известных метрик вместо выбора одной с обоснованием под конкретную бизнес-постановку.</li>
+</ul>
+
+<h2>Как построить подготовку</h2>
+
+<ol>
+  <li><strong>Диагностика.</strong> 2–3 <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседования</a> по ML-треку. Типичное открытие: слабое место не нейросети, а базовая статистика.</li>
+  <li><strong>Фундамент первым.</strong> Статистика и классический ML — темы, которые спрашивают в 100% интервью. LLM и специализированные темы — после уверенного фундамента.</li>
+  <li><strong>Продакшен-блок.</strong> Если опыта продакшена мало — целевая проработка тем мониторинга, дрейфа и деплоя в режиме «Подготовка по темам»: вопросы о жизни модели после обучения будут обязательно.</li>
+  <li><strong>Свои проекты.</strong> Каждый ML-проект из резюме будет разобран с пристрастием: какие данные, почему такая модель, какие метрики, что в проде. Прожарка опыта репетирует именно это.</li>
+</ol>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Сколько математики реально нужно для ML-собеседования?</p>
+    <p class="faq-a">Меньше, чем пугают, но больше, чем «никакой». Уровень: уверенное объяснение p-value и доверительных интервалов, понимание градиентного спуска концептуально, знание, что такое собственные векторы — без вывода формул на доске. Вывод формул спрашивают в основном в research-позициях.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Спрашивают ли классический ML, если вакансия про LLM?</p>
+    <p class="faq-a">Да, почти всегда. Классический ML и статистика — проверка фундамента: способность рассуждать о смещении, дисперсии, переобучении и валидации переносится на любые модели. Кандидат «только про LLM» без фундамента — красный флаг для большинства команд.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Чем отличаются интервью ML-инженера и Data Scientist?</p>
+    <p class="faq-a">Границы размыты и зависят от компании, но тенденция: у DS больше статистики, A/B-тестов и продуктовой аналитики; у ML-инженера — больше продакшена, инфраструктуры и кода. Ядро — классический ML и основы статистики — общее для обеих ролей.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Как готовиться к вопросам про LLM, если в работе их не было?</p>
+    <p class="faq-a">Честность плюс концептуальная база: понимать устройство трансформера, разницу fine-tuning и RAG, проблему галлюцинаций — это доступно без продакшен-опыта. На интервью прямо сказать «в проде не использовал, но понимаю устройство» — сильнее, чем изображать опыт, который вскроется на втором уточняющем вопросе.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Подготовка к Backend-собеседованию</span>
+  </a>
+  <a class="related-card" href="/ru/experience-deep-dive/">
+    <span class="rc-label">Прожарка опыта</span>
+    <span class="rc-title">Поведенческое интервью по твоему реальному CV</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь себя на реальных вопросах</h3>
+  <p>Выбери ML-специализацию и уровень — получи первый вопрос через минуту. Оценка каждого ответа и разбор слабых тем после сессии. Бесплатный старт.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать тренировку</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько математики реально нужно для ML-собеседования?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Уровень: уверенное объяснение p-value и доверительных интервалов, концептуальное понимание градиентного спуска. Вывод формул спрашивают в основном в research-позициях."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Спрашивают ли классический ML, если вакансия про LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, почти всегда. Классический ML и статистика — проверка фундамента. Кандидат «только про LLM» без фундамента — красный флаг для большинства команд."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем отличаются интервью ML-инженера и Data Scientist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "У DS больше статистики, A/B-тестов и продуктовой аналитики; у ML-инженера — продакшена, инфраструктуры и кода. Ядро общее для обеих ролей."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как готовиться к вопросам про LLM, если в работе их не было?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Концептуальная база доступна без продакшен-опыта: устройство трансформера, разница fine-tuning и RAG, проблема галлюцинаций. Честное «в проде не использовал, но понимаю устройство» — сильная позиция."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

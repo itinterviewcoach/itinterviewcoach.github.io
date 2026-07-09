@@ -16,6 +16,41 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://itinterviewcoach.com/ru/mock-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/resume-analysis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/backend-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/qa-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/live-coding/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/experience-deep-dive/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/ml-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://itinterviewcoach.com/legal/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

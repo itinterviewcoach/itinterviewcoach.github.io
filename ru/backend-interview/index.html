@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подготовка к Backend-собеседованию: темы, вопросы по уровням, стратегия | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Как подготовиться к Backend-собеседованию: какие темы спрашивают на техническом интервью, примеры вопросов для Junior, Middle и Senior, типичные ошибки кандидатов и стратегия подготовки по темам.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/backend-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/backend-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/backend-interview/">
+<meta property="og:title" content="Подготовка к Backend-собеседованию: темы, вопросы по уровням, стратегия">
+<meta property="og:description" content="Какие темы спрашивают на Backend-интервью, примеры вопросов для Junior, Middle и Senior, типичные ошибки и как тренироваться.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Подготовка к Backend-собеседованию: темы, вопросы по уровням, стратегия",
+  "description": "Какие темы спрашивают на техническом интервью Backend-разработчика, примеры вопросов по уровням Junior/Middle/Senior, типичные ошибки кандидатов и стратегия подготовки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/backend-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Backend-собеседование</div>
+  <h1>Подготовка к Backend-собеседованию: <em>темы, вопросы, стратегия</em></h1>
+  <p class="article-lead">Что спрашивают на техническом интервью Backend-разработчика, чем отличаются вопросы для Junior, Middle и Senior, на чём чаще всего срезаются кандидаты — и как тренироваться системно, а не по случайным спискам вопросов.</p>
+</div>
+
+<article>
+
+<h2>Из чего состоит Backend-собеседование</h2>
+
+<p>Типичное техническое интервью Backend-разработчика в компаниях СНГ и международных компаниях состоит из трёх блоков, которые могут проходить в один или несколько этапов:</p>
+
+<ul>
+  <li><strong>Теоретическая часть</strong> — вопросы по фундаментальным темам: базы данных, сеть, конкурентность, архитектура. Проверяется глубина понимания, а не заученные определения.</li>
+  <li><strong>Практическая часть</strong> — live coding: решение задачи в реальном времени с обсуждением подхода. Как проходит этот формат — <a href="/ru/live-coding/" style="color:var(--accent);">разбираем отдельно</a>.</li>
+  <li><strong>Поведенческая часть</strong> — вопросы по реальному опыту из резюме: какие решения принимал, какие были компромиссы, что пошло не так. Для тренировки этого блока существует формат <a href="/ru/experience-deep-dive/" style="color:var(--accent);">прожарки опыта</a>.</li>
+</ul>
+
+<p>Эта страница — про первый блок: теоретические темы и то, как их спрашивают на разных уровнях.</p>
+
+<h2>Темы Backend-интервью</h2>
+
+<p>Шесть тематических кластеров покрывают подавляющее большинство вопросов теоретической части:</p>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Базы данных</h4>
+    <p>Индексы, транзакции и уровни изоляции, нормализация, репликация, шардирование, N+1, оптимизация запросов, SQL vs NoSQL.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Конкурентность</h4>
+    <p>Потоки и процессы, async/await, GIL, гонки данных, блокировки, пулы соединений, backpressure.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Проектирование API</h4>
+    <p>REST-семантика, идемпотентность, версионирование, пагинация, обработка ошибок, rate limiting, gRPC vs REST.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Безопасность</h4>
+    <p>Аутентификация и авторизация, JWT и сессии, OWASP Top 10, SQL-инъекции, XSS, CSRF, хранение секретов.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Observability</h4>
+    <p>Логирование, метрики, трейсинг, алёртинг, SLO/SLI, диагностика деградаций в проде.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Событийная архитектура</h4>
+    <p>Очереди сообщений, Kafka, гарантии доставки, exactly-once, идемпотентные консьюмеры, outbox-паттерн.</p>
+  </div>
+</div>
+
+<h2>Как меняются вопросы по уровням</h2>
+
+<p>Одна и та же тема на разных уровнях спрашивается принципиально по-разному. Разница не в сложности терминов, а в <strong>глубине ожидаемого ответа</strong>:</p>
+
+<h3>Junior — «что это и как работает»</h3>
+
+<div class="example-q">
+  <span class="q-label">Базы данных · Junior</span>
+  Что такое индекс в базе данных и почему нельзя просто проиндексировать все колонки?
+  <span class="q-hint">понимание trade-off между скоростью чтения и стоимостью записи, а не заученное определение.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">API · Junior</span>
+  Чем PUT отличается от PATCH и какой из них идемпотентен?
+  <span class="q-hint">знание REST-семантики и понимание идемпотентности — базового понятия для проектирования надёжных API.</span>
+</div>
+
+<h3>Middle — «когда и почему»</h3>
+
+<div class="example-q">
+  <span class="q-label">Конкурентность · Middle</span>
+  У тебя Python-сервис делает 200 внешних HTTP-вызовов на запрос. Потоки, процессы или asyncio — что выберешь и почему?
+  <span class="q-hint">понимание I/O-bound vs CPU-bound нагрузки и роли GIL, умение обосновать выбор.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Базы данных · Middle</span>
+  Запрос со JOIN трёх таблиц работал быстро, но после роста данных стал занимать 40 секунд. Твои действия по шагам?
+  <span class="q-hint">практический опыт: EXPLAIN, чтение плана запроса, работа с индексами и статистикой.</span>
+</div>
+
+<h3>Senior — «компромиссы и границы применимости»</h3>
+
+<div class="example-q">
+  <span class="q-label">Событийная архитектура · Senior</span>
+  Платёжный сервис публикует события в Kafka. Как гарантировать, что событие не потеряется, если сервис упадёт между записью в БД и отправкой в топик?
+  <span class="q-hint">знание outbox-паттерна, понимание распределённых транзакций и их альтернатив, границы гарантий exactly-once.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Observability · Senior</span>
+  P99 latency вырос вдвое, но средняя latency не изменилась. Что это значит и как будешь диагностировать?
+  <span class="q-hint">понимание перцентилей, хвостовых задержек и системного подхода к диагностике, а не «посмотрю логи».</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Ключевое отличие senior-ответа</strong> — анализ компромиссов. На вопрос «как сделать X» middle называет рабочий способ, senior — два-три способа с условиями применимости каждого. Оценка в IT Interview Coach калибруется по этому же принципу: ответ без trade-offs для Senior помечается как частичный.</p>
+</div>
+
+<h2>На чём срезаются кандидаты</h2>
+
+<ul>
+  <li><strong>Знание инструмента без понимания механики.</strong> Кандидат использует Redis три года, но не может объяснить, что происходит при заполнении памяти. Вопросы «а что под капотом» — стандартный способ проверить глубину.</li>
+  <li><strong>Ответ не на заданный вопрос.</strong> Спросили про уровни изоляции — кандидат рассказывает всё, что знает про транзакции. Структура «сначала прямой ответ, потом детали» решает эту проблему.</li>
+  <li><strong>Отсутствие цифр и порядков величин.</strong> Senior-кандидат должен ориентироваться в порядках: сколько RPS держит один инстанс PostgreSQL, сколько стоит сетевой round-trip, когда таблица становится «большой».</li>
+  <li><strong>Молчание при незнании.</strong> Вместо рассуждения от первых принципов — «не сталкивался». Интервьюеры целенаправленно задают вопросы на границе знаний, чтобы увидеть ход мышления.</li>
+</ul>
+
+<h2>Как построить подготовку</h2>
+
+<ol>
+  <li><strong>Диагностика.</strong> Пройди 2–3 <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседования</a> по своей специализации — увидишь реальные слабые темы вместо предполагаемых. Часто они не совпадают.</li>
+  <li><strong>Целевая проработка.</strong> Слабые темы отрабатывай в режиме «Подготовка по темам»: выбираешь конкретный кластер — например, конкурентность — и тренируешь только его.</li>
+  <li><strong>Возврат к смешанному формату.</strong> После проработки — снова полное мок-интервью, чтобы проверить прогресс в условиях случайных тем.</li>
+  <li><strong>Перед реальным интервью.</strong> Сессия по темам, релевантным вакансии, плюс прожарка опыта, если ожидается поведенческая часть.</li>
+</ol>
+
+<p>Если в боте загружено резюме, вопросы адаптируются под твой стек: у кандидата с PostgreSQL и Kafka в резюме вопросы будут про PostgreSQL и Kafka, а не про абстрактные «базы данных» и «очереди».</p>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Нужно ли учить алгоритмы для Backend-собеседования?</p>
+    <p class="faq-a">Зависит от компании. Крупные технологические компании (Яндекс, международные BigTech) почти всегда включают алгоритмическую секцию. Продуктовые компании среднего размера чаще проверяют практические навыки: базы данных, API, отладку. Уточни формат у рекрутера — это нормальная практика.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Вопросы в боте привязаны к Python или подходят для других языков?</p>
+    <p class="faq-a">Ядро тем — базы данных, API, архитектура, безопасность — языконезависимо. Языкоспецифичные вопросы (например, про GIL) появляются, если соответствующий стек указан в профиле или резюме. Кандидатам с Go, Java или Node.js в резюме вопросы адаптируются под их стек.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Сколько времени нужно на подготовку к Backend-интервью?</p>
+    <p class="faq-a">При регулярной работе (3–4 сессии в неделю по 20–30 минут) заметный прогресс появляется за 2–3 недели: формулировки становятся структурными, типовые темы перестают вызывать ступор. Подготовка «с нуля до Senior» — история не про недели, но подготовка к конкретному интервью при имеющемся опыте — задача на 2–4 недели.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что делать, если на реальном интервью спросили то, чего не знаешь?</p>
+    <p class="faq-a">Рассуждать вслух от первых принципов: «Точно не сталкивался, но исходя из того, как устроено X, предположу...». Интервьюеры регулярно задают вопросы на границе знаний намеренно — оценивается ход мышления. Молчание или «не знаю» без попытки — худший вариант ответа.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/qa-interview/">
+    <span class="rc-label">QA</span>
+    <span class="rc-title">Подготовка к QA-собеседованию</span>
+  </a>
+  <a class="related-card" href="/ru/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Как проходит live coding и как к нему тренироваться</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь себя на реальных вопросах</h3>
+  <p>Выбери Backend-специализацию и уровень — получи первый вопрос через минуту. Оценка каждого ответа и разбор слабых тем после сессии. Бесплатный старт.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать тренировку</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужно ли учить алгоритмы для Backend-собеседования?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Зависит от компании. Крупные технологические компании почти всегда включают алгоритмическую секцию. Продуктовые компании среднего размера чаще проверяют практические навыки: базы данных, API, отладку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Вопросы в боте привязаны к Python или подходят для других языков?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ядро тем — базы данных, API, архитектура, безопасность — языконезависимо. Языкоспецифичные вопросы появляются, если соответствующий стек указан в профиле или резюме."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько времени нужно на подготовку к Backend-интервью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При регулярной работе (3–4 сессии в неделю по 20–30 минут) заметный прогресс появляется за 2–3 недели. Подготовка к конкретному интервью при имеющемся опыте — задача на 2–4 недели."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что делать, если на реальном интервью спросили то, чего не знаешь?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Рассуждать вслух от первых принципов. Интервьюеры регулярно задают вопросы на границе знаний намеренно — оценивается ход мышления. Молчание без попытки — худший вариант ответа."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

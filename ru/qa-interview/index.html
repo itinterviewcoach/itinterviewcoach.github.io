@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подготовка к QA-собеседованию: темы, вопросы по уровням, стратегия | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Как подготовиться к собеседованию QA-инженера: какие темы спрашивают на техническом интервью, примеры вопросов для Junior, Middle и Senior, разница между manual и automation интервью, типичные ошибки кандидатов.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/qa-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/qa-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/qa-interview/">
+<meta property="og:title" content="Подготовка к QA-собеседованию: темы, вопросы по уровням, стратегия">
+<meta property="og:description" content="Какие темы спрашивают на интервью QA-инженера, примеры вопросов для Junior, Middle и Senior, manual vs automation, типичные ошибки и как тренироваться.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Подготовка к QA-собеседованию: темы, вопросы по уровням, стратегия",
+  "description": "Какие темы спрашивают на техническом интервью QA-инженера, примеры вопросов по уровням Junior/Middle/Senior, manual vs automation, типичные ошибки кандидатов и стратегия подготовки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/qa-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / QA-собеседование</div>
+  <h1>Подготовка к QA-собеседованию: <em>темы, вопросы, стратегия</em></h1>
+  <p class="article-lead">Что спрашивают на техническом интервью QA-инженера, чем отличаются вопросы для ручного тестировщика и автоматизатора, как меняется глубина от Junior к Senior — и как готовиться системно.</p>
+</div>
+
+<article>
+
+<h2>Из чего состоит QA-собеседование</h2>
+
+<p>Интервью QA-инженера обычно включает три блока:</p>
+
+<ul>
+  <li><strong>Теория тестирования</strong> — тест-дизайн, виды тестирования, работа с дефектами. Это ядро, которое спрашивают всегда, от стажёра до лида.</li>
+  <li><strong>Технический блок</strong> — API-тестирование, SQL, инструменты. Для автоматизаторов — плюс код: язык автоматизации, фреймворки, паттерны.</li>
+  <li><strong>Практика и опыт</strong> — разбор рабочих ситуаций: как тестировал конкретную фичу, как приоритизировал при нехватке времени, как спорил с разработчиком о серьёзности бага. Тренировать этот блок помогает <a href="/ru/experience-deep-dive/" style="color:var(--accent);">прожарка опыта</a>.</li>
+</ul>
+
+<h2>Темы QA-интервью</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Тест-дизайн</h4>
+    <p>Классы эквивалентности, граничные значения, pairwise, таблицы решений, state transition, чек-листы vs тест-кейсы.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Виды тестирования</h4>
+    <p>Функциональное и нефункциональное, регрессионное, smoke vs sanity, приёмочное, исследовательское тестирование.</p>
+  </div>
+  <div class="topic-card">
+    <h4>API-тестирование</h4>
+    <p>HTTP-методы и коды ответов, REST-семантика, Postman, валидация схем, тестирование негативных сценариев, contract testing.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Работа с дефектами</h4>
+    <p>Жизненный цикл бага, severity vs priority, оформление отчёта, локализация дефекта, работа с невоспроизводимыми багами.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Автоматизация</h4>
+    <p>Пирамида тестирования, селекторы и ожидания, Page Object, флаки-тесты, CI-интеграция, что автоматизировать и что нет.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Специальные области</h4>
+    <p>Mobile-тестирование, тестирование безопасности, работа с тестовыми данными, тестирование производительности.</p>
+  </div>
+</div>
+
+<h2>Как меняются вопросы по уровням</h2>
+
+<h3>Junior — «что это и зачем»</h3>
+
+<div class="example-q">
+  <span class="q-label">Тест-дизайн · Junior</span>
+  Поле принимает возраст от 18 до 65. Какие значения проверишь и почему именно их?
+  <span class="q-hint">владение техникой граничных значений: 17, 18, 19, 64, 65, 66, плюс невалидные типы — а не хаотичный перебор.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Дефекты · Junior</span>
+  Чем severity отличается от priority? Приведи пример бага с высокой severity и низкой priority.
+  <span class="q-hint">понимание разницы между техническим влиянием и бизнес-срочностью. Классический пример: краш на странице, куда заходит 0,1% пользователей.</span>
+</div>
+
+<h3>Middle — «как применить в реальной ситуации»</h3>
+
+<div class="example-q">
+  <span class="q-label">API · Middle</span>
+  Как бы ты спроектировал набор тестов для API-эндпоинта перевода денег между счетами? Какие классы эквивалентности и граничные значения выделишь?
+  <span class="q-hint">системный подход: позитивные и негативные сценарии, идемпотентность, конкурентные переводы, недостаточный баланс, лимиты.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Автоматизация · Middle</span>
+  Тест падает в CI один раз из десяти, локально стабилен. Твои действия по шагам?
+  <span class="q-hint">опыт борьбы с флаки-тестами: ожидания vs sleep, изоляция данных, порядок выполнения, ресурсы CI-агентов.</span>
+</div>
+
+<h3>Senior — «стратегия и компромиссы»</h3>
+
+<div class="example-q">
+  <span class="q-label">Стратегия · Senior</span>
+  Релиз через два дня, регрессионный прогон занимает пять. Как решишь, что тестировать, и как обоснуешь риски бизнесу?
+  <span class="q-hint">риск-ориентированное тестирование: приоритизация по частоте использования и цене отказа, impact analysis, прозрачная коммуникация остаточных рисков.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Автоматизация · Senior</span>
+  У команды 2000 UI-тестов, прогон 4 часа, треть падений — флаки. Твой план действий как QA-лида?
+  <span class="q-hint">понимание пирамиды тестирования: перенос проверок на уровень API и unit, карантин флаки-тестов, метрики стабильности, а не «перепишем все тесты».</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Особенность QA-интервью:</strong> в отличие от разработки, где часто проверяют знание конкретных технологий, в QA прежде всего оценивают мышление — способность системно раскладывать задачу на проверки. Кандидат, который на вопрос о тестировании лифта выдаёт структуру (функциональные, граничные, нагрузочные, безопасность), выигрывает у того, кто перечисляет двадцать хаотичных проверок.</p>
+</div>
+
+<h2>Manual vs Automation: чем отличаются интервью</h2>
+
+<p>Для <strong>ручного тестировщика</strong> ядро интервью — тест-дизайн и работа с дефектами. Технический блок ограничивается SQL-запросами уровня JOIN и GROUP BY, HTTP-основами и умением читать логи. Главное, что оценивают, — структурность мышления и внимательность к деталям.</p>
+
+<p>Для <strong>автоматизатора</strong> добавляется полноценная инженерная часть: живой код на языке автоматизации, знание фреймворков (pytest, Selenium, Playwright), понимание паттернов (Page Object, фикстуры), опыт CI/CD. Нередко автоматизаторам дают <a href="/ru/live-coding/" style="color:var(--accent);">live coding</a> — задачу написать или отрефакторить тест в реальном времени.</p>
+
+<p>Частая ловушка на собеседованиях автоматизаторов — <strong>проверка теории тестирования, которую кандидат считал «пройденным этапом»</strong>. Автоматизатор, не способный спроектировать классы эквивалентности, вызывает вопрос: что именно он автоматизирует?</p>
+
+<h2>На чём срезаются кандидаты</h2>
+
+<ul>
+  <li><strong>Хаотичное перечисление вместо структуры.</strong> На вопрос «как протестируешь X» кандидат сыплет проверками без группировки. Сильный ответ начинается с классификации: функциональные проверки, граничные, негативные, нефункциональные.</li>
+  <li><strong>Незнание базовой теории при опыте работы.</strong> Три года в тестировании, но pairwise и таблицы решений — «что-то слышал». Опыт без теоретической базы читается как потолок роста.</li>
+  <li><strong>Слабый SQL.</strong> Запрос с JOIN двух таблиц ставит в тупик. Для Middle+ уровня SQL — обязательный инструмент повседневной работы с тестовыми данными.</li>
+  <li><strong>«Автоматизирую всё».</strong> На вопрос о стратегии автоматизации — энтузиазм без анализа. Senior-ответ включает экономику: стоимость написания и поддержки против частоты прогона и цены ручной проверки.</li>
+</ul>
+
+<h2>Как построить подготовку</h2>
+
+<ol>
+  <li><strong>Диагностика.</strong> 2–3 <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседования</a> по QA-треку покажут реальные пробелы — у опытных ручных тестировщиков это часто теория тест-дизайна, у автоматизаторов — та же теория плюс глубина API.</li>
+  <li><strong>Проработка слабых тем.</strong> Режим «Подготовка по темам»: выбираешь конкретный кластер — тест-дизайн, API-тестирование, автоматизация — и тренируешь до уверенности.</li>
+  <li><strong>Контрольная сессия.</strong> Полное мок-интервью со случайными темами — проверка, что знания устоялись.</li>
+  <li><strong>Под конкретную вакансию.</strong> Прочитай требования: если упомянут contract testing или mobile — прогони сессию по этим темам. Плюс прожарка опыта перед поведенческой частью.</li>
+</ol>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Нужно ли ручному тестировщику знать программирование для собеседования?</p>
+    <p class="faq-a">Для позиции manual QA — обычно нет, но SQL на уровне SELECT с JOIN и понимание HTTP спрашивают почти всегда. Базовое чтение кода становится плюсом: тестировщик, который может посмотреть в код фичи, локализует баги быстрее.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что важнее для QA-automation интервью: тестирование или программирование?</p>
+    <p class="faq-a">Оба, и провал любого блока критичен. Сильный программист без теории тестирования пишет бесполезные тесты; сильный тестировщик без инженерных навыков пишет неподдерживаемые. На интервью проверяют обе стороны — готовиться нужно к обеим.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Спрашивают ли на QA-интервью про тестирование ИИ и LLM-приложений?</p>
+    <p class="faq-a">Всё чаще — особенно в продуктах с ИИ-функциональностью. Специфика: недетерминированность ответов, оценка качества генерации, регрессия промптов. Пока это редко бывает основным блоком, но вопрос «как бы ты тестировал чат-бота» уже встречается регулярно.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Как тренироваться, если нет опыта коммерческой разработки?</p>
+    <p class="faq-a">Мок-интервью решают проблему «нет опыта собеседований»: формат вопрос-ответ-разбор тренирует формулировки до выхода на реальные интервью. Для Junior-уровня вопросы в боте калибруются на теорию и базовую практику — то, что можно освоить на учебных проектах.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Подготовка к Backend-собеседованию</span>
+  </a>
+  <a class="related-card" href="/ru/ml-interview/">
+    <span class="rc-label">ML / Data Science</span>
+    <span class="rc-title">Подготовка к ML-собеседованию</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь себя на реальных вопросах</h3>
+  <p>Выбери QA-специализацию и уровень — получи первый вопрос через минуту. Оценка каждого ответа и разбор слабых тем после сессии. Бесплатный старт.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать тренировку</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужно ли ручному тестировщику знать программирование для собеседования?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для позиции manual QA — обычно нет, но SQL на уровне SELECT с JOIN и понимание HTTP спрашивают почти всегда. Базовое чтение кода — плюс для локализации багов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что важнее для QA-automation интервью: тестирование или программирование?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Оба, провал любого блока критичен. Сильный программист без теории тестирования пишет бесполезные тесты; сильный тестировщик без инженерных навыков — неподдерживаемые."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Спрашивают ли на QA-интервью про тестирование ИИ и LLM-приложений?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Всё чаще. Специфика: недетерминированность ответов, оценка качества генерации, регрессия промптов. Вопрос «как бы ты тестировал чат-бота» встречается регулярно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как тренироваться, если нет опыта коммерческой разработки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Мок-интервью тренируют формулировки до выхода на реальные собеседования. Для Junior-уровня вопросы калибруются на теорию и базовую практику с учебных проектов."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

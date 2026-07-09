@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мок-собеседование: что это, как проходит и как подготовиться | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Мок-собеседование — репетиция технического интервью с оценкой ответов. Что это такое, чем отличается от реального собеседования, как проходит по шагам и сколько сессий нужно перед настоящим интервью.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/mock-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/mock-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/mock-interview/">
+<meta property="og:title" content="Мок-собеседование: что это, как проходит и как подготовиться">
+<meta property="og:description" content="Полный разбор формата мок-собеседования: чем отличается от реального интервью, как проходит по шагам, типичные ошибки кандидатов и сколько тренировок нужно.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Мок-собеседование: что это, как проходит и как подготовиться",
+  "description": "Полный разбор формата мок-собеседования для IT-специалистов: определение, отличия от реального интервью, пошаговый процесс, типичные ошибки и стратегия подготовки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/mock-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* ARTICLE LAYOUT */
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .comparison-table th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .comparison-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #c5cede;
+    vertical-align: top;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* RELATED */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .divider {
+    position: relative; z-index: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+    .comparison-table { font-size: 13px; }
+    .comparison-table th, .comparison-table td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Мок-собеседование</div>
+  <h1>Мок-собеседование: что это, как проходит и <em>как подготовиться</em></h1>
+  <p class="article-lead">Разбираем формат репетиционного интервью: чем он отличается от настоящего собеседования, из каких этапов состоит и почему кандидаты, которые тренируются на мок-сессиях, проходят реальные интервью заметно увереннее.</p>
+</div>
+
+<article>
+
+<h2>Что такое мок-собеседование</h2>
+
+<p><strong>Мок-собеседование</strong> (от англ. mock interview — «имитация интервью») — это репетиция настоящего собеседования в условиях, максимально приближенных к реальным. Кандидату задают те же типы вопросов, что и на настоящем интервью, он отвечает в реальном времени, а затем получает разбор: что было сильно, что слабо, какие темы проседают.</p>
+
+<p>Ключевое отличие от простого повторения теории — <strong>формат проверки под давлением</strong>. Одно дело знать, как работает индекс в базе данных, и совсем другое — объяснить это вслух за две минуты, когда тебя слушают и оценивают. Мок-собеседование тренирует именно второй навык: способность структурированно формулировать ответы в стрессовой ситуации.</p>
+
+<p>Исторически мок-интервью проводили карьерные консультанты и знакомые тимлиды. Сегодня этот формат автоматизирован: ИИ-интервьюер генерирует вопросы под конкретную специализацию и уровень кандидата, оценивает каждый ответ и указывает на пробелы — без записи на сессию, ожидания и оплаты за час работы консультанта.</p>
+
+<h2>Чем мок-собеседование отличается от реального</h2>
+
+<table class="comparison-table">
+  <tr>
+    <th>Параметр</th>
+    <th>Реальное интервью</th>
+    <th>Мок-собеседование</th>
+  </tr>
+  <tr>
+    <td>Цена ошибки</td>
+    <td>Потерянный оффер</td>
+    <td>Ноль — ошибка становится материалом для разбора</td>
+  </tr>
+  <tr>
+    <td>Обратная связь</td>
+    <td>Почти никогда: «мы вам перезвоним»</td>
+    <td>Детальная, по каждому ответу</td>
+  </tr>
+  <tr>
+    <td>Повторяемость</td>
+    <td>Одна попытка на компанию</td>
+    <td>Неограниченно, можно повторять слабые темы</td>
+  </tr>
+  <tr>
+    <td>Темы</td>
+    <td>Определяет интервьюер</td>
+    <td>Можно выбирать целенаправленно</td>
+  </tr>
+  <tr>
+    <td>Стресс</td>
+    <td>Максимальный</td>
+    <td>Умеренный — достаточный для тренировки, но без ставок</td>
+  </tr>
+</table>
+
+<p>Главная ценность мок-формата — <strong>обратная связь, которой не бывает на реальных интервью</strong>. Компании почти никогда не объясняют причину отказа. Кандидат может провалить пять собеседований подряд по одной и той же причине и не узнать о ней. Мок-сессия делает эту причину видимой после первого же прогона.</p>
+
+<h2>Как проходит мок-собеседование в IT Interview Coach</h2>
+
+<p>В боте мок-собеседование запускается командой «Тренировка интервью» и проходит в пять этапов:</p>
+
+<ol class="steps-list">
+  <li><strong>Настройка под профиль.</strong> Специализация (Backend, QA или ML/Data Science) и уровень (Junior, Middle, Senior) берутся из твоего профиля. Если загружено резюме — вопросы дополнительно адаптируются под твой реальный стек: у Python-разработчика с PostgreSQL в резюме спросят про PostgreSQL, а не про абстрактную «базу данных».</li>
+  <li><strong>Генерация вопроса.</strong> ИИ формирует вопрос по случайной теме из твоей специализации с учётом уровня. Junior получит вопрос про отличие списка от кортежа, Senior — про стратегию миграции таблицы на сотни миллионов строк без даунтайма.</li>
+  <li><strong>Ответ в свободной форме.</strong> Отвечаешь текстом или голосом (на Premium). Нет вариантов ответа — как на реальном интервью, нужно формулировать самому.</li>
+  <li><strong>Оценка ответа.</strong> ИИ классифицирует ответ: правильный, частично правильный или неправильный. При частично правильном ответе задаётся наводящий вопрос — так же, как поступил бы живой интервьюер, давая шанс докрутить мысль.</li>
+  <li><strong>Итоговый разбор.</strong> После сессии — статистика: сколько ответов верных, какие темы проседают, что учить в первую очередь. Слабые темы можно сразу отработать в режиме «Подготовка по темам».</li>
+</ol>
+
+<h3>Примеры вопросов по уровням</h3>
+
+<div class="example-q">
+  <span class="q-label">Backend · Junior</span>
+  Чем отличается индекс B-tree от хеш-индекса и в каких случаях каждый из них эффективнее?
+</div>
+
+<div class="example-q">
+  <span class="q-label">Backend · Senior</span>
+  У тебя сервис на 50 000 RPS начал деградировать по latency после деплоя. Метрики CPU и памяти в норме. Опиши свою стратегию диагностики: с чего начнёшь и почему.
+</div>
+
+<div class="example-q">
+  <span class="q-label">QA · Middle</span>
+  Как бы ты спроектировал набор тестов для API-эндпоинта перевода денег между счетами? Какие классы эквивалентности и граничные значения выделишь?
+</div>
+
+<div class="example-q">
+  <span class="q-label">ML · Senior</span>
+  Модель показывает 0.95 AUC на валидации, но в проде метрики бизнеса не растут. Назови минимум три возможные причины и способ проверки каждой.
+</div>
+
+<h2>Типичные ошибки кандидатов на мок-сессиях</h2>
+
+<p>По результатам тренировочных сессий выделяются повторяющиеся паттерны, которые стоят кандидатам офферов:</p>
+
+<ul>
+  <li><strong>Ответ без структуры.</strong> Кандидат знает материал, но вываливает всё подряд без логики «сначала главное, потом детали». Интервьюер теряет нить и снижает оценку.</li>
+  <li><strong>Молчание вместо рассуждения.</strong> Не зная точного ответа, кандидат говорит «не знаю» и замолкает. На реальном интервью ценится умение рассуждать вслух: даже частичный ход мысли демонстрирует инженерное мышление.</li>
+  <li><strong>Заученные определения без понимания.</strong> На уточняющий вопрос «а почему так?» следует пауза. Мок-формат с наводящими вопросами выявляет это мгновенно.</li>
+  <li><strong>Игнорирование уровня вопроса.</strong> Senior-кандидат отвечает на архитектурный вопрос перечислением технологий вместо анализа компромиссов — а именно trade-offs отличают senior-ответ от middle-ответа.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Особенность оценки в боте:</strong> строгость калибруется под уровень. Ответ, который засчитывается Junior-кандидату как полный, для Senior будет помечен как частичный — от сеньора ожидается глубина: компромиссы, граничные случаи, альтернативы.</p>
+</div>
+
+<h2>Сколько мок-собеседований нужно перед реальным интервью</h2>
+
+<p>Универсального числа нет, но практика показывает рабочую схему:</p>
+
+<ul>
+  <li><strong>3–5 сессий</strong> — минимум, чтобы увидеть свои слабые темы и перестать теряться от самого формата «вопрос — ответ под оценкой».</li>
+  <li><strong>8–12 сессий</strong> — уровень, на котором формулировки становятся структурными автоматически, а типовые вопросы по специализации перестают заставать врасплох.</li>
+  <li><strong>Перед конкретным интервью</strong> — 1–2 сессии по темам, которые релевантны вакансии, плюс одна сессия «Прожарки опыта», если ожидается поведенческая часть.</li>
+</ul>
+
+<p>Важнее количества — <strong>работа с разбором после каждой сессии</strong>. Одна сессия с честным разбором слабых тем даёт больше, чем пять подряд без анализа результатов.</p>
+
+<h2>Мок-собеседования по специализациям</h2>
+
+<p>Формат мок-интервью универсален, но содержание сильно различается по направлениям:</p>
+
+<ul>
+  <li><strong>Backend</strong> — базы данных, конкурентность, проектирование API, безопасность, observability, событийная архитектура.</li>
+  <li><strong>QA</strong> — тест-дизайн, классы эквивалентности, API-тестирование, автоматизация, работа с дефектами, mobile и contract testing.</li>
+  <li><strong>ML/Data Science</strong> — статистика, классический ML, нейросети, LLM и NLP, временные ряды, продакшен ML-систем.</li>
+</ul>
+
+<p>Каждое направление в боте покрывается отдельным банком тем с калибровкой по трём уровням — от Junior до Senior.</p>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Мок-собеседование и пробное собеседование — это одно и то же?</p>
+    <p class="faq-a">Да, это синонимы. Также встречаются термины «тестовое интервью», «репетиция собеседования» и «тренировочное интервью». Суть одна: имитация реального интервью с обратной связью.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Можно ли пройти мок-собеседование бесплатно?</p>
+    <p class="faq-a">Да. На бесплатном тарифе IT Interview Coach доступно 3 тренировочных сессии в месяц. Этого достаточно, чтобы попробовать формат и увидеть первые слабые места. На тарифе Basic — 20 сессий в месяц, с 7-дневным бесплатным пробным периодом.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Чем мок-собеседование с ИИ отличается от сессии с живым интервьюером?</p>
+    <p class="faq-a">Живой интервьюер даёт больше нюансов невербальной динамики, но стоит 3–10 тысяч рублей за сессию и требует записи. ИИ-формат доступен мгновенно, стоит на порядок дешевле, не устаёт и позволяет тренироваться хоть каждый день. Оптимальная стратегия: основной объём тренировок на ИИ, финальная репетиция — с человеком, если есть возможность.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Подходит ли мок-собеседование для подготовки к поведенческой части интервью?</p>
+    <p class="faq-a">Для поведенческой части в боте есть отдельный режим — «Прожарка опыта». ИИ берёт позиции из твоего резюме и задаёт глубокие вопросы по реальным проектам: что делал, какой результат, как принимал решения.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/resume-analysis/">
+    <span class="rc-label">Анализ резюме</span>
+    <span class="rc-title">ATS-оценка резюме: как пройти автоматический скрининг</span>
+  </a>
+  <a class="related-card" href="/ru/experience-deep-dive/">
+    <span class="rc-label">Прожарка опыта</span>
+    <span class="rc-title">Поведенческое интервью по твоему реальному CV</span>
+  </a>
+  <a class="related-card" href="/ru/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Как проходит live coding и как к нему тренироваться</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Попробуй мок-собеседование прямо сейчас</h3>
+  <p>Первая сессия занимает 15–30 минут и не требует оплаты. Открой бота в Telegram, выбери специализацию — и получи первый вопрос через минуту.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать в Telegram</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Мок-собеседование и пробное собеседование — это одно и то же?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, это синонимы. Также встречаются термины «тестовое интервью», «репетиция собеседования» и «тренировочное интервью». Суть одна: имитация реального интервью с обратной связью."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли пройти мок-собеседование бесплатно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. На бесплатном тарифе IT Interview Coach доступно 3 тренировочных сессии в месяц. На тарифе Basic — 20 сессий в месяц, с 7-дневным бесплатным пробным периодом."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем мок-собеседование с ИИ отличается от сессии с живым интервьюером?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Живой интервьюер стоит 3–10 тысяч рублей за сессию и требует записи. ИИ-формат доступен мгновенно, дешевле и позволяет тренироваться каждый день. Оптимально: объём тренировок на ИИ, финальная репетиция с человеком."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Подходит ли мок-собеседование для подготовки к поведенческой части интервью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для поведенческой части есть отдельный режим — «Прожарка опыта». ИИ берёт позиции из резюме и задаёт глубокие вопросы по реальным проектам: что делал, какой результат, как принимал решения."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

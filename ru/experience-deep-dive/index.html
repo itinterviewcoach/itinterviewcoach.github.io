@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Прожарка опыта: поведенческое интервью по твоему CV | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Прожарка опыта — тренировка поведенческого интервью на основе твоего реального резюме. Почему вопросы по опыту заваливают чаще технических, как проходит прожарка и как подготовиться к разбору своих проектов.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/experience-deep-dive/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/experience-deep-dive/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/experience-deep-dive/">
+<meta property="og:title" content="Прожарка опыта: поведенческое интервью по твоему CV">
+<meta property="og:description" content="Почему вопросы по реальному опыту заваливают чаще технических, как проходит прожарка опыта и как готовиться к глубокому разбору своих проектов.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Прожарка опыта: поведенческое интервью по твоему CV",
+  "description": "Что такое прожарка опыта, почему поведенческая часть интервью сложнее технической, как проходит разбор позиций из резюме и как к нему готовиться.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/experience-deep-dive/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Прожарка опыта</div>
+  <h1>Прожарка опыта: <em>поведенческое интервью по твоему CV</em></h1>
+  <p class="article-lead">Технические вопросы можно выучить. Вопросы по твоему собственному опыту выучить нельзя — но к ним можно подготовиться. Разбираем формат, который тренирует самую недооценённую часть собеседования.</p>
+</div>
+
+<article>
+
+<h2>Что такое прожарка опыта</h2>
+
+<p><strong>Прожарка опыта</strong> — тренировка поведенческой части интервью на материале твоего собственного резюме. ИИ берёт конкретную позицию из загруженного CV и разбирает её так, как это делает опытный интервьюер: что именно ты делал, какой был результат, почему принял такие решения, что пошло не так и как ты с этим справился.</p>
+
+<p>Название отражает суть: это не комфортная беседа «расскажите о себе», а глубокий разбор с уточняющими вопросами, где за каждым ответом следует «а почему?», «а что было бы, если?..», «а какова была твоя роль конкретно?». Именно так проходит поведенческая часть в сильных компаниях — и именно к ней большинство кандидатов не готовятся вообще.</p>
+
+<h2>Почему опыт заваливают чаще, чем теорию</h2>
+
+<p>Парадокс поведенческого интервью: кандидат рассказывает о работе, которую сам делал, — и проваливается. Причины повторяются из собеседования в собеседование:</p>
+
+<ul>
+  <li><strong>Опыт не отрефлексирован.</strong> Работа делалась в потоке: задача — решение — следующая задача. На вопрос «почему выбрали это решение?» честный внутренний ответ — «так исторически сложилось». Но интервьюеру нужен анализ, а он требует подготовки.</li>
+  <li><strong>Нет цифр.</strong> «Оптимизировал сервис» — а насколько? С какого значения до какого? Кандидат не помнит или никогда не измерял. Результат без масштаба не производит впечатления.</li>
+  <li><strong>Размытая личная роль.</strong> «Мы сделали», «команда внедрила» — интервьюер не может понять вклад кандидата. Уточнение «а что конкретно делал ты?» ставит в тупик тех, кто привык говорить «мы».</li>
+  <li><strong>Провалы не упакованы.</strong> Вопрос «расскажи о неудаче» — стандартный, но кандидаты либо утверждают, что неудач не было (красный флаг), либо рассказывают историю без выводов.</li>
+  <li><strong>Расхождение с резюме.</strong> В CV написано «внедрил Kafka», а на вопрос о гарантиях доставки кандидат плывёт. Такое расхождение подрывает доверие ко всему резюме сразу.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Ключевое отличие от технической части:</strong> на теоретический вопрос есть правильный ответ, который можно выучить. На вопрос по твоему опыту правильный ответ есть только у тебя — и его нужно сформулировать заранее, потому что формулирование в реальном времени под давлением почти всегда получается хуже.</p>
+</div>
+
+<h2>Как проходит прожарка</h2>
+
+<ol class="steps-list">
+  <li><strong>Выбор позиции.</strong> Бот загружает позиции из твоего резюме (если CV ещё не загружено — предложит загрузить). Выбираешь, какую разбирать: логично начать с последней — о ней спрашивают в первую очередь.</li>
+  <li><strong>Открывающий вопрос.</strong> ИИ формулирует вопрос по выбранной позиции на основе того, что написано в CV: о заявленном проекте, технологии или результате.</li>
+  <li><strong>Уточняющие вопросы.</strong> Главная часть. По каждому ответу ИИ задаёт углубляющие вопросы — про твою личную роль, альтернативы, компромиссы, метрики. Если ответ звучит общо — последует просьба конкретизировать, как на реальном интервью.</li>
+  <li><strong>Итог по позиции.</strong> В конце — саммари: какие ответы звучали сильно, где не хватило конкретики, какие темы из этой позиции стоит проработать до реального интервью.</li>
+</ol>
+
+<p>Одна сессия — одна позиция, около 10–15 минут. Это осознанное ограничение: глубокий разбор одной позиции полезнее поверхностного пробега по всей карьере.</p>
+
+<h2>Как готовить истории из опыта</h2>
+
+<p>Классическая структура ответа на поведенческий вопрос — <strong>STAR</strong>: Situation (контекст), Task (задача), Action (что конкретно делал ты), Result (измеримый итог). Прожарка естественным образом выявляет, каких элементов не хватает в твоих историях:</p>
+
+<ul>
+  <li>Если уточняющие вопросы постоянно крутятся вокруг «а что делал именно ты» — в историях проседает <strong>Action</strong> с личной ролью.</li>
+  <li>Если ИИ спрашивает про цифры и масштаб — не хватает <strong>Result</strong>.</li>
+  <li>Если вопросы про «почему так, а не иначе» ставят в тупик — не отрефлексированы альтернативы и компромиссы.</li>
+</ul>
+
+<p>Рабочая подготовка выглядит так: для каждой позиции в резюме — 2–3 заготовленные истории (успешный проект, сложная проблема, провал с выводами), каждая проверена прожаркой хотя бы один раз. Заготовленная — не значит заученная дословно: важна структура и ключевые факты, а не текст наизусть.</p>
+
+<p>Формулировки, отточенные в прожарке, усиливают и само резюме — конкретика с цифрами из устных историй переносится в буллеты CV. Как оценивается резюме и что в нём проверяется — <a href="/ru/resume-analysis/" style="color:var(--accent);">в разборе ATS-анализа</a>.</p>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Чем прожарка опыта отличается от мок-собеседования?</p>
+    <p class="faq-a">Мок-собеседование проверяет технические знания на вопросах по специализации — у них есть объективно правильные ответы. Прожарка работает с твоим личным опытом: вопросы строятся по твоему резюме, и оценивается конкретика, рефлексия и связность историй. На реальном интервью присутствуют обе части — тренировать стоит обе.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Нужно ли загружать резюме для прожарки?</p>
+    <p class="faq-a">Да, это основа формата: вопросы генерируются по конкретным позициям из твоего CV. Без резюме получилась бы абстрактная беседа про «какой-нибудь проект» — а ценность именно в разборе того, что ты реально предъявишь работодателю.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что если в моём опыте нет впечатляющих результатов?</p>
+    <p class="faq-a">Впечатляющий результат — не обязательно «ускорил в 10 раз». Масштаб задачи, ограничения, в которых пришлось работать, качество принятых решений — всё это материал для сильной истории. Прожарка помогает найти, что именно в твоём опыте звучит убедительно, — часто это не то, что кандидат считал главным.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Стоит ли рассказывать на интервью о провалах честно?</p>
+    <p class="faq-a">Да, но подготовленно. Вопрос о неудаче — проверка зрелости: способен ли ты анализировать свои ошибки. Сильный ответ содержит: что пошло не так, какова была твоя роль в этом, что ты изменил после. Слабые ответы — «неудач не было» и перекладывание ответственности на других.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/resume-analysis/">
+    <span class="rc-label">Анализ резюме</span>
+    <span class="rc-title">ATS-оценка резюме: как пройти автоматический скрининг</span>
+  </a>
+  <a class="related-card" href="/ru/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Как проходит live coding и как к нему тренироваться</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь свои истории до реального интервью</h3>
+  <p>Загрузи резюме, выбери позицию — и узнай, какие вопросы по твоему опыту поставят тебя в тупик. Лучше выяснить это на тренировке.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать прожарку</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чем прожарка опыта отличается от мок-собеседования?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Мок-собеседование проверяет технические знания — у вопросов есть правильные ответы. Прожарка работает с личным опытом: вопросы строятся по резюме, оценивается конкретика и рефлексия."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли загружать резюме для прожарки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, это основа формата: вопросы генерируются по конкретным позициям из CV. Ценность — в разборе того, что реально предъявишь работодателю."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если в моём опыте нет впечатляющих результатов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Масштаб задачи, ограничения и качество решений — тоже материал для сильной истории. Прожарка помогает найти, что в опыте звучит убедительно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Стоит ли рассказывать на интервью о провалах честно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, но подготовленно. Сильный ответ: что пошло не так, твоя роль, что изменил после. Слабые ответы — «неудач не было» и перекладывание ответственности."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>
