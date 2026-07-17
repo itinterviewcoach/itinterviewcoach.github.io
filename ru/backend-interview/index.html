@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Подготовка к Backend-собеседованию: темы, вопросы по уровням, стратегия | IT Interview Coach</title>
+<title>Подготовка к собеседованию Backend: 6 тем и разбор | IT Interview Coach</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="description" content="Как подготовиться к Backend-собеседованию: какие темы спрашивают на техническом интервью, примеры вопросов для Junior, Middle и Senior, типичные ошибки кандидатов и стратегия подготовки по темам.">
+<meta name="description" content="Подготовка к собеседованию Backend: 6 ключевых тем, вопросы для Junior, Middle и Senior с разбором, типичные ошибки. Тренируйся на мок-интервью бесплатно.">
+<meta name="keywords" content="подготовка к собеседованию backend, вопросы на собеседовании backend, backend interview вопросы, техническое интервью бэкенд, собеседование backend разработчик">
 <link rel="canonical" href="https://itinterviewcoach.com/ru/backend-interview/">
 <link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/backend-interview/">
 <meta name="robots" content="index, follow">
@@ -16,7 +17,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://itinterviewcoach.com/ru/backend-interview/">
-<meta property="og:title" content="Подготовка к Backend-собеседованию: темы, вопросы по уровням, стратегия">
+<meta property="og:title" content="Подготовка к собеседованию Backend: темы, вопросы, стратегия">
 <meta property="og:description" content="Какие темы спрашивают на Backend-интервью, примеры вопросов для Junior, Middle и Senior, типичные ошибки и как тренироваться.">
 <meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
 
@@ -41,7 +42,49 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Как подготовиться к собеседованию Backend",
+  "description": "Пошаговая подготовка к техническому интервью Backend-разработчика: от диагностики слабых тем до финальной репетиции перед реальным собеседованием.",
+  "inLanguage": "ru",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Диагностика",
+      "text": "Пройди 2–3 мок-собеседования по своей специализации, чтобы увидеть реальные слабые темы вместо предполагаемых."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Целевая проработка",
+      "text": "Слабые темы отрабатывай в режиме подготовки по темам: выбираешь конкретный кластер и тренируешь только его."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Возврат к смешанному формату",
+      "text": "После проработки — снова полное мок-интервью, чтобы проверить прогресс в условиях случайных тем."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Перед реальным интервью",
+      "text": "Сессия по темам, релевантным вакансии, плюс прожарка опыта, если ожидается поведенческая часть."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IT Interview Coach",
+  "url": "https://itinterviewcoach.com/",
+  "description": "Тренажёр мок-интервью для IT с адаптацией вопросов под резюме и оценкой ответов по уровням Junior, Middle и Senior. Направления: Backend, QA, ML, live coding.",
+  "sameAs": ["https://t.me/ITInterviewCoach_Bot"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -160,6 +203,44 @@
     font-style: normal;
     color: var(--accent);
   }
+
+  .def-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .def-item {
+    background: var(--bg);
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #c5cede;
+    line-height: 1.65;
+  }
+
+  .def-term {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 13px;
+  }
+
+  .lead-answer {
+    font-size: 16px;
+    color: var(--text);
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 22px 26px;
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    line-height: 1.7;
+  }
+
+  .lead-answer strong { color: var(--accent2); }
 
   .article-lead {
     font-size: 18px;
@@ -483,11 +564,13 @@
 
 <div class="article-hero">
   <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Backend-собеседование</div>
-  <h1>Подготовка к Backend-собеседованию: <em>темы, вопросы, стратегия</em></h1>
+  <h1>Подготовка к собеседованию Backend: <em>темы, вопросы, стратегия</em></h1>
   <p class="article-lead">Что спрашивают на техническом интервью Backend-разработчика, чем отличаются вопросы для Junior, Middle и Senior, на чём чаще всего срезаются кандидаты — и как тренироваться системно, а не по случайным спискам вопросов.</p>
 </div>
 
 <article>
+
+<p class="lead-answer"><strong>Подготовка к собеседованию Backend</strong> строится вокруг трёх блоков: теоретические вопросы (базы данных, конкурентность, API, безопасность), практический live coding и поведенческая часть по опыту из резюме. Шесть ключевых тем теоретического блока — базы данных, конкурентность, проектирование API, безопасность, observability и событийная архитектура. Глубина ответов зависит от уровня: Junior объясняет, как работает механизм, Middle — когда его применять, Senior — компромиссы и границы применимости.</p>
 
 <h2>Из чего состоит Backend-собеседование</h2>
 
@@ -530,6 +613,19 @@
     <h4>Событийная архитектура</h4>
     <p>Очереди сообщений, Kafka, гарантии доставки, exactly-once, идемпотентные консьюмеры, outbox-паттерн.</p>
   </div>
+</div>
+
+<h3>Ключевые термины Backend-интервью</h3>
+
+<p>Определения, которые спрашивают чаще всего — короткие формулировки, которые стоит уметь дать сразу:</p>
+
+<div class="def-list">
+  <div class="def-item"><span class="def-term">ACID</span> — четыре свойства транзакции: атомарность (всё или ничего), согласованность (переход между валидными состояниями), изолированность (параллельные транзакции не мешают друг другу), долговечность (закоммиченные данные не теряются).</div>
+  <div class="def-item"><span class="def-term">Уровни изоляции</span> — степень видимости незакоммиченных изменений между транзакциями: Read Uncommitted, Read Committed, Repeatable Read, Serializable. Чем строже уровень, тем меньше аномалий (грязное чтение, неповторяемое чтение, фантомы) и тем ниже параллелизм.</div>
+  <div class="def-item"><span class="def-term">Идемпотентность</span> — свойство операции давать один и тот же результат при повторном выполнении. GET, PUT и DELETE идемпотентны, POST — нет. Критично для надёжной обработки повторных запросов и ретраев.</div>
+  <div class="def-item"><span class="def-term">N+1 запрос</span> — антипаттерн, когда для списка из N объектов выполняется 1 запрос за списком и ещё N запросов за связанными данными. Решается жадной загрузкой (JOIN или предзагрузка одним запросом).</div>
+  <div class="def-item"><span class="def-term">Индекс</span> — структура данных, ускоряющая поиск строк по колонке ценой замедления записи и дополнительного места. B-tree — для диапазонов и сортировки, хеш-индекс — только для точного совпадения.</div>
+  <div class="def-item"><span class="def-term">Outbox-паттерн</span> — способ гарантировать доставку события: сообщение пишется в ту же БД-транзакцию, что и бизнес-данные, а отдельный процесс дочитывает его из таблицы и публикует в брокер. Решает проблему потери события между коммитом в БД и отправкой в очередь.</div>
 </div>
 
 <h2>Как меняются вопросы по уровням</h2>

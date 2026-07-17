@@ -47,7 +47,7 @@ Payment methods: card via Dodo Payments (EUR), Telegram Stars (XTR).
 
 ## Company
 
-Individual Entrepreneur, Georgia (Саქართველო). Registration: IN 300455148.
+Individual Entrepreneur, Georgia. Registration: IN 300455148.
 Contact: itinterviewcoach@outlook.com
 Support: @ITInterviewCoachSupport_bot
 
