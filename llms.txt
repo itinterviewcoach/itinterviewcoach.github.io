@@ -23,6 +23,18 @@ IT Interview Coach is a Telegram bot that simulates technical job interviews and
 - QA (test design, API testing, automation, mobile, contract testing, security testing)
 - ML / Data Science (statistics, classical ML, neural networks, LLM/NLP, time series, production systems)
 
+## Guides and content pages
+
+In-depth guides on interview preparation (Russian). Each page covers a specific topic with definitions, example questions by level, and preparation strategy:
+
+- [Мок-собеседование: что это и как проходит](https://itinterviewcoach.com/ru/mock-interview/) — what a mock interview is, how it differs from a real one, the 5-step process, example questions by level
+- [Анализ резюме с ATS-оценкой](https://itinterviewcoach.com/ru/resume-analysis/) — how ATS ranking works, all 9 resume penalty detectors with point values, how to raise the score
+- [Подготовка к собеседованию Backend](https://itinterviewcoach.com/ru/backend-interview/) — 6 core topics, key term definitions (ACID, isolation levels, idempotency, N+1, outbox), questions by level
+- [Подготовка к собеседованию QA](https://itinterviewcoach.com/ru/qa-interview/) — test design, API testing, automation; manual vs automation interviews; questions by level
+- [Подготовка к собеседованию ML](https://itinterviewcoach.com/ru/ml-interview/) — statistics, classical ML, neural networks, LLM/NLP; Middle and Senior questions
+- [Live coding на собеседовании](https://itinterviewcoach.com/ru/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
+- [Прожарка опыта: поведенческое интервью](https://itinterviewcoach.com/ru/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
+
 ## Pricing
 
 - **Free** — €0 forever. 3 sessions/month, 1 CV analysis/day, Russian interface
