@@ -5,48 +5,138 @@
     <loc>https://itinterviewcoach.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/mock-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/mock-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/mock-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/mock-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/mock-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/mock-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/mock-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/mock-interview/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/resume-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/resume-analysis/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/resume-analysis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/resume-analysis/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/resume-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/resume-analysis/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/resume-analysis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/resume-analysis/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/backend-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/backend-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/backend-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/backend-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/backend-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/backend-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/backend-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/backend-interview/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/qa-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/qa-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/qa-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/qa-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/qa-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/qa-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/qa-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/qa-interview/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/live-coding/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/live-coding/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/live-coding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/live-coding/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/live-coding/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/live-coding/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/live-coding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/live-coding/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/experience-deep-dive/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/experience-deep-dive/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/experience-deep-dive/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/experience-deep-dive/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/experience-deep-dive/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/experience-deep-dive/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/experience-deep-dive/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/experience-deep-dive/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itinterviewcoach.com/ru/ml-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/ml-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/ml-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/ml-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/ml-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/ml-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/ml-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/ml-interview/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

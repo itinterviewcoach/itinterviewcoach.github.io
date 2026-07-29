@@ -1,6 +1,6 @@
 # IT Interview Coach
 
-> AI-powered Telegram bot for technical interview preparation. Targets Russian-speaking IT professionals (CIS market). Available at https://t.me/ITInterviewCoach_Bot
+> AI-powered Telegram bot for technical interview preparation. Targets Russian-speaking IT professionals (CIS market) and Spanish-speaking IT professionals. Available at https://t.me/ITInterviewCoach_Bot
 
 ## Product
 
@@ -9,7 +9,7 @@ IT Interview Coach is a Telegram bot that simulates technical job interviews and
 ## Core features
 
 - **Mock interviews** — AI-generated questions tailored to specialization and level, with instant evaluation of each answer
-- **Experience Deep-Dive** (Прожарка опыта) — behavioural interview simulator based on positions from the user's uploaded CV
+- **Experience Deep-Dive** (Прожарка опыта / Análisis profundo de experiencia) — behavioural interview simulator based on positions from the user's uploaded CV
 - **Topic Preparation** — targeted practice on specific topics (databases, concurrency, API design, algorithms, etc.)
 - **Live Coding** — 4-phase coding sessions: clarify → solve → review → discuss, with full debrief
 - **CV / Resume Analysis** — ATS score 0–100, 9 deterministic penalty detectors, structured recommendations, and conversational CV consultation
@@ -25,7 +25,9 @@ IT Interview Coach is a Telegram bot that simulates technical job interviews and
 
 ## Guides and content pages
 
-In-depth guides on interview preparation (Russian). Each page covers a specific topic with definitions, example questions by level, and preparation strategy:
+In-depth guides on interview preparation, available in Russian and Spanish. Each page covers a specific topic with definitions, example questions by level, and preparation strategy.
+
+Russian:
 
 - [Мок-собеседование: что это и как проходит](https://itinterviewcoach.com/ru/mock-interview/) — what a mock interview is, how it differs from a real one, the 5-step process, example questions by level
 - [Анализ резюме с ATS-оценкой](https://itinterviewcoach.com/ru/resume-analysis/) — how ATS ranking works, all 9 resume penalty detectors with point values, how to raise the score
@@ -35,9 +37,19 @@ In-depth guides on interview preparation (Russian). Each page covers a specific 
 - [Live coding на собеседовании](https://itinterviewcoach.com/ru/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
 - [Прожарка опыта: поведенческое интервью](https://itinterviewcoach.com/ru/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
 
+Spanish:
+
+- [Entrevista simulada: qué es y cómo transcurre](https://itinterviewcoach.com/es/mock-interview/) — what a mock interview is, how it differs from a real one, the 5-step process, example questions by level
+- [Análisis de CV con puntuación ATS](https://itinterviewcoach.com/es/resume-analysis/) — how ATS ranking works, the 9 resume penalty detectors with point values, how to raise the score
+- [Preparación para la entrevista de Backend](https://itinterviewcoach.com/es/backend-interview/) — 6 core topics, key term definitions (ACID, isolation levels, idempotency, N+1, outbox), questions by level
+- [Preparación para la entrevista de QA](https://itinterviewcoach.com/es/qa-interview/) — test design, API testing, automation; manual vs automation interviews; questions by level
+- [Preparación para la entrevista de ML](https://itinterviewcoach.com/es/ml-interview/) — statistics, classical ML, neural networks, LLM/NLP; Middle and Senior questions
+- [Live coding en la entrevista](https://itinterviewcoach.com/es/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
+- [Análisis profundo de experiencia: entrevista conductual](https://itinterviewcoach.com/es/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
+
 ## Pricing
 
-- **Free** — €0 forever. 3 sessions/month, 1 CV analysis/day, Russian interface
+- **Free** — €0 forever. 3 sessions/month, 1 CV analysis/day, Russian/English/Spanish interface
 - **Basic** — €10/month or 650 Telegram Stars. 20 sessions/month, 3 CV analyses/day, 7-day free trial
 - **Premium** — €20/month or 1250 Telegram Stars. Unlimited sessions, 5 CV analyses/day, English mode, voice input, LinkedIn audit
 
@@ -45,15 +57,16 @@ Payment methods: card via Dodo Payments (EUR), Telegram Stars (XTR).
 
 ## Languages
 
-- Interface: Russian and English
-- Interview sessions: Russian (Free/Basic), Russian + English (Premium)
-- Primary market: Russian-speaking IT professionals (Russia, CIS, Georgia, Eastern Europe)
+- Interface: Russian, English, and Spanish
+- Interview sessions: Russian and Spanish (Free/Basic); Russian, Spanish, and English (Premium adds English mode)
+- Markets: Russian-speaking IT professionals (Russia, CIS, Georgia, Eastern Europe) and Spanish-speaking IT professionals
 
 ## Links
 
 - Bot: https://t.me/ITInterviewCoach_Bot
 - Website: https://itinterviewcoach.com
 - Russian landing page: https://itinterviewcoach.com/ru/
+- Spanish landing page: https://itinterviewcoach.com/es/
 - Privacy Policy: https://itinterviewcoach.com/legal/privacy-policy
 - Terms of Service: https://itinterviewcoach.com/legal/terms-of-service
 

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparación para la entrevista de Backend: 6 temas y ejemplos | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Preparación para la entrevista de Backend: 6 temas clave, preguntas para Junior, Middle y Senior con explicación, errores típicos. Practica en entrevistas simuladas gratis.">
+<meta name="keywords" content="preparación entrevista backend, preguntas entrevista backend, entrevista técnica backend, entrevista backend developer, cómo prepararse entrevista backend">
+<link rel="canonical" href="https://itinterviewcoach.com/es/backend-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/backend-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/backend-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/backend-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/backend-interview/">
+<meta property="og:title" content="Preparación para la entrevista de Backend: temas, preguntas, estrategia">
+<meta property="og:description" content="Qué se pregunta en una entrevista técnica de Backend, ejemplos de preguntas para Junior, Middle y Senior, errores típicos y cómo entrenar.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Preparación para la entrevista de Backend: temas, preguntas por nivel, estrategia",
+  "description": "Qué temas se preguntan en la entrevista técnica de un desarrollador Backend, ejemplos de preguntas por nivel Junior/Middle/Senior, errores típicos de los candidatos y estrategia de preparación.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/backend-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo prepararse para la entrevista de Backend",
+  "description": "Preparación paso a paso para la entrevista técnica de un desarrollador Backend: desde diagnosticar tus temas débiles hasta el ensayo final antes de la entrevista real.",
+  "inLanguage": "es",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Diagnóstico",
+      "text": "Haz 2–3 entrevistas simuladas de tu especialización para ver tus temas débiles reales en lugar de los que supones."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Trabajo dirigido",
+      "text": "Trabaja los temas débiles en el modo de preparación por temas: eliges un cluster concreto y entrenas solo ese."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Vuelta al formato mixto",
+      "text": "Tras el trabajo dirigido, otra entrevista simulada completa para comprobar el progreso con temas aleatorios."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Antes de la entrevista real",
+      "text": "Una sesión sobre los temas relevantes para la vacante, más el análisis profundo de experiencia si se espera una parte conductual."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IT Interview Coach",
+  "url": "https://itinterviewcoach.com/",
+  "description": "Simulador de entrevistas para IT con preguntas adaptadas al CV y evaluación de respuestas por nivel Junior, Middle y Senior. Áreas: Backend, QA, ML, live coding.",
+  "sameAs": ["https://t.me/ITInterviewCoach_Bot"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .def-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .def-item {
+    background: var(--bg);
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #c5cede;
+    line-height: 1.65;
+  }
+
+  .def-term {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 13px;
+  }
+
+  .lead-answer {
+    font-size: 16px;
+    color: var(--text);
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 22px 26px;
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    line-height: 1.7;
+  }
+
+  .lead-answer strong { color: var(--accent2); }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Entrevista de Backend</div>
+  <h1>Preparación para la entrevista de Backend: <em>temas, preguntas, estrategia</em></h1>
+  <p class="article-lead">Qué se pregunta en una entrevista técnica de desarrollador Backend, en qué se diferencian las preguntas para Junior, Middle y Senior, dónde suelen fallar los candidatos — y cómo entrenar de forma sistemática, no con listas de preguntas al azar.</p>
+</div>
+
+<article>
+
+<p class="lead-answer"><strong>La preparación para la entrevista de Backend</strong> se organiza en torno a tres bloques: preguntas teóricas (bases de datos, concurrencia, API, seguridad), live coding práctico y una parte conductual sobre la experiencia de tu CV. Los seis temas clave del bloque teórico son: bases de datos, concurrencia, diseño de API, seguridad, observabilidad y arquitectura orientada a eventos. La profundidad esperada depende del nivel: un Junior explica cómo funciona un mecanismo, un Middle cuándo aplicarlo, un Senior los compromisos y los límites de aplicabilidad.</p>
+
+<h2>De qué se compone la entrevista de Backend</h2>
+
+<p>Una entrevista técnica típica de desarrollador Backend, tanto en empresas de la región como en compañías internacionales, se compone de tres bloques que pueden repartirse en una o varias etapas:</p>
+
+<ul>
+  <li><strong>Parte teórica</strong> — preguntas sobre temas fundamentales: bases de datos, red, concurrencia, arquitectura. Se evalúa la profundidad de comprensión, no las definiciones memorizadas.</li>
+  <li><strong>Parte práctica</strong> — live coding: resolver un problema en tiempo real discutiendo el enfoque. Cómo funciona este formato lo <a href="/es/live-coding/" style="color:var(--accent);">vemos por separado</a>.</li>
+  <li><strong>Parte conductual</strong> — preguntas sobre la experiencia real de tu CV: qué decisiones tomaste, qué compromisos hubo, qué salió mal. Para entrenar este bloque existe el formato de <a href="/es/experience-deep-dive/" style="color:var(--accent);">análisis profundo de experiencia</a>.</li>
+</ul>
+
+<p>Esta página trata el primer bloque: los temas teóricos y cómo se preguntan en cada nivel.</p>
+
+<h2>Temas de la entrevista de Backend</h2>
+
+<p>Seis clusters temáticos cubren la gran mayoría de las preguntas de la parte teórica:</p>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Bases de datos</h4>
+    <p>Índices, transacciones y niveles de aislamiento, normalización, replicación, sharding, N+1, optimización de consultas, SQL vs NoSQL.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Concurrencia</h4>
+    <p>Hilos y procesos, async/await, GIL, condiciones de carrera, bloqueos, pools de conexiones, backpressure.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Diseño de API</h4>
+    <p>Semántica REST, idempotencia, versionado, paginación, manejo de errores, rate limiting, gRPC vs REST.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Seguridad</h4>
+    <p>Autenticación y autorización, JWT y sesiones, OWASP Top 10, inyecciones SQL, XSS, CSRF, gestión de secretos.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Observabilidad</h4>
+    <p>Logging, métricas, tracing, alerting, SLO/SLI, diagnóstico de degradaciones en producción.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Arquitectura de eventos</h4>
+    <p>Colas de mensajes, Kafka, garantías de entrega, exactly-once, consumidores idempotentes, patrón outbox.</p>
+  </div>
+</div>
+
+<h3>Términos clave de la entrevista de Backend</h3>
+
+<p>Definiciones que se preguntan con más frecuencia — formulaciones cortas que conviene saber dar de inmediato:</p>
+
+<div class="def-list">
+  <div class="def-item"><span class="def-term">ACID</span> — cuatro propiedades de una transacción: atomicidad (todo o nada), consistencia (transición entre estados válidos), aislamiento (las transacciones paralelas no se interfieren), durabilidad (los datos confirmados no se pierden).</div>
+  <div class="def-item"><span class="def-term">Niveles de aislamiento</span> — grado de visibilidad de los cambios no confirmados entre transacciones: Read Uncommitted, Read Committed, Repeatable Read, Serializable. Cuanto más estricto el nivel, menos anomalías (lectura sucia, lectura no repetible, lecturas fantasma) y menor concurrencia.</div>
+  <div class="def-item"><span class="def-term">Idempotencia</span> — propiedad de una operación de dar el mismo resultado al ejecutarse repetidamente. GET, PUT y DELETE son idempotentes, POST no. Crítica para el manejo fiable de peticiones repetidas y reintentos.</div>
+  <div class="def-item"><span class="def-term">Consulta N+1</span> — antipatrón en el que, para una lista de N objetos, se ejecuta 1 consulta por la lista y N consultas más por los datos relacionados. Se resuelve con carga ansiosa (JOIN o precarga en una sola consulta).</div>
+  <div class="def-item"><span class="def-term">Índice</span> — estructura de datos que acelera la búsqueda de filas por una columna a costa de escrituras más lentas y espacio adicional. B-tree — para rangos y ordenación; índice hash — solo para coincidencia exacta.</div>
+  <div class="def-item"><span class="def-term">Patrón outbox</span> — forma de garantizar la entrega de un evento: el mensaje se escribe en la misma transacción de BD que los datos de negocio, y un proceso aparte lo lee de la tabla y lo publica en el broker. Resuelve la pérdida del evento entre el commit en la BD y el envío a la cola.</div>
+</div>
+
+<h2>Cómo cambian las preguntas según el nivel</h2>
+
+<p>Un mismo tema se pregunta de forma radicalmente distinta en cada nivel. La diferencia no está en la dificultad de los términos, sino en la <strong>profundidad de la respuesta esperada</strong>:</p>
+
+<h3>Junior — «qué es y cómo funciona»</h3>
+
+<div class="example-q">
+  <span class="q-label">Bases de datos · Junior</span>
+  ¿Qué es un índice en una base de datos y por qué no se pueden indexar simplemente todas las columnas?
+  <span class="q-hint">entender el trade-off entre velocidad de lectura y coste de escritura, no una definición memorizada.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">API · Junior</span>
+  ¿En qué se diferencia PUT de PATCH y cuál de los dos es idempotente?
+  <span class="q-hint">conocer la semántica REST y entender la idempotencia — concepto básico para diseñar APIs fiables.</span>
+</div>
+
+<h3>Middle — «cuándo y por qué»</h3>
+
+<div class="example-q">
+  <span class="q-label">Concurrencia · Middle</span>
+  Tu servicio en Python hace 200 llamadas HTTP externas por petición. Hilos, procesos o asyncio — ¿qué eliges y por qué?
+  <span class="q-hint">entender la carga I/O-bound vs CPU-bound y el papel del GIL, y saber justificar la elección.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Bases de datos · Middle</span>
+  Una consulta con JOIN de tres tablas iba rápida, pero tras crecer los datos pasó a tardar 40 segundos. ¿Tus pasos?
+  <span class="q-hint">experiencia práctica: EXPLAIN, lectura del plan de consulta, trabajo con índices y estadísticas.</span>
+</div>
+
+<h3>Senior — «compromisos y límites de aplicabilidad»</h3>
+
+<div class="example-q">
+  <span class="q-label">Arquitectura de eventos · Senior</span>
+  Un servicio de pagos publica eventos en Kafka. ¿Cómo garantizas que el evento no se pierda si el servicio cae entre la escritura en la BD y el envío al topic?
+  <span class="q-hint">conocer el patrón outbox, entender las transacciones distribuidas y sus alternativas, los límites de las garantías exactly-once.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Observabilidad · Senior</span>
+  La latencia P99 se duplicó, pero la latencia media no cambió. ¿Qué significa esto y cómo lo diagnosticas?
+  <span class="q-hint">entender los percentiles, las latencias de cola y un enfoque sistémico del diagnóstico, no «miro los logs».</span>
+</div>
+
+<div class="info-block">
+  <p><strong>La diferencia clave de una respuesta senior</strong> es el análisis de compromisos. Ante «cómo hacer X», un middle nombra una forma que funciona; un senior nombra dos o tres formas con las condiciones de uso de cada una. La evaluación en IT Interview Coach se calibra con este mismo principio: una respuesta sin trade-offs para nivel Senior se marca como parcial.</p>
+</div>
+
+<h2>Dónde fallan los candidatos</h2>
+
+<ul>
+  <li><strong>Conocer la herramienta sin entender el mecanismo.</strong> El candidato usa Redis desde hace tres años, pero no sabe explicar qué pasa cuando se llena la memoria. Las preguntas «qué hay debajo del capó» son la forma estándar de comprobar la profundidad.</li>
+  <li><strong>Responder a otra cosa.</strong> Preguntan por los niveles de aislamiento y el candidato cuenta todo lo que sabe sobre transacciones. La estructura «primero la respuesta directa, luego los detalles» resuelve esto.</li>
+  <li><strong>Falta de cifras y órdenes de magnitud.</strong> Un candidato senior debe manejar órdenes de magnitud: cuántos RPS aguanta una instancia de PostgreSQL, cuánto cuesta un round-trip de red, cuándo una tabla se vuelve «grande».</li>
+  <li><strong>Silencio ante lo desconocido.</strong> En vez de razonar desde primeros principios — «no me he encontrado con eso». Los entrevistadores hacen preguntas en el límite del conocimiento a propósito, para ver el razonamiento.</li>
+</ul>
+
+<h2>Cómo estructurar la preparación</h2>
+
+<ol>
+  <li><strong>Diagnóstico.</strong> Haz 2–3 <a href="/es/mock-interview/" style="color:var(--accent);">entrevistas simuladas</a> de tu especialización — verás tus temas débiles reales en lugar de los que supones. A menudo no coinciden.</li>
+  <li><strong>Trabajo dirigido.</strong> Trabaja los temas débiles en el modo «Preparación por temas»: eliges un cluster concreto — por ejemplo, concurrencia — y entrenas solo ese.</li>
+  <li><strong>Vuelta al formato mixto.</strong> Tras el trabajo dirigido, otra entrevista simulada completa para comprobar el progreso con temas aleatorios.</li>
+  <li><strong>Antes de la entrevista real.</strong> Una sesión sobre los temas relevantes para la vacante, más el análisis profundo de experiencia si se espera una parte conductual.</li>
+</ol>
+
+<p>Si has subido tu CV al bot, las preguntas se adaptan a tu stack: un candidato con PostgreSQL y Kafka en el CV recibirá preguntas sobre PostgreSQL y Kafka, no sobre «bases de datos» y «colas» abstractas.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Hay que estudiar algoritmos para la entrevista de Backend?</p>
+    <p class="faq-a">Depende de la empresa. Las grandes tecnológicas (BigTech internacional) casi siempre incluyen una sección de algoritmos. Las empresas de producto de tamaño medio suelen comprobar habilidades prácticas: bases de datos, API, depuración. Pregunta el formato al reclutador — es una práctica normal.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Las preguntas del bot están atadas a Python o sirven para otros lenguajes?</p>
+    <p class="faq-a">El núcleo de temas — bases de datos, API, arquitectura, seguridad — es independiente del lenguaje. Las preguntas específicas de lenguaje (por ejemplo, sobre el GIL) aparecen si el stack correspondiente figura en tu perfil o CV. A los candidatos con Go, Java o Node.js en el CV, las preguntas se les adaptan a su stack.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cuánto tiempo se necesita para preparar la entrevista de Backend?</p>
+    <p class="faq-a">Con trabajo regular (3–4 sesiones por semana de 20–30 minutos) el progreso se nota en 2–3 semanas: las respuestas se vuelven estructuradas y los temas habituales dejan de bloquearte. Prepararse «de cero a Senior» no es cuestión de semanas, pero preparar una entrevista concreta teniendo experiencia es una tarea de 2–4 semanas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Qué hago si en la entrevista real preguntan algo que no sé?</p>
+    <p class="faq-a">Razonar en voz alta desde primeros principios: «No me he encontrado con esto, pero por cómo funciona X, supongo que...». Los entrevistadores hacen preguntas en el límite del conocimiento a propósito — se evalúa el razonamiento. El silencio o un «no sé» sin intentarlo es la peor respuesta.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/qa-interview/">
+    <span class="rc-label">QA</span>
+    <span class="rc-title">Preparación para la entrevista de QA</span>
+  </a>
+  <a class="related-card" href="/es/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Cómo transcurre el live coding y cómo entrenarlo</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Ponte a prueba con preguntas reales</h3>
+  <p>Elige la especialización Backend y tu nivel — recibe la primera pregunta en un minuto. Evaluación de cada respuesta y análisis de tus temas débiles al terminar la sesión. Inicio gratuito.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar a entrenar</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay que estudiar algoritmos para la entrevista de Backend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la empresa. Las grandes tecnológicas casi siempre incluyen una sección de algoritmos. Las empresas de producto de tamaño medio suelen comprobar habilidades prácticas: bases de datos, API, depuración."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las preguntas del bot están atadas a Python o sirven para otros lenguajes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El núcleo de temas — bases de datos, API, arquitectura, seguridad — es independiente del lenguaje. Las preguntas específicas de lenguaje aparecen si el stack correspondiente figura en tu perfil o CV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo se necesita para preparar la entrevista de Backend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con trabajo regular (3–4 sesiones por semana de 20–30 minutos) el progreso se nota en 2–3 semanas. Preparar una entrevista concreta teniendo experiencia es una tarea de 2–4 semanas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si en la entrevista real preguntan algo que no sé?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Razonar en voz alta desde primeros principios. Los entrevistadores hacen preguntas en el límite del conocimiento a propósito — se evalúa el razonamiento. El silencio sin intentarlo es la peor respuesta."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

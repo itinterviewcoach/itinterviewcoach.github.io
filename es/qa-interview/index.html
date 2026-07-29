@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparación para la entrevista de QA: temas, preguntas por nivel, estrategia | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Cómo prepararse para la entrevista de ingeniero QA: qué temas se preguntan en la entrevista técnica, ejemplos de preguntas para Junior, Middle y Senior, diferencia entre entrevista manual y de automatización, errores típicos de los candidatos.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/qa-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/qa-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/qa-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/qa-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/qa-interview/">
+<meta property="og:title" content="Preparación para la entrevista de QA: temas, preguntas por nivel, estrategia">
+<meta property="og:description" content="Qué temas se preguntan en la entrevista de un ingeniero QA, ejemplos de preguntas para Junior, Middle y Senior, manual vs automatización, errores típicos y cómo entrenar.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Preparación para la entrevista de QA: temas, preguntas por nivel, estrategia",
+  "description": "Qué temas se preguntan en la entrevista técnica de un ingeniero QA, ejemplos de preguntas por nivel Junior/Middle/Senior, manual vs automatización, errores típicos de los candidatos y estrategia de preparación.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/qa-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Entrevista de QA</div>
+  <h1>Preparación para la entrevista de QA: <em>temas, preguntas, estrategia</em></h1>
+  <p class="article-lead">Qué se pregunta en la entrevista técnica de un ingeniero QA, en qué se diferencian las preguntas para un tester manual y uno de automatización, cómo cambia la profundidad de Junior a Senior — y cómo prepararse de forma sistemática.</p>
+</div>
+
+<article>
+
+<h2>De qué se compone la entrevista de QA</h2>
+
+<p>La entrevista de un ingeniero QA suele incluir tres bloques:</p>
+
+<ul>
+  <li><strong>Teoría de testing</strong> — diseño de pruebas, tipos de testing, gestión de defectos. Es el núcleo que se pregunta siempre, desde becario hasta lead.</li>
+  <li><strong>Bloque técnico</strong> — testing de API, SQL, herramientas. Para los de automatización — además, código: lenguaje de automatización, frameworks, patrones.</li>
+  <li><strong>Práctica y experiencia</strong> — análisis de situaciones reales: cómo testeaste una funcionalidad concreta, cómo priorizaste con poco tiempo, cómo discutiste con un desarrollador la gravedad de un bug. Para entrenar este bloque ayuda el <a href="/es/experience-deep-dive/" style="color:var(--accent);">análisis profundo de experiencia</a>.</li>
+</ul>
+
+<h2>Temas de la entrevista de QA</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Diseño de pruebas</h4>
+    <p>Clases de equivalencia, valores límite, pairwise, tablas de decisión, state transition, checklists vs casos de prueba.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Tipos de testing</h4>
+    <p>Funcional y no funcional, regresión, smoke vs sanity, de aceptación, testing exploratorio.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Testing de API</h4>
+    <p>Métodos HTTP y códigos de respuesta, semántica REST, Postman, validación de esquemas, escenarios negativos, contract testing.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Gestión de defectos</h4>
+    <p>Ciclo de vida del bug, severity vs priority, redacción del reporte, localización del defecto, bugs no reproducibles.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Automatización</h4>
+    <p>Pirámide de testing, selectores y esperas, Page Object, tests flaky, integración con CI, qué automatizar y qué no.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Áreas especiales</h4>
+    <p>Testing mobile, testing de seguridad, trabajo con datos de prueba, testing de rendimiento.</p>
+  </div>
+</div>
+
+<h2>Cómo cambian las preguntas según el nivel</h2>
+
+<h3>Junior — «qué es y para qué»</h3>
+
+<div class="example-q">
+  <span class="q-label">Diseño de pruebas · Junior</span>
+  Un campo acepta edades de 18 a 65. ¿Qué valores comprobarías y por qué esos precisamente?
+  <span class="q-hint">dominio de la técnica de valores límite: 17, 18, 19, 64, 65, 66, más tipos no válidos — no una prueba caótica al azar.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Defectos · Junior</span>
+  ¿En qué se diferencia severity de priority? Da un ejemplo de bug con severity alta y priority baja.
+  <span class="q-hint">entender la diferencia entre impacto técnico y urgencia de negocio. Ejemplo clásico: un crash en una página que visita el 0,1% de los usuarios.</span>
+</div>
+
+<h3>Middle — «cómo aplicarlo en una situación real»</h3>
+
+<div class="example-q">
+  <span class="q-label">API · Middle</span>
+  ¿Cómo diseñarías el conjunto de pruebas para un endpoint de API de transferencia de dinero entre cuentas? ¿Qué clases de equivalencia y valores límite aislarías?
+  <span class="q-hint">enfoque sistémico: escenarios positivos y negativos, idempotencia, transferencias concurrentes, saldo insuficiente, límites.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Automatización · Middle</span>
+  Un test falla en CI una de cada diez veces y en local es estable. ¿Tus pasos?
+  <span class="q-hint">experiencia lidiando con tests flaky: esperas vs sleep, aislamiento de datos, orden de ejecución, recursos de los agentes de CI.</span>
+</div>
+
+<h3>Senior — «estrategia y compromisos»</h3>
+
+<div class="example-q">
+  <span class="q-label">Estrategia · Senior</span>
+  El release es en dos días y la pasada de regresión tarda cinco. ¿Cómo decides qué testear y cómo justificas los riesgos al negocio?
+  <span class="q-hint">testing basado en riesgo: priorización por frecuencia de uso y coste del fallo, impact analysis, comunicación transparente de los riesgos residuales.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Automatización · Senior</span>
+  El equipo tiene 2000 tests de UI, la pasada dura 4 horas y un tercio de los fallos son flaky. ¿Tu plan de acción como QA lead?
+  <span class="q-hint">entender la pirámide de testing: mover comprobaciones al nivel de API y unit, poner en cuarentena los tests flaky, métricas de estabilidad, no «reescribimos todos los tests».</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Particularidad de la entrevista de QA:</strong> a diferencia del desarrollo, donde a menudo se comprueba el conocimiento de tecnologías concretas, en QA se evalúa ante todo el razonamiento — la capacidad de descomponer sistemáticamente una tarea en comprobaciones. Un candidato que, ante la pregunta de cómo testear un ascensor, ofrece una estructura (funcionales, de límite, de carga, seguridad) gana a quien enumera veinte comprobaciones caóticas.</p>
+</div>
+
+<h2>Manual vs Automatización: en qué se diferencian las entrevistas</h2>
+
+<p>Para el <strong>tester manual</strong>, el núcleo de la entrevista es el diseño de pruebas y la gestión de defectos. El bloque técnico se limita a consultas SQL de nivel JOIN y GROUP BY, fundamentos de HTTP y saber leer logs. Lo que más se evalúa es la estructura del razonamiento y la atención al detalle.</p>
+
+<p>Para el <strong>automatizador</strong> se añade una parte de ingeniería completa: código real en el lenguaje de automatización, conocimiento de frameworks (pytest, Selenium, Playwright), comprensión de patrones (Page Object, fixtures), experiencia con CI/CD. Con frecuencia a los automatizadores se les da <a href="/es/live-coding/" style="color:var(--accent);">live coding</a> — la tarea de escribir o refactorizar un test en tiempo real.</p>
+
+<p>Una trampa habitual en las entrevistas de automatizadores es <strong>comprobar la teoría de testing que el candidato daba por «etapa superada»</strong>. Un automatizador incapaz de diseñar clases de equivalencia genera la duda: ¿qué está automatizando exactamente?</p>
+
+<h2>Dónde fallan los candidatos</h2>
+
+<ul>
+  <li><strong>Enumeración caótica en lugar de estructura.</strong> Ante «cómo testearías X», el candidato suelta comprobaciones sin agrupar. Una buena respuesta empieza por la clasificación: comprobaciones funcionales, de límite, negativas, no funcionales.</li>
+  <li><strong>Desconocer la teoría básica pese a tener experiencia.</strong> Tres años en testing, pero pairwise y las tablas de decisión son un «algo he oído». Experiencia sin base teórica se lee como techo de crecimiento.</li>
+  <li><strong>SQL flojo.</strong> Una consulta con JOIN de dos tablas lo deja bloqueado. Para nivel Middle+, el SQL es una herramienta obligatoria del trabajo diario con datos de prueba.</li>
+  <li><strong>«Lo automatizo todo».</strong> Ante la pregunta de estrategia de automatización — entusiasmo sin análisis. Una respuesta senior incluye la economía: coste de escribir y mantener frente a la frecuencia de ejecución y el coste de la comprobación manual.</li>
+</ul>
+
+<h2>Cómo estructurar la preparación</h2>
+
+<ol>
+  <li><strong>Diagnóstico.</strong> 2–3 <a href="/es/mock-interview/" style="color:var(--accent);">entrevistas simuladas</a> del track de QA mostrarán las lagunas reales — en los testers manuales con experiencia suele ser la teoría de diseño de pruebas; en los automatizadores, la misma teoría más la profundidad de API.</li>
+  <li><strong>Trabajar los temas débiles.</strong> Modo «Preparación por temas»: eliges un cluster concreto — diseño de pruebas, testing de API, automatización — y lo entrenas hasta la seguridad.</li>
+  <li><strong>Sesión de control.</strong> Una entrevista simulada completa con temas aleatorios — para comprobar que el conocimiento se ha asentado.</li>
+  <li><strong>Para una vacante concreta.</strong> Lee los requisitos: si mencionan contract testing o mobile — haz una sesión sobre esos temas. Más el análisis profundo de experiencia antes de la parte conductual.</li>
+</ol>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Un tester manual necesita saber programar para la entrevista?</p>
+    <p class="faq-a">Para un puesto de QA manual — normalmente no, pero SQL a nivel de SELECT con JOIN y comprensión de HTTP se preguntan casi siempre. Leer código básico se vuelve una ventaja: un tester que puede mirar el código de una funcionalidad localiza los bugs más rápido.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Qué importa más en una entrevista de QA automation: testing o programación?</p>
+    <p class="faq-a">Ambos, y suspender cualquiera de los dos bloques es crítico. Un buen programador sin teoría de testing escribe tests inútiles; un buen tester sin habilidades de ingeniería escribe tests inmantenibles. En la entrevista se comprueban las dos caras — hay que preparar ambas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿En una entrevista de QA preguntan sobre testing de IA y aplicaciones con LLM?</p>
+    <p class="faq-a">Cada vez más — sobre todo en productos con funcionalidad de IA. Su particularidad: respuestas no deterministas, evaluación de la calidad de la generación, regresión de prompts. Todavía rara vez es el bloque principal, pero la pregunta «cómo testearías un chatbot» ya aparece con regularidad.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cómo entrenar si no tengo experiencia en desarrollo comercial?</p>
+    <p class="faq-a">Las entrevistas simuladas resuelven el problema de «no tengo experiencia en entrevistas»: el formato pregunta-respuesta-análisis entrena las formulaciones antes de salir a las entrevistas reales. Para nivel Junior, las preguntas del bot se calibran a la teoría y la práctica básica — lo que se puede dominar en proyectos de aprendizaje.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Preparación para la entrevista de Backend</span>
+  </a>
+  <a class="related-card" href="/es/ml-interview/">
+    <span class="rc-label">ML / Data Science</span>
+    <span class="rc-title">Preparación para la entrevista de ML</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Ponte a prueba con preguntas reales</h3>
+  <p>Elige la especialización QA y tu nivel — recibe la primera pregunta en un minuto. Evaluación de cada respuesta y análisis de tus temas débiles al terminar la sesión. Inicio gratuito.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar a entrenar</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Un tester manual necesita saber programar para la entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para un puesto de QA manual — normalmente no, pero SQL a nivel de SELECT con JOIN y comprensión de HTTP se preguntan casi siempre. Leer código básico es una ventaja para localizar bugs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué importa más en una entrevista de QA automation: testing o programación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambos, y suspender cualquier bloque es crítico. Un buen programador sin teoría de testing escribe tests inútiles; un buen tester sin habilidades de ingeniería, inmantenibles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En una entrevista de QA preguntan sobre testing de IA y aplicaciones con LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada vez más. Su particularidad: respuestas no deterministas, evaluación de la calidad de la generación, regresión de prompts. La pregunta «cómo testearías un chatbot» aparece con regularidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo entrenar si no tengo experiencia en desarrollo comercial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las entrevistas simuladas entrenan las formulaciones antes de salir a las entrevistas reales. Para nivel Junior, las preguntas se calibran a la teoría y la práctica básica de proyectos de aprendizaje."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

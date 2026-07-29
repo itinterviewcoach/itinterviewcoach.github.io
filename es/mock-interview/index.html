@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrevista simulada: qué es, cómo se desarrolla y cómo prepararla | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="La entrevista simulada es un ensayo de la entrevista técnica con evaluación de las respuestas. Qué es, en qué se diferencia de una entrevista real, cómo se desarrolla paso a paso y cuántas sesiones necesitas antes de la de verdad.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/mock-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/mock-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/mock-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/mock-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/mock-interview/">
+<meta property="og:title" content="Entrevista simulada: qué es, cómo se desarrolla y cómo prepararla">
+<meta property="og:description" content="Análisis completo del formato de entrevista simulada: en qué se diferencia de una entrevista real, cómo se desarrolla paso a paso, errores típicos de los candidatos y cuántas prácticas necesitas.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Entrevista simulada: qué es, cómo se desarrolla y cómo prepararla",
+  "description": "Análisis completo del formato de entrevista simulada para profesionales IT: definición, diferencias con una entrevista real, proceso paso a paso, errores típicos y estrategia de preparación.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/mock-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* ARTICLE LAYOUT */
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .comparison-table th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .comparison-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #c5cede;
+    vertical-align: top;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* RELATED */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .divider {
+    position: relative; z-index: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+    .comparison-table { font-size: 13px; }
+    .comparison-table th, .comparison-table td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Entrevista simulada</div>
+  <h1>Entrevista simulada: qué es, cómo se desarrolla y <em>cómo prepararla</em></h1>
+  <p class="article-lead">Analizamos el formato de entrevista de ensayo: en qué se diferencia de una entrevista real, de qué etapas se compone y por qué los candidatos que entrenan en sesiones simuladas afrontan las entrevistas reales con bastante más seguridad.</p>
+</div>
+
+<article>
+
+<h2>Qué es una entrevista simulada</h2>
+
+<p>Una <strong>entrevista simulada</strong> (en inglés, <em>mock interview</em>) es un ensayo de una entrevista real en condiciones lo más parecidas posible a las reales. Al candidato se le hacen los mismos tipos de preguntas que en una entrevista de verdad, responde en tiempo real y después recibe un análisis: qué estuvo fuerte, qué flojo, qué temas cojean.</p>
+
+<p>La diferencia clave frente a un simple repaso de teoría es el <strong>formato de evaluación bajo presión</strong>. Una cosa es saber cómo funciona un índice en una base de datos y otra muy distinta explicarlo en voz alta en dos minutos mientras te escuchan y te evalúan. La entrevista simulada entrena precisamente esa segunda habilidad: formular respuestas de forma estructurada en una situación de estrés.</p>
+
+<p>Históricamente, las entrevistas simuladas las hacían consultores de carrera y tech leads conocidos. Hoy el formato está automatizado: un entrevistador con IA genera preguntas según la especialización y el nivel concretos del candidato, evalúa cada respuesta y señala las lagunas — sin reservar cita, sin esperas ni pagar por hora de consultor.</p>
+
+<h2>En qué se diferencia una entrevista simulada de una real</h2>
+
+<table class="comparison-table">
+  <tr>
+    <th>Parámetro</th>
+    <th>Entrevista real</th>
+    <th>Entrevista simulada</th>
+  </tr>
+  <tr>
+    <td>Coste del error</td>
+    <td>Oferta perdida</td>
+    <td>Cero — el error se convierte en material de análisis</td>
+  </tr>
+  <tr>
+    <td>Feedback</td>
+    <td>Casi nunca: «ya te llamaremos»</td>
+    <td>Detallado, en cada respuesta</td>
+  </tr>
+  <tr>
+    <td>Repetibilidad</td>
+    <td>Un intento por empresa</td>
+    <td>Ilimitada, puedes repetir los temas débiles</td>
+  </tr>
+  <tr>
+    <td>Temas</td>
+    <td>Los decide el entrevistador</td>
+    <td>Puedes elegirlos de forma dirigida</td>
+  </tr>
+  <tr>
+    <td>Estrés</td>
+    <td>Máximo</td>
+    <td>Moderado — suficiente para entrenar, pero sin apuestas</td>
+  </tr>
+</table>
+
+<p>El valor principal del formato simulado es el <strong>feedback que no existe en las entrevistas reales</strong>. Las empresas casi nunca explican el motivo del rechazo. Un candidato puede suspender cinco entrevistas seguidas por el mismo motivo sin llegar a conocerlo. Una sesión simulada hace visible ese motivo desde la primera pasada.</p>
+
+<h2>Cómo se desarrolla una entrevista simulada en IT Interview Coach</h2>
+
+<p>En el bot, la entrevista simulada se inicia con el comando «Práctica de entrevista» y transcurre en cinco etapas:</p>
+
+<ol class="steps-list">
+  <li><strong>Ajuste al perfil.</strong> La especialización (Backend, QA o ML/Data Science) y el nivel (Junior, Middle, Senior) se toman de tu perfil. Si has subido tu CV, las preguntas se adaptan además a tu stack real: a un desarrollador de Python con PostgreSQL en el CV le preguntarán por PostgreSQL, no por una «base de datos» abstracta.</li>
+  <li><strong>Generación de la pregunta.</strong> La IA formula una pregunta sobre un tema aleatorio de tu especialización, teniendo en cuenta el nivel. Un Junior recibirá una pregunta sobre la diferencia entre una lista y una tupla; un Senior, sobre la estrategia para migrar una tabla de cientos de millones de filas sin downtime.</li>
+  <li><strong>Respuesta libre.</strong> Respondes por texto o por voz (en Premium). No hay opciones cerradas — como en una entrevista real, tienes que formular tú mismo.</li>
+  <li><strong>Evaluación de la respuesta.</strong> La IA clasifica la respuesta: correcta, parcialmente correcta o incorrecta. Si es parcialmente correcta, hace una pregunta orientativa — igual que haría un entrevistador humano, dándote la oportunidad de rematar la idea.</li>
+  <li><strong>Análisis final.</strong> Tras la sesión, estadísticas: cuántas respuestas correctas, qué temas cojean, qué estudiar primero. Los temas débiles puedes trabajarlos enseguida en el modo «Preparación por temas».</li>
+</ol>
+
+<h3>Ejemplos de preguntas por nivel</h3>
+
+<div class="example-q">
+  <span class="q-label">Backend · Junior</span>
+  ¿En qué se diferencia un índice B-tree de un índice hash y en qué casos es más eficiente cada uno?
+</div>
+
+<div class="example-q">
+  <span class="q-label">Backend · Senior</span>
+  Un servicio a 50 000 RPS empezó a degradarse en latencia tras un deploy. Las métricas de CPU y memoria están normales. Describe tu estrategia de diagnóstico: por dónde empiezas y por qué.
+</div>
+
+<div class="example-q">
+  <span class="q-label">QA · Middle</span>
+  ¿Cómo diseñarías el conjunto de pruebas para un endpoint de API de transferencia de dinero entre cuentas? ¿Qué clases de equivalencia y valores límite aislarías?
+</div>
+
+<div class="example-q">
+  <span class="q-label">ML · Senior</span>
+  El modelo da 0.95 de AUC en validación, pero en producción las métricas de negocio no suben. Nombra al menos tres causas posibles y cómo comprobar cada una.
+</div>
+
+<h2>Errores típicos de los candidatos en las sesiones simuladas</h2>
+
+<p>A partir de las sesiones de práctica se observan patrones recurrentes que les cuestan ofertas a los candidatos:</p>
+
+<ul>
+  <li><strong>Respuesta sin estructura.</strong> El candidato domina el material, pero lo suelta todo de golpe sin la lógica «primero lo importante, luego los detalles». El entrevistador pierde el hilo y baja la nota.</li>
+  <li><strong>Silencio en lugar de razonamiento.</strong> Al no saber la respuesta exacta, el candidato dice «no lo sé» y se calla. En una entrevista real se valora saber razonar en voz alta: incluso un razonamiento parcial demuestra pensamiento de ingeniería.</li>
+  <li><strong>Definiciones memorizadas sin comprensión.</strong> Ante un «¿y por qué es así?», llega la pausa. El formato simulado con preguntas orientativas lo detecta al instante.</li>
+  <li><strong>Ignorar el nivel de la pregunta.</strong> Un candidato Senior responde a una pregunta de arquitectura enumerando tecnologías en lugar de analizar compromisos — y precisamente los trade-offs distinguen una respuesta senior de una middle.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Particularidad de la evaluación en el bot:</strong> el rigor se calibra según el nivel. Una respuesta que a un Junior se le cuenta como completa, a un Senior se le marca como parcial — de un senior se espera profundidad: compromisos, casos límite, alternativas.</p>
+</div>
+
+<h2>Cuántas entrevistas simuladas necesitas antes de la real</h2>
+
+<p>No hay un número universal, pero la práctica muestra un esquema que funciona:</p>
+
+<ul>
+  <li><strong>3–5 sesiones</strong> — el mínimo para ver tus temas débiles y dejar de perderte con el propio formato «pregunta — respuesta bajo evaluación».</li>
+  <li><strong>8–12 sesiones</strong> — el nivel en el que las formulaciones se vuelven estructuradas de forma automática y las preguntas habituales de la especialización dejan de pillarte por sorpresa.</li>
+  <li><strong>Antes de una entrevista concreta</strong> — 1–2 sesiones sobre los temas relevantes para la vacante, más una sesión de «Análisis profundo de experiencia» si se espera una parte conductual.</li>
+</ul>
+
+<p>Más importante que la cantidad es <strong>trabajar el análisis después de cada sesión</strong>. Una sesión con un análisis honesto de los temas débiles aporta más que cinco seguidas sin revisar los resultados.</p>
+
+<h2>Entrevistas simuladas por especialización</h2>
+
+<p>El formato de la entrevista simulada es universal, pero el contenido varía mucho según el área:</p>
+
+<ul>
+  <li><strong>Backend</strong> — bases de datos, concurrencia, diseño de API, seguridad, observabilidad, arquitectura de eventos.</li>
+  <li><strong>QA</strong> — diseño de pruebas, clases de equivalencia, testing de API, automatización, gestión de defectos, testing mobile y contract testing.</li>
+  <li><strong>ML/Data Science</strong> — estadística, ML clásico, redes neuronales, LLM y NLP, series temporales, sistemas de ML en producción.</li>
+</ul>
+
+<p>Cada área en el bot se cubre con su propio banco de temas calibrado por tres niveles — de Junior a Senior.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Entrevista simulada y entrevista de práctica son lo mismo?</p>
+    <p class="faq-a">Sí, son sinónimos. También se usan los términos «entrevista de prueba», «ensayo de entrevista» y «entrevista de entrenamiento». La esencia es la misma: imitar una entrevista real con feedback.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Se puede hacer una entrevista simulada gratis?</p>
+    <p class="faq-a">Sí. En el plan gratuito de IT Interview Coach dispones de 3 sesiones de práctica al mes. Es suficiente para probar el formato y ver tus primeros puntos débiles. En el plan Basic — 20 sesiones al mes, con 7 días de prueba gratis.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿En qué se diferencia una entrevista simulada con IA de una sesión con un entrevistador humano?</p>
+    <p class="faq-a">Un entrevistador humano aporta más matices de dinámica no verbal, pero cuesta bastante más por sesión y requiere reservar cita. El formato con IA está disponible al instante, cuesta mucho menos, no se cansa y permite entrenar incluso a diario. La estrategia óptima: el grueso del entrenamiento con IA y el ensayo final con una persona, si es posible.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Sirve la entrevista simulada para preparar la parte conductual?</p>
+    <p class="faq-a">Para la parte conductual el bot tiene un modo aparte — «Análisis profundo de experiencia». La IA toma los puestos de tu CV y hace preguntas exigentes sobre proyectos reales: qué hiciste, qué resultado, cómo tomaste las decisiones.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/resume-analysis/">
+    <span class="rc-label">Análisis de CV</span>
+    <span class="rc-title">Puntuación ATS del CV: cómo pasar el filtro automático</span>
+  </a>
+  <a class="related-card" href="/es/experience-deep-dive/">
+    <span class="rc-label">Análisis de experiencia</span>
+    <span class="rc-title">Entrevista conductual sobre tu CV real</span>
+  </a>
+  <a class="related-card" href="/es/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Cómo transcurre el live coding y cómo entrenarlo</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Prueba una entrevista simulada ahora mismo</h3>
+  <p>La primera sesión dura 15–30 minutos y no requiere pago. Abre el bot en Telegram, elige tu especialización — y recibe la primera pregunta en un minuto.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar en Telegram</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Entrevista simulada y entrevista de práctica son lo mismo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, son sinónimos. También se usan «entrevista de prueba», «ensayo de entrevista» y «entrevista de entrenamiento». La esencia es la misma: imitar una entrevista real con feedback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede hacer una entrevista simulada gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En el plan gratuito de IT Interview Coach dispones de 3 sesiones de práctica al mes. En el plan Basic — 20 sesiones al mes, con 7 días de prueba gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia una entrevista simulada con IA de una sesión con un entrevistador humano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un entrevistador humano cuesta bastante más por sesión y requiere reservar cita. El formato con IA está disponible al instante, cuesta menos y permite entrenar a diario. Lo óptimo: el grueso del entrenamiento con IA y el ensayo final con una persona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve la entrevista simulada para preparar la parte conductual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para la parte conductual hay un modo aparte — «Análisis profundo de experiencia». La IA toma los puestos del CV y hace preguntas exigentes sobre proyectos reales: qué hiciste, qué resultado, cómo tomaste las decisiones."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

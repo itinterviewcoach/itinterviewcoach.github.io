@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis profundo de experiencia: entrevista conductual sobre tu CV | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="El análisis profundo de experiencia es un entrenamiento de la entrevista conductual a partir de tu CV real. Por qué las preguntas sobre la experiencia se suspenden más que las técnicas, cómo transcurre y cómo prepararse para el análisis de tus proyectos.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/experience-deep-dive/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/experience-deep-dive/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/experience-deep-dive/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/experience-deep-dive/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/experience-deep-dive/">
+<meta property="og:title" content="Análisis profundo de experiencia: entrevista conductual sobre tu CV">
+<meta property="og:description" content="Por qué las preguntas sobre la experiencia real se suspenden más que las técnicas, cómo transcurre el análisis profundo de experiencia y cómo prepararse para el examen a fondo de tus proyectos.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Análisis profundo de experiencia: entrevista conductual sobre tu CV",
+  "description": "Qué es el análisis profundo de experiencia, por qué la parte conductual de la entrevista es más difícil que la técnica, cómo transcurre el examen de los puestos del CV y cómo prepararse.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/experience-deep-dive/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Análisis de experiencia</div>
+  <h1>Análisis profundo de experiencia: <em>entrevista conductual sobre tu CV</em></h1>
+  <p class="article-lead">Las preguntas técnicas se pueden estudiar. Las preguntas sobre tu propia experiencia no se pueden estudiar — pero sí prepararse. Analizamos el formato que entrena la parte más infravalorada de la entrevista.</p>
+</div>
+
+<article>
+
+<h2>Qué es el análisis profundo de experiencia</h2>
+
+<p>El <strong>análisis profundo de experiencia</strong> es un entrenamiento de la parte conductual de la entrevista a partir del material de tu propio CV. La IA toma un puesto concreto del currículum que has subido y lo examina como lo hace un entrevistador con experiencia: qué hiciste exactamente, qué resultado obtuviste, por qué tomaste esas decisiones, qué salió mal y cómo lo resolviste.</p>
+
+<p>El nombre refleja la esencia: no es una charla cómoda de «háblame de ti», sino un examen a fondo con preguntas de seguimiento, donde a cada respuesta le sigue un «¿y por qué?», «¿y qué habría pasado si…?», «¿y cuál fue tu papel en concreto?». Así transcurre la parte conductual en las empresas fuertes — y es precisamente para lo que la mayoría de los candidatos no se preparan en absoluto.</p>
+
+<h2>Por qué la experiencia se suspende más que la teoría</h2>
+
+<p>La paradoja de la entrevista conductual: el candidato habla de un trabajo que él mismo hizo — y suspende. Los motivos se repiten de una entrevista a otra:</p>
+
+<ul>
+  <li><strong>La experiencia no está reflexionada.</strong> El trabajo se hizo sobre la marcha: tarea — solución — siguiente tarea. Ante «¿por qué elegiste esa solución?», la respuesta interna honesta es «así se dio históricamente». Pero el entrevistador necesita análisis, y eso requiere preparación.</li>
+  <li><strong>No hay cifras.</strong> «Optimicé el servicio» — ¿y cuánto? ¿De qué valor a qué valor? El candidato no lo recuerda o nunca lo midió. Un resultado sin escala no impresiona.</li>
+  <li><strong>Papel personal difuso.</strong> «Hicimos», «el equipo implementó» — el entrevistador no logra entender la aportación del candidato. La repregunta «¿y qué hiciste tú en concreto?» deja bloqueados a quienes se acostumbraron a hablar en «nosotros».</li>
+  <li><strong>Los fracasos no están empaquetados.</strong> La pregunta «cuéntame un fracaso» es estándar, pero los candidatos o afirman que no hubo fracasos (bandera roja) o cuentan una historia sin conclusiones.</li>
+  <li><strong>Discrepancia con el CV.</strong> En el currículum pone «implementé Kafka», pero ante una pregunta sobre garantías de entrega el candidato naufraga. Esa discrepancia socava la confianza en todo el CV de golpe.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Diferencia clave con la parte técnica:</strong> una pregunta teórica tiene una respuesta correcta que se puede estudiar. Una pregunta sobre tu experiencia solo tiene la respuesta correcta que tienes tú — y hay que formularla de antemano, porque formularla en tiempo real y bajo presión casi siempre sale peor.</p>
+</div>
+
+<h2>Cómo transcurre el análisis</h2>
+
+<ol class="steps-list">
+  <li><strong>Elección del puesto.</strong> El bot carga los puestos de tu CV (si aún no has subido el currículum, te propondrá subirlo). Eliges cuál examinar: lo lógico es empezar por el último — es por el que preguntan primero.</li>
+  <li><strong>Pregunta de apertura.</strong> La IA formula una pregunta sobre el puesto elegido basándose en lo que pone en el CV: sobre el proyecto, la tecnología o el resultado declarados.</li>
+  <li><strong>Preguntas de seguimiento.</strong> La parte principal. Por cada respuesta, la IA hace preguntas que profundizan — sobre tu papel personal, las alternativas, los compromisos, las métricas. Si la respuesta suena genérica, seguirá una petición de concretar, como en una entrevista real.</li>
+  <li><strong>Resumen del puesto.</strong> Al final — un resumen: qué respuestas sonaron fuertes, dónde faltó concreción, qué temas de ese puesto conviene trabajar antes de la entrevista real.</li>
+</ol>
+
+<p>Una sesión — un puesto, unos 10–15 minutos. Es una limitación consciente: un examen a fondo de un puesto es más útil que un repaso superficial de toda la carrera.</p>
+
+<h2>Cómo preparar las historias de tu experiencia</h2>
+
+<p>La estructura clásica de respuesta a una pregunta conductual es <strong>STAR</strong>: Situation (contexto), Task (tarea), Action (qué hiciste tú en concreto), Result (resultado medible). El análisis profundo revela de forma natural qué elementos faltan en tus historias:</p>
+
+<ul>
+  <li>Si las preguntas de seguimiento giran constantemente en torno a «qué hiciste tú» — en las historias cojea la <strong>Action</strong> con tu papel personal.</li>
+  <li>Si la IA pregunta por cifras y escala — falta el <strong>Result</strong>.</li>
+  <li>Si las preguntas de «por qué así y no de otro modo» te bloquean — no están reflexionadas las alternativas y los compromisos.</li>
+</ul>
+
+<p>Una preparación que funciona es así: para cada puesto del CV — 2–3 historias preparadas (proyecto exitoso, problema difícil, fracaso con conclusiones), cada una pasada por el análisis al menos una vez. Preparada no significa memorizada palabra por palabra: lo que importa es la estructura y los hechos clave, no el texto de memoria.</p>
+
+<p>Las formulaciones pulidas en el análisis refuerzan también el propio CV — la concreción con cifras de las historias orales se traslada a los bullets del currículum. Cómo se evalúa el CV y qué se comprueba en él — <a href="/es/resume-analysis/" style="color:var(--accent);">en el análisis del examen ATS</a>.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿En qué se diferencia el análisis profundo de experiencia de una entrevista simulada?</p>
+    <p class="faq-a">La entrevista simulada comprueba conocimientos técnicos con preguntas de la especialización — tienen respuestas objetivamente correctas. El análisis profundo trabaja con tu experiencia personal: las preguntas se construyen a partir de tu CV, y se evalúa la concreción, la reflexión y la coherencia de las historias. En una entrevista real están las dos partes — conviene entrenar ambas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Hay que subir el CV para el análisis profundo?</p>
+    <p class="faq-a">Sí, es la base del formato: las preguntas se generan a partir de puestos concretos de tu CV. Sin currículum saldría una charla abstracta sobre «algún proyecto» — y el valor está justamente en examinar lo que vas a presentar de verdad al empleador.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Y si en mi experiencia no hay resultados impresionantes?</p>
+    <p class="faq-a">Un resultado impresionante no es necesariamente «lo aceleré 10 veces». La escala de la tarea, las restricciones con las que hubo que trabajar, la calidad de las decisiones tomadas — todo eso es material para una historia fuerte. El análisis profundo ayuda a encontrar qué de tu experiencia suena convincente — a menudo no es lo que el candidato creía que era lo principal.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Conviene contar los fracasos con honestidad en la entrevista?</p>
+    <p class="faq-a">Sí, pero preparado. La pregunta sobre un fracaso es una prueba de madurez: si eres capaz de analizar tus errores. Una respuesta fuerte contiene: qué salió mal, cuál fue tu papel en ello, qué cambiaste después. Las respuestas débiles son «no hubo fracasos» y echar la responsabilidad a otros.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/resume-analysis/">
+    <span class="rc-label">Análisis de CV</span>
+    <span class="rc-title">Puntuación ATS del CV: cómo pasar el filtro automático</span>
+  </a>
+  <a class="related-card" href="/es/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Cómo transcurre el live coding y cómo entrenarlo</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Pon a prueba tus historias antes de la entrevista real</h3>
+  <p>Sube tu CV, elige un puesto — y descubre qué preguntas sobre tu experiencia te van a dejar bloqueado. Mejor averiguarlo en el entrenamiento.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar el análisis</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia el análisis profundo de experiencia de una entrevista simulada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La entrevista simulada comprueba conocimientos técnicos — las preguntas tienen respuestas correctas. El análisis profundo trabaja con la experiencia personal: las preguntas se construyen a partir del CV y se evalúa la concreción y la reflexión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay que subir el CV para el análisis profundo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, es la base del formato: las preguntas se generan a partir de puestos concretos del CV. El valor está en examinar lo que vas a presentar de verdad al empleador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si en mi experiencia no hay resultados impresionantes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La escala de la tarea, las restricciones y la calidad de las decisiones también son material para una historia fuerte. El análisis profundo ayuda a encontrar qué de tu experiencia suena convincente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Conviene contar los fracasos con honestidad en la entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, pero preparado. Una respuesta fuerte: qué salió mal, tu papel en ello, qué cambiaste después. Las respuestas débiles son «no hubo fracasos» y echar la responsabilidad a otros."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

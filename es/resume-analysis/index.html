@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de CV con puntuación ATS: por qué tu CV no pasa el filtro | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Análisis ATS del CV para profesionales IT: 9 comprobaciones automáticas, penalizaciones concretas por errores típicos y una puntuación de 0 a 100. Explicamos por qué un CV no pasa el filtro automático y cómo arreglarlo.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/resume-analysis/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/resume-analysis/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/resume-analysis/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/resume-analysis/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/resume-analysis/">
+<meta property="og:title" content="Análisis de CV con puntuación ATS: por qué tu CV no pasa el filtro">
+<meta property="og:description" content="9 comprobaciones automáticas del CV con penalizaciones concretas: plantillas de portal de empleo, foto, maquetación, contacto, clichés. Puntuación de 0 a 100 y un plan de correcciones concreto.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Análisis de CV con puntuación ATS: por qué tu CV no pasa el filtro",
+  "description": "Cómo funciona el filtro automático de CV: 9 comprobaciones con penalizaciones concretas, errores típicos de los profesionales IT y cómo subir la puntuación ATS.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/resume-analysis/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* PENALTY CARDS */
+  .penalty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .penalty-item {
+    background: var(--bg);
+    padding: 22px 26px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .penalty-item:hover { background: var(--bg2); }
+
+  .penalty-score {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--warn);
+    flex-shrink: 0;
+    min-width: 64px;
+  }
+
+  .penalty-body h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .penalty-body p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .verdict-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .verdict-table th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .verdict-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #c5cede;
+    vertical-align: top;
+  }
+
+  .verdict-table td:first-child {
+    font-family: var(--mono);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+    .penalty-item { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Análisis de CV</div>
+  <h1>Análisis de CV con puntuación ATS: <em>por qué tu CV no pasa el filtro</em></h1>
+  <p class="article-lead">La mayoría de los CV se descartan antes de que los lea una persona. Analizamos cómo funciona el filtro automático, qué 9 comprobaciones pasa un CV en IT Interview Coach y cómo subir la puntuación con pasos concretos.</p>
+</div>
+
+<article>
+
+<h2>Qué es un ATS y por qué importa</h2>
+
+<p>Un <strong>ATS (Applicant Tracking System)</strong> es el software con el que las empresas procesan las candidaturas entrantes. Cuando envías tu CV a través de la web de una empresa, un portal de empleo o LinkedIn, primero lo procesa un algoritmo: parsea el texto, extrae las aptitudes y la experiencia, las coteja con los requisitos de la vacante y las clasifica frente al resto de candidatos.</p>
+
+<p>El reclutador ve las candidaturas en el orden que ha decidido el sistema. Un CV con mala legibilidad automática — maquetación compleja, encabezados no estándar, palabras clave ausentes — queda al final de la lista o se parsea con errores. Un candidato puede encajar perfectamente en el puesto y no recibir ni siquiera un rechazo: simplemente nadie abrió su CV.</p>
+
+<div class="info-block">
+  <p><strong>Matiz importante:</strong> el ATS no «rechaza» un CV automáticamente — lo clasifica. Pero en un puesto con cientos de candidaturas, el reclutador solo revisa físicamente la parte alta de la lista. Una posición baja equivale, en la práctica, a un rechazo.</p>
+</div>
+
+<h2>Cómo funciona el análisis de CV en IT Interview Coach</h2>
+
+<p>Subes tu CV en formato PDF o DOCX y el bot lo pasa por un pipeline de tres etapas:</p>
+
+<ol>
+  <li><strong>Parseo y limpieza.</strong> Extracción del texto del archivo y eliminación de datos personales antes de procesarlo — al LLM solo llega texto anonimizado.</li>
+  <li><strong>Análisis estructural.</strong> La IA extrae aptitudes, puestos, experiencia y formación, determina la profesión y el nivel, y evalúa la calidad del contenido: la concreción de las formulaciones, la presencia de resultados, la relevancia.</li>
+  <li><strong>Comprobaciones deterministas.</strong> Nueve detectores algorítmicos revisan la forma del CV — aquello con lo que tropiezan los parsers de los ATS. Estas comprobaciones no dependen de la IA y se activan igual en cada ejecución.</li>
+</ol>
+
+<p>El resultado es una <strong>puntuación ATS de 0 a 100</strong>, un veredicto (fuerte / medio / débil) y una lista concreta de problemas con recomendaciones.</p>
+
+<h2>Las 9 comprobaciones: por qué baja la puntuación</h2>
+
+<p>Cada detector busca un problema concreto y resta una cantidad fija de puntos:</p>
+
+<div class="penalty-list">
+  <div class="penalty-item">
+    <span class="penalty-score">−15</span>
+    <div class="penalty-body">
+      <h4>Marcadores de plantilla de portal de empleo</h4>
+      <p>Un CV exportado de un portal de empleo (como HeadHunter o el formato Europass) se reconoce por marcadores característicos. Estas plantillas están pensadas para la búsqueda interna del portal y se parsean mal en los ATS corporativos. Para postular directamente a una empresa necesitas una versión aparte.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−15</span>
+    <div class="penalty-body">
+      <h4>Marcadores estructurales de plantilla exportada</h4>
+      <p>Se activa al combinarse al menos dos de: foto + marca de «actualizado» + sección de aficiones + maquetación en columnas. Aun sin marcadores explícitos, la estructura delata una exportación desde una plantilla de portal de empleo.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Fotografía en la primera página</h4>
+      <p>En la práctica internacional, la foto en el CV es un lastre: los parsers tropiezan con las imágenes insertadas y, en muchos países, la foto crea riesgo de acusaciones de discriminación, por lo que esos CV se descartan por precaución.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Maquetación a varias columnas</h4>
+      <p>Los parsers leen el texto línea a línea, de izquierda a derecha. Un diseño a dos columnas se convierte en un revoltijo: las aptitudes de la columna derecha se mezclan con la experiencia de la izquierda. Una sola columna siempre es más seguro.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−10</span>
+    <div class="penalty-body">
+      <h4>Falta de datos de contacto</h4>
+      <p>Ni email, ni teléfono, ni LinkedIn, ni GitHub, ni Telegram. Un CV sin contacto es un documento muerto: ni siquiera un reclutador interesado podría escribirte.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−8</span>
+    <div class="penalty-body">
+      <h4>Encabezados de sección no estándar</h4>
+      <p>El ATS busca las secciones por nombres estándar: «Experiencia laboral», «Aptitudes», «Formación». Encabezados creativos como «Mi trayectoria» o «De qué estoy orgulloso» el parser no los reconoce — y el contenido de esa sección se pierde.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−8</span>
+    <div class="penalty-body">
+      <h4>Pocas aptitudes técnicas</h4>
+      <p>Si del CV se extraen menos de 4 aptitudes técnicas — o falta la sección de aptitudes, o está escrita de forma que no se parsea. Las palabras clave de las aptitudes son la base del cotejo con la vacante.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−5×N</span>
+    <div class="penalty-body">
+      <h4>Páginas de más</h4>
+      <p>Por cada página que sobra. Para un profesional IT el estándar son 1–2 páginas. Un CV de 4–5 páginas no se lee entero, y lo importante se ahoga en los detalles.</p>
+    </div>
+  </div>
+  <div class="penalty-item">
+    <span class="penalty-score">−5</span>
+    <div class="penalty-body">
+      <h4>Puesto genérico</h4>
+      <p>«Especialista», «Ingeniero», «Desarrollador» sin más concreción. El ATS coteja el puesto con el título de la vacante — un encabezado difuso baja la relevancia para cualquier posición concreta.</p>
+    </div>
+  </div>
+</div>
+
+<p>Aparte, el detector de clichés resta <strong>−3 puntos por cada uno</strong> (máximo −15): «resistente al estrés», «jugador de equipo», «responsable», «aprendo rápido» — frases que no aportan información y ocupan el lugar de hechos concretos.</p>
+
+<div class="info-block">
+  <p><strong>Límite de la penalización total:</strong> el descuento conjunto de todos los detectores no supera los 40 puntos. Es una protección contra el desplome en cascada — un CV con varios problemas de formato pero contenido fuerte no recibirá una nota más baja de la que merece por su contenido.</p>
+</div>
+
+<h2>Cómo leer la puntuación final</h2>
+
+<table class="verdict-table">
+  <tr>
+    <th>Puntuación</th>
+    <th>Veredicto</th>
+    <th>Qué hacer</th>
+  </tr>
+  <tr>
+    <td>90–100</td>
+    <td>CV fuerte</td>
+    <td>Mejoras puntuales: aptitudes que faltan según las recomendaciones, actualizar las formulaciones</td>
+  </tr>
+  <tr>
+    <td>70–89</td>
+    <td>Nivel medio</td>
+    <td>Corregir las penalizaciones de formato (suele ser rápido) y reforzar las formulaciones de experiencia con resultados</td>
+  </tr>
+  <tr>
+    <td>Menos de 70</td>
+    <td>Requiere reelaboración</td>
+    <td>Problemas sistémicos: estructura, completitud, legibilidad automática. Se recomienda una revisión paso a paso con el consultor</td>
+  </tr>
+</table>
+
+<h2>Qué ocurre tras el análisis</h2>
+
+<p>El informe estático es solo el primer paso. Después queda disponible la <strong>revisión conversacional del CV</strong>: un consultor con IA recorre cada punto de tu experiencia y te ayuda a reformularlo según el principio «acción → resultado».</p>
+
+<p>Transformación típica de una formulación:</p>
+
+<ul>
+  <li><strong>Antes:</strong> «Me encargué de optimizar servicios backend»</li>
+  <li><strong>Después:</strong> «Reduje el tiempo de respuesta de la API principal de 800 a 220 ms reescribiendo consultas N+1 y añadiendo caché en Redis»</li>
+</ul>
+
+<p>El consultor no se inventa cifras por ti — te hace preguntas sobre resultados reales y te ayuda a empaquetarlos en una formulación. Si en un proyecto no hubo un resultado medible, te ayuda a mostrar la escala y la complejidad de la tarea de otra manera.</p>
+
+<p>El CV que subes lo usan también los demás módulos del bot: las <a href="/es/mock-interview/" style="color:var(--accent);">entrevistas simuladas</a> adaptan las preguntas a tu stack, y el «Análisis profundo de experiencia» construye una entrevista conductual sobre tus puestos reales.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Cuánto cuesta analizar el CV?</p>
+    <p class="faq-a">En el plan gratuito — 1 análisis al día, suficiente para un ciclo completo: revisas, corriges y vuelves a revisar al día siguiente. En Basic — 3 análisis al día; en Premium — 5.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Es seguro subir un CV con datos personales?</p>
+    <p class="faq-a">Antes de procesarlo con la IA, del texto se eliminan automáticamente los datos personales: nombres, teléfonos, emails, direcciones. Al LLM llega texto anonimizado. El borrado completo de todos tus datos está disponible con el comando /delete_my_data en cualquier momento.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Por qué no puedo usar directamente el CV de un portal de empleo o el formato Europass?</p>
+    <p class="faq-a">Esos formatos están optimizados para la búsqueda interna del portal y funcionan bien allí. Pero al postular directamente a una empresa (por su web, LinkedIn o una recomendación), ese CV llega a un ATS corporativo que lo parsea con errores. La estrategia que funciona son dos CV: la versión del portal para el portal y una versión limpia a una sola columna para las candidaturas directas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Una puntuación ATS alta garantiza una invitación a entrevista?</p>
+    <p class="faq-a">No. La puntuación refleja la legibilidad automática y la calidad estructural del CV — es la condición necesaria para que el CV llegue al reclutador y se entienda. Lo demás lo decide el contenido: la relevancia de la experiencia, la concreción de los resultados, el ajuste a los requisitos de la vacante.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/experience-deep-dive/">
+    <span class="rc-label">Análisis de experiencia</span>
+    <span class="rc-title">Entrevista conductual sobre tu CV real</span>
+  </a>
+  <a class="related-card" href="/es/live-coding/">
+    <span class="rc-label">Live Coding</span>
+    <span class="rc-title">Cómo transcurre el live coding y cómo entrenarlo</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Revisa tu CV en 2 minutos</h3>
+  <p>Sube un PDF o DOCX al bot — recibe la puntuación ATS, una lista concreta de problemas y recomendaciones. La primera revisión es gratis, sin registrarte en ninguna web.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Revisar mi CV</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta analizar el CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En el plan gratuito — 1 análisis al día. En Basic — 3 análisis al día; en Premium — 5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro subir un CV con datos personales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes de procesarlo con la IA, del texto se eliminan automáticamente los datos personales: nombres, teléfonos, emails, direcciones. El borrado completo de tus datos está disponible con el comando /delete_my_data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué no puedo usar directamente el CV de un portal de empleo o el formato Europass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Esos formatos están optimizados para la búsqueda interna del portal. Al postular directamente a una empresa, el ATS corporativo los parsea con errores. La estrategia que funciona son dos CV: la versión del portal para el portal y una limpia a una columna para las candidaturas directas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Una puntuación ATS alta garantiza una invitación a entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La puntuación refleja la legibilidad automática y la calidad estructural — condición necesaria para que el CV llegue al reclutador. Lo demás lo decide el contenido: la relevancia de la experiencia y la concreción de los resultados."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparación para la entrevista de ML: temas, preguntas por nivel, estrategia | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Cómo prepararse para la entrevista de ingeniero ML y Data Scientist: qué temas se preguntan — de la estadística a los LLM, ejemplos de preguntas para Middle y Senior, errores típicos de los candidatos y estrategia de preparación.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/ml-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/ml-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/ml-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/ml-interview/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/ml-interview/">
+<meta property="og:title" content="Preparación para la entrevista de ML: temas, preguntas por nivel, estrategia">
+<meta property="og:description" content="Qué temas se preguntan en la entrevista de un ingeniero ML: estadística, ML clásico, redes neuronales, LLM, producción. Ejemplos de preguntas y errores típicos.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Preparación para la entrevista de ML: temas, preguntas por nivel, estrategia",
+  "description": "Qué temas se preguntan en la entrevista técnica de un ingeniero ML y Data Scientist, ejemplos de preguntas por nivel, errores típicos de los candidatos y estrategia de preparación.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/ml-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Entrevista de ML</div>
+  <h1>Preparación para la entrevista de ML: <em>temas, preguntas, estrategia</em></h1>
+  <p class="article-lead">La entrevista de un ingeniero ML es la más amplia en cobertura de todo el IT: de la estadística a la producción, de los algoritmos clásicos a los LLM. Analizamos qué se pregunta, cómo cambia la profundidad según el nivel y dónde fallan los candidatos con un CV fuerte.</p>
+</div>
+
+<article>
+
+<h2>De qué se compone la entrevista de ML</h2>
+
+<p>La entrevista de un ingeniero ML o Data Scientist suele ser más amplia que la de otras especializaciones de ingeniería, e incluye hasta cuatro bloques:</p>
+
+<ul>
+  <li><strong>Matemáticas y estadística</strong> — probabilidad, contraste de hipótesis, álgebra lineal a nivel de comprensión. El bloque que más se suspende: tras un par de años usando librerías ya hechas, la teoría se evapora.</li>
+  <li><strong>Machine learning</strong> — de los algoritmos clásicos a las redes neuronales y los LLM. Se comprueba la comprensión de la mecánica, no saber llamar a fit-predict.</li>
+  <li><strong>Práctica y producción</strong> — cómo vive el modelo después del entrenamiento: despliegue, monitorización, deriva de datos, reentrenamiento en producción.</li>
+  <li><strong>Coding</strong> — Python y trabajo con datos; en algunas empresas, <a href="/es/live-coding/" style="color:var(--accent);">live coding</a> completo. Las preguntas sobre tus propios proyectos del CV las entrena el <a href="/es/experience-deep-dive/" style="color:var(--accent);">análisis profundo de experiencia</a>.</li>
+</ul>
+
+<h2>Temas de la entrevista de ML</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Estadística y probabilidad</h4>
+    <p>Contraste de hipótesis, p-value, intervalos de confianza, tests A/B, comparaciones múltiples, distribuciones, TCL.</p>
+  </div>
+  <div class="topic-card">
+    <h4>ML clásico</h4>
+    <p>Modelos lineales, árboles y ensembles, gradient boosting, validación cruzada, regularización, métricas de calidad, desbalanceo de clases.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Redes neuronales</h4>
+    <p>Backpropagation, optimizadores, batch normalization, sobreajuste y dropout, CNN, embeddings, transfer learning.</p>
+  </div>
+  <div class="topic-card">
+    <h4>LLM y NLP</h4>
+    <p>Transformers y attention, tokenización, fine-tuning vs RAG, prompting, evaluación de la calidad de la generación, alucinaciones.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Series temporales</h4>
+    <p>Estacionariedad, estacionalidad, features de lag, validación sin fuga del futuro, particularidades de las métricas de predicción.</p>
+  </div>
+  <div class="topic-card">
+    <h4>ML en producción</h4>
+    <p>Deriva de datos y de concepto, monitorización de modelos, pipelines de reentrenamiento, feature store, despliegue A/B de modelos, límites de latencia.</p>
+  </div>
+</div>
+
+<h2>Cómo cambian las preguntas según el nivel</h2>
+
+<p>El track de ML en el bot se calibra a los niveles Middle y Senior — la particularidad del área es que los puestos junior se cubren más a menudo con prácticas y cribados académicos, y el mercado de vacantes empieza en un Middle sólido.</p>
+
+<h3>Middle — «cómo funciona y cuándo aplicarlo»</h3>
+
+<div class="example-q">
+  <span class="q-label">ML clásico · Middle</span>
+  Un modelo da un accuracy de 0.97 en un problema con desbalanceo de clases 1:50. ¿Por qué eso no dice nada y qué métricas mirar?
+  <span class="q-hint">entender la relación entre las métricas y el balance de clases: precision/recall, PR-AUC, y saber elegir la métrica según el objetivo de negocio.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Estadística · Middle</span>
+  Lanzas un test A/B y a los tres días ves un resultado significativo. El product quiere parar el test y desplegar la funcionalidad. ¿Qué respondes?
+  <span class="q-hint">el problema del peeking: aumento de falsos positivos al parar antes de tiempo, duración fijada de antemano o sequential testing.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Series temporales · Middle</span>
+  ¿Por qué la validación cruzada k-fold habitual no sirve para series temporales y cómo validar correctamente?
+  <span class="q-hint">entender la fuga del futuro hacia el pasado y dominar la validación walk-forward.</span>
+</div>
+
+<h3>Senior — «límites de aplicabilidad y producción»</h3>
+
+<div class="example-q">
+  <span class="q-label">Producción · Senior</span>
+  El modelo da 0.95 de AUC en validación, pero en producción las métricas de negocio no suben. Nombra al menos tres causas posibles y cómo comprobar cada una.
+  <span class="q-hint">pensamiento sistémico: train-serve skew, deriva de datos, brecha entre la métrica de ML y la de negocio, errores en el pipeline de features.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">LLM · Senior</span>
+  El equipo quiere afinar un LLM con documentos internos. ¿En qué condiciones propondrías RAG en lugar de fine-tuning y al revés?
+  <span class="q-hint">análisis de compromisos: frecuencia de actualización del conocimiento, coste, alucinaciones, volumen de datos, requisitos de estilo de las respuestas.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Estadística · Senior</span>
+  Habéis lanzado 40 tests A/B en el trimestre y 3 mostraron un efecto positivo significativo. ¿Cuántos son probablemente falsos positivos y qué hacer al respecto?
+  <span class="q-hint">comparaciones múltiples a nivel de proceso, no de un solo test: correcciones, FDR, cultura de registrar las hipótesis.</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Particularidad senior en ML:</strong> la señal clave es saber conectar las métricas de ML con el resultado de negocio. Un candidato que, ante una pregunta sobre la calidad del modelo, empieza por «¿y qué estamos optimizando para el negocio?» gana a quien conoce a la perfección las funciones de pérdida pero no se hace esa pregunta.</p>
+</div>
+
+<h2>Dónde fallan los candidatos</h2>
+
+<ul>
+  <li><strong>Librerías sin mecánica.</strong> El candidato lleva tres años usando gradient boosting, pero no sabe explicar en qué se diferencia, a nivel de idea, de un random forest. El «cómo funciona» es la comprobación estándar de profundidad.</li>
+  <li><strong>Fallo en estadística.</strong> El más frecuente: el p-value se explica mal incluso por candidatos con fuerte experiencia en DL. La estadística es el fundamento que se pregunta siempre.</li>
+  <li><strong>Cero mentalidad de producción.</strong> Respuestas excelentes sobre el entrenamiento de modelos — y silencio ante «¿qué pasará con el modelo dentro de medio año en producción?». Para puestos Middle+, el ciclo de vida del modelo es obligatorio.</li>
+  <li><strong>Hype en lugar de comprensión.</strong> Razonamientos seguros sobre LLM con incapacidad de explicar el attention. Que un tema esté de moda sube también el listón de lo que se pregunta sobre él.</li>
+  <li><strong>Métricas desligadas del problema.</strong> Enumerar todas las métricas conocidas en lugar de elegir una con justificación para el planteamiento de negocio concreto.</li>
+</ul>
+
+<h2>Cómo estructurar la preparación</h2>
+
+<ol>
+  <li><strong>Diagnóstico.</strong> 2–3 <a href="/es/mock-interview/" style="color:var(--accent);">entrevistas simuladas</a> del track de ML. Descubrimiento típico: el punto débil no son las redes neuronales, sino la estadística básica.</li>
+  <li><strong>El fundamento primero.</strong> Estadística y ML clásico — temas que se preguntan en el 100% de las entrevistas. Los LLM y los temas especializados, después de un fundamento sólido.</li>
+  <li><strong>Bloque de producción.</strong> Si tienes poca experiencia de producción — trabajo dirigido de monitorización, deriva y despliegue en el modo «Preparación por temas»: las preguntas sobre la vida del modelo tras el entrenamiento caerán seguro.</li>
+  <li><strong>Tus proyectos.</strong> Cada proyecto de ML de tu CV se analizará a fondo: qué datos, por qué ese modelo, qué métricas, qué pasa en producción. El análisis profundo de experiencia ensaya exactamente eso.</li>
+</ol>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Cuántas matemáticas se necesitan de verdad para la entrevista de ML?</p>
+    <p class="faq-a">Menos de lo que asusta, pero más que «ninguna». El nivel: explicar con seguridad el p-value y los intervalos de confianza, entender el descenso de gradiente conceptualmente, saber qué son los vectores propios — sin demostrar fórmulas en la pizarra. Demostrar fórmulas se pregunta sobre todo en puestos de research.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Preguntan ML clásico si la vacante es sobre LLM?</p>
+    <p class="faq-a">Sí, casi siempre. El ML clásico y la estadística son la comprobación del fundamento: saber razonar sobre sesgo, varianza, sobreajuste y validación se traslada a cualquier modelo. Un candidato «solo de LLM» sin fundamento es una bandera roja para la mayoría de equipos.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿En qué se diferencian las entrevistas de ingeniero ML y Data Scientist?</p>
+    <p class="faq-a">Los límites son difusos y dependen de la empresa, pero la tendencia: el DS tiene más estadística, tests A/B y analítica de producto; el ingeniero ML, más producción, infraestructura y código. El núcleo — ML clásico y fundamentos de estadística — es común a ambos roles.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cómo preparar las preguntas sobre LLM si no los he usado en el trabajo?</p>
+    <p class="faq-a">Honestidad más base conceptual: entender la arquitectura del transformer, la diferencia entre fine-tuning y RAG, el problema de las alucinaciones — todo eso es accesible sin experiencia de producción. En la entrevista, decir directamente «en producción no lo he usado, pero entiendo la arquitectura» es más fuerte que fingir una experiencia que se destapará a la segunda repregunta.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Preparación para la entrevista de Backend</span>
+  </a>
+  <a class="related-card" href="/es/experience-deep-dive/">
+    <span class="rc-label">Análisis de experiencia</span>
+    <span class="rc-title">Entrevista conductual sobre tu CV real</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Ponte a prueba con preguntas reales</h3>
+  <p>Elige la especialización ML y tu nivel — recibe la primera pregunta en un minuto. Evaluación de cada respuesta y análisis de tus temas débiles al terminar la sesión. Inicio gratuito.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar a entrenar</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuántas matemáticas se necesitan de verdad para la entrevista de ML?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El nivel: explicar con seguridad el p-value y los intervalos de confianza, y entender el descenso de gradiente conceptualmente. Demostrar fórmulas se pregunta sobre todo en puestos de research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Preguntan ML clásico si la vacante es sobre LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, casi siempre. El ML clásico y la estadística son la comprobación del fundamento. Un candidato «solo de LLM» sin fundamento es una bandera roja para la mayoría de equipos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencian las entrevistas de ingeniero ML y Data Scientist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El DS tiene más estadística, tests A/B y analítica de producto; el ingeniero ML, más producción, infraestructura y código. El núcleo es común a ambos roles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo preparar las preguntas sobre LLM si no los he usado en el trabajo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La base conceptual es accesible sin experiencia de producción: arquitectura del transformer, diferencia entre fine-tuning y RAG, problema de las alucinaciones. Un honesto «en producción no lo he usado, pero entiendo la arquitectura» es una posición fuerte."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

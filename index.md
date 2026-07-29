@@ -25,7 +25,7 @@ Backend, QA, ML — Junior / Middle / Senior levels
 
 ## Languages
 
-Russian (all plans), English (Premium only)
+Russian and Spanish (all plans), English (Premium only)
 
 ## Payment methods
 

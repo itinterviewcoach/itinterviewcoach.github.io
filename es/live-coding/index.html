@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live coding en la entrevista: cómo transcurre y cómo entrenarlo | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="El live coding en la entrevista técnica: de qué etapas se compone, qué evalúa en realidad el entrevistador, errores típicos de los candidatos y cómo entrenar el formato — de aclarar el enunciado a discutir la solución.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/live-coding/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/live-coding/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/live-coding/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/live-coding/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/live-coding/">
+<meta property="og:title" content="Live coding en la entrevista: cómo transcurre y cómo entrenarlo">
+<meta property="og:description" content="Las etapas de una entrevista de live coding, qué evalúa el entrevistador además del código que funciona, errores típicos de los candidatos y una metodología de entrenamiento en cuatro fases.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Live coding en la entrevista: cómo transcurre y cómo entrenarlo",
+  "description": "De qué etapas se compone una entrevista de live coding, qué evalúa el entrevistador, errores típicos de los candidatos y cómo entrenar el formato de forma sistemática.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/live-coding/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Live Coding</div>
+  <h1>Live coding en la entrevista: <em>cómo transcurre y cómo entrenarlo</em></h1>
+  <p class="article-lead">Resolver un problema en tiempo real es la parte más estresante de la entrevista técnica. Analizamos de qué etapas se compone el live coding, qué evalúa en realidad el entrevistador y por qué «resolví el problema» no es lo mismo que «aprobé la sección».</p>
+</div>
+
+<article>
+
+<h2>Qué es el live coding</h2>
+
+<p>El <strong>live coding</strong> es un formato de entrevista técnica en el que el candidato resuelve un problema en tiempo real, verbalizando su razonamiento en voz alta. El entrevistador no ve solo el código final, sino todo el proceso: cómo entendió el enunciado, cómo eligió el enfoque, cómo reaccionó a las pistas, cómo comprobó su solución.</p>
+
+<p>Es precisamente el proceso el objeto principal de evaluación. Un código que funciona pero escrito en silencio se puntúa a menudo por debajo de una solución imperfecta con un razonamiento claro. Al empleador le interesa cómo vas a pensar ante problemas reales, donde los enunciados son incompletos y no hay una respuesta correcta al final del libro de texto.</p>
+
+<h2>Qué evalúa el entrevistador</h2>
+
+<p>El checklist formal varía según la empresa, pero el núcleo de la evaluación es universal:</p>
+
+<ul>
+  <li><strong>Trabajo con el enunciado.</strong> Si el candidato hizo preguntas de aclaración o se lanzó a escribir código con la primera impresión. Los problemas reales siempre están infradefinidos — saber identificar las condiciones límite antes de escribir código distingue a un ingeniero con experiencia.</li>
+  <li><strong>Estructura del razonamiento.</strong> Si expuso el enfoque antes de implementar, si descompuso el problema en pasos, si explicó la elección de la estructura de datos.</li>
+  <li><strong>Calidad del código.</strong> No la brevedad de olimpiada, sino la legibilidad: nombres con sentido, manejo de los casos límite, ausencia de números mágicos.</li>
+  <li><strong>Reacción al feedback.</strong> Cómo asume el candidato una pista: la incorpora a la solución o se pone a la defensiva. Es una señal directa de cómo será en una code review.</li>
+  <li><strong>Autocomprobación.</strong> Si pasó la solución por los ejemplos, si encontró por sí mismo el caso límite de entrada vacía — o si declaró «listo» tras la última línea.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Para los candidatos Senior</strong> se añade una señal aparte — la autocorrección: la capacidad de detectar un problema en su propia solución sin una pista externa y corregirlo. Los entrevistadores anotan esos momentos de forma explícita, y pesan mucho en la evaluación final.</p>
+</div>
+
+<h2>Las cuatro fases del live coding: cómo funciona el entrenamiento</h2>
+
+<p>En IT Interview Coach el live coding reproduce la estructura de una entrevista real — la sesión transcurre en cuatro fases:</p>
+
+<ol class="steps-list">
+  <li><strong>Aclaración del enunciado (clarify).</strong> Al recibir el problema, puedes hacer preguntas: qué restricciones tiene la entrada, qué devolver con datos vacíos, si importa el rendimiento. La IA responde como un entrevistador real — aclara el enunciado, pero no da pistas de la solución. El simple hecho de preguntar ya suma a la evaluación: así se forma el hábito de no saltar al código.</li>
+  <li><strong>Solución (solve).</strong> Escribes el código y lo envías. El número de intentos no está limitado — igual que en una entrevista real, donde tras un comentario del entrevistador puedes corregir.</li>
+  <li><strong>Análisis (review).</strong> La IA evalúa la solución: si hay problemas, no da la respuesta hecha, sino que señala la dirección con una pregunta orientativa y una pista sobre el caso límite que se te escapó. Así funciona un buen entrevistador: comprueba si sabes rematar la solución con la mínima ayuda.</li>
+  <li><strong>Discusión (discuss).</strong> Tras aceptar la solución — preguntas sobre el enfoque: por qué elegiste esa estructura de datos, cuál es la complejidad, qué cambia si la entrada crece mil veces. Esta fase imita las preguntas de follow-up en las que fallan los candidatos que copiaron la solución o llegaron a ella por casualidad.</li>
+</ol>
+
+<p>Tras la sesión — un <strong>debrief estructurado</strong>: qué se trabajó, cómo fue la solución por intentos, zonas de riesgo (a partir de las pistas registradas) y qué entrenar a continuación. El debrief se construye solo sobre los datos reales de la sesión — intentos y pistas —, no sobre consejos genéricos.</p>
+
+<h2>Errores típicos de los candidatos</h2>
+
+<ul>
+  <li><strong>Código desde el primer segundo.</strong> El candidato empieza a teclear antes de entender el problema. A los diez minutos resulta que estaba resolviendo otro problema. Regla: primero un ejemplo de entrada-salida en voz alta, luego el código.</li>
+  <li><strong>Solución silenciosa.</strong> Cinco minutos de silencio — el entrevistador no sabe si el candidato avanza hacia la solución o está atascado. Verbalizar es una habilidad que solo se entrena con la práctica.</li>
+  <li><strong>Ignorar los casos límite.</strong> Array vacío, un solo elemento, duplicados, números negativos — el set típico por el que hay que preguntar o que hay que manejar antes de declarar «listo».</li>
+  <li><strong>Reacción defensiva a las pistas.</strong> El entrevistador dice «¿y si la entrada está vacía?» — el candidato se justifica en lugar de «cierto, ahora lo corrijo». Una pista es ayuda, no una acusación.</li>
+  <li><strong>Entregar sin autocomprobar.</strong> Pasar la solución por el ejemplo del enunciado lleva un minuto y caza la mitad de los errores — pero la mayoría de los candidatos no lo hace.</li>
+</ul>
+
+<h2>Cómo entrenar</h2>
+
+<ol>
+  <li><strong>Entrena el formato, no solo los problemas.</strong> Resolver cientos de problemas de LeetCode en silencio no prepara para el live coding: bajo la presión de ser observado y con la obligación de hablar, se resuelve de otra manera. Hacen falta sesiones que reproduzcan el formato completo — con aclaración del enunciado y discusión al final.</li>
+  <li><strong>Empieza por problemas de tu nivel.</strong> En el bot los problemas se calibran por especialización (Backend, QA, ML) y nivel (Junior — Senior). Fallar en problemas demasiado difíciles no entrena la habilidad, sino la frustración.</li>
+  <li><strong>Trabaja con el debrief.</strong> Las zonas de riesgo del debrief son una lista concreta de lo que entrenar. Si de sesión en sesión se repite «no comprueba los casos límite» — ese es tu punto de crecimiento.</li>
+  <li><strong>Combínalo con la teoría.</strong> El live coding comprueba la aplicación; la <a href="/es/mock-interview/" style="color:var(--accent);">entrevista simulada</a>, la comprensión. En una entrevista real habrá ambos bloques: entrena los dos.</li>
+</ol>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿El live coding es siempre de problemas algorítmicos?</p>
+    <p class="faq-a">No. Las secciones algorítmicas son propias de las grandes empresas tecnológicas. En las empresas de producto es más habitual que den tareas prácticas: escribir una función de procesamiento de datos, refactorizar un fragmento, encontrar un bug. Para los automatizadores de QA — escribir o arreglar un test. Los problemas del bot se acercan más al segundo tipo: práctica, no olimpiada.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Se puede usar documentación y buscar durante el live coding?</p>
+    <p class="faq-a">Depende de la empresa — pregúntalo al principio de la sección, es una pregunta normal. Muchos entrevistadores permiten la documentación: en el trabajo real nadie escribe código sin ella. Lo que suele estar prohibido es solo el uso de asistentes de IA y de soluciones ya hechas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Qué hacer si no sale la solución?</p>
+    <p class="faq-a">Verbalizar el atasco en voz alta: «Veo que este enfoque choca con X, voy a probar desde Y». El entrevistador evalúa el proceso — un razonamiento honesto ante un atasco da más puntos que quedarse callado y bloqueado. Pedir una pista también es normal: lo que importa es cómo la usas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cuántos problemas hay que resolver para prepararse?</p>
+    <p class="faq-a">Para el formato de live coding importan más los ciclos completos que la cantidad: 10–15 sesiones con aclaración del enunciado, verbalización y análisis aportan más que 100 problemas resueltos en silencio. Si el punto débil son los algoritmos en sí, esa es una preparación aparte, en paralelo.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Preparación para la entrevista de Backend</span>
+  </a>
+  <a class="related-card" href="/es/qa-interview/">
+    <span class="rc-label">QA</span>
+    <span class="rc-title">Preparación para la entrevista de QA</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Prueba una sesión de live coding</h3>
+  <p>Un problema para tu especialización y nivel, cuatro fases como en una entrevista real y un debrief con las zonas de riesgo al final. Directamente en Telegram.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar la sesión</a>
+</div>
+
+</article>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El live coding es siempre de problemas algorítmicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Las secciones algorítmicas son propias de las grandes tecnológicas. En las empresas de producto es más habitual dar tareas prácticas: escribir una función, refactorizar un fragmento, encontrar un bug."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede usar documentación y buscar durante el live coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la empresa — pregúntalo al principio de la sección. Muchos permiten la documentación. Lo que suele estar prohibido es el uso de asistentes de IA y de soluciones ya hechas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hacer si no sale la solución?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verbalizar el atasco en voz alta y probar otro enfoque. Un razonamiento honesto ante un atasco da más puntos que quedarse callado y bloqueado. Pedir una pista es normal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos problemas hay que resolver para prepararse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Importan más los ciclos completos que la cantidad: 10–15 sesiones con aclaración del enunciado, verbalización y análisis aportan más que 100 problemas resueltos en silencio."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

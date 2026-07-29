@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Interview Coach — Preparación para entrevistas técnicas con IA</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Asistente de IA en Telegram para preparar entrevistas técnicas. Entrevistas simuladas con evaluación por IA, análisis de CV con puntuación ATS, análisis profundo de experiencia, live coding — para ingenieros Backend, QA y ML.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/">
+<link rel="alternate" hreflang="en" href="https://itinterviewcoach.com/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/">
+<meta name="keywords" content="preparación entrevista técnica, mock interview online, simulador de entrevista, análisis de CV ATS, entrevista simulada, práctica live coding, diseño de sistemas, algoritmos para entrevista, entrevista Backend, entrevista QA, entrevista ML, bot de Telegram para IT">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://itinterviewcoach.com/es/">
+<meta property="og:title" content="IT Interview Coach — Preparación para entrevistas técnicas con IA">
+<meta property="og:description" content="Asistente de IA en Telegram para preparar entrevistas técnicas. Entrevistas simuladas con evaluación por IA, análisis de CV, live coding — para Backend, QA y ML.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "IT Interview Coach",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Telegram",
+  "url": "https://itinterviewcoach.com/es/",
+  "inLanguage": "es",
+  "description": "Asistente de IA en Telegram para preparar entrevistas técnicas. Entrevistas simuladas con evaluación por IA, análisis de CV con puntuación ATS, análisis profundo de experiencia, live coding.",
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Basic", "price": "10", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Premium", "price": "20", "priceCurrency": "EUR" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* GRID BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(80,101,185,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  h1 span {
+    display: block;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .btn-secondary {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text); border-color: var(--muted); }
+
+  /* STATS */
+  .stats {
+    position: relative; z-index: 1;
+    padding: 0 48px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stat {
+    background: var(--bg);
+    padding: 32px;
+  }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SECTION */
+  section {
+    position: relative; z-index: 1;
+    padding: 80px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin-bottom: 56px;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .feature {
+    background: var(--bg);
+    padding: 36px;
+    transition: background 0.2s;
+  }
+
+  .feature:hover { background: var(--bg3); }
+
+  .feature-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .feature h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .plan {
+    background: var(--bg);
+    padding: 36px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .plan:hover { background: var(--bg3); }
+
+  .plan.featured {
+    background: var(--bg3);
+    outline: 1px solid var(--accent);
+    outline-offset: -1px;
+  }
+
+  .plan-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #000;
+    background: var(--accent);
+    padding: 3px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 1px;
+  }
+
+  .plan-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .plan-price {
+    font-family: var(--mono);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .plan-price sup {
+    font-size: 20px;
+    vertical-align: super;
+    color: var(--muted);
+  }
+
+  .plan-stars {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+
+  .plan-period {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    font-family: var(--mono);
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .plan-features li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .plan-features li:last-child { border-bottom: none; }
+
+  .plan-features li::before {
+    content: '—';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .plan-features li.inactive {
+    opacity: 0.35;
+  }
+
+  .plan-features li.inactive::before {
+    color: var(--muted);
+  }
+
+  .plan-cta {
+    display: block;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s;
+    border-radius: 1px;
+  }
+
+  .plan-cta:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .plan.featured .plan-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+  }
+
+  .plan.featured .plan-cta:hover {
+    background: var(--accent2);
+    box-shadow: 0 4px 16px rgba(80,101,185,0.35);
+  }
+
+  /* TRIAL BANNER */
+  .trial-banner {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .trial-banner span {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .trial-banner strong {
+    color: var(--accent);
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* DIVIDER */
+  .divider {
+    position: relative; z-index: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero, section { padding-left: 24px; padding-right: 24px; }
+    .stats { margin-left: 24px; margin-right: 24px; grid-template-columns: 1fr; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 36px; }
+  }
+
+  /* SCROLL ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 28px 36px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-item { padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="#features">Funciones</a></li>
+    <li><a href="#pricing">Precios</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/legal/privacy-policy">Privacidad</a></li>
+    <li><a href="/legal/terms-of-service">Términos</a></li>
+    <li><a href="/ru/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Con IA · Disponible 24/7</div>
+  <h1>
+    Aprueba tu próxima<br>
+    <em>entrevista técnica</em>
+    <span>con feedback de IA</span>
+  </h1>
+  <p class="hero-sub">
+    Bot de Telegram para que profesionales IT preparen entrevistas técnicas — entrevistas simuladas con evaluación por IA, análisis de CV, práctica de live coding y auditoría de LinkedIn.
+  </p>
+  <div class="hero-cta">
+    <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">
+      ▶ Empezar en Telegram
+    </a>
+    <a href="#pricing" class="btn-secondary">Ver precios</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats fade-in">
+  <div class="stat">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Especializaciones</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">€0</span>
+    <span class="stat-label">Empieza gratis</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">7 días</span>
+    <span class="stat-label">Prueba de Basic</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section id="features">
+  <p class="section-label">// Qué incluye</p>
+  <h2>Todo para preparar<br>tu entrevista</h2>
+  <p class="section-sub">De la entrevista simulada al análisis de CV — todo en un solo bot de Telegram, sin instalar aplicaciones.</p>
+
+  <div class="features-grid fade-in">
+    <div class="feature">
+      <span class="feature-icon">🎯</span>
+      <h3>Entrevistas simuladas</h3>
+      <p>Practica preguntas según tu stack y tu nivel. Evaluación instantánea de cada respuesta por IA — como en una entrevista simulada real.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🧠</span>
+      <h3>Análisis profundo de experiencia</h3>
+      <p>La IA examina cada puesto de tu CV como lo hace un entrevistador — preguntas profundas sobre tu experiencia real.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📚</span>
+      <h3>Preparación por temas</h3>
+      <p>Elige un tema — algoritmos, diseño de sistemas, bases de datos — y entrénalo con preguntas dirigidas.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">💻</span>
+      <h3>Live Coding</h3>
+      <p>Resuelve problemas reales con análisis de la IA, pistas sobre edge cases y preguntas de aclaración.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📄</span>
+      <h3>Análisis de CV</h3>
+      <p>Sube tu CV una vez. Puntuación ATS, detección de errores y datos estructurados para todos los módulos.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">💼</span>
+      <h3>Auditoría de LinkedIn</h3>
+      <p>Análisis del perfil de LinkedIn, seguimiento de métricas y recomendaciones concretas. Solo Premium.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🌐</span>
+      <h3>Entrevista en inglés</h3>
+      <p>Cambia todo el proceso al inglés — preguntas, evaluación y feedback. Solo Premium.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🎙️</span>
+      <h3>Entrada por voz</h3>
+      <p>Responde a las preguntas por voz. Reconocimiento de voz con evaluación por IA. Solo Premium.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <p class="section-label">// Precios</p>
+  <h2>Precios simples<br>y transparentes</h2>
+  <p class="section-sub">Empieza gratis. Sube de nivel cuando estés listo. Cancela cuando quieras.</p>
+
+  <div class="trial-banner fade-in">
+    <span>🎁 <strong>7 días gratis</strong> en el plan Basic — no hace falta pagar para empezar. &nbsp;|&nbsp; 💳 Tarjeta vía <a href="https://store.dodopayments.com/interviewcoach" style="color:var(--accent);text-decoration:none">Dodo Payments</a> &nbsp;·&nbsp; ⭐ o con Telegram Stars</span>
+  </div>
+
+  <div class="pricing-grid fade-in">
+
+    <div class="plan">
+      <p class="plan-name">Free</p>
+      <div class="plan-price">€0</div>
+      <p class="plan-period">para siempre</p>
+      <ul class="plan-features">
+        <li>3 sesiones al mes</li>
+        <li>1 análisis de CV al día</li>
+        <li>Interfaz RU · EN · ES</li>
+        <li class="inactive">Entrevista en inglés</li>
+        <li class="inactive">Entrada por voz</li>
+        <li class="inactive">Auditoría de LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Empezar gratis</a>
+    </div>
+
+    <div class="plan">
+      <p class="plan-name">Basic</p>
+      <div class="plan-price">€10<span class="plan-stars">650 ⭐</span></div>
+      <p class="plan-period">al mes · 7 días gratis</p>
+      <ul class="plan-features">
+        <li>20 sesiones al mes</li>
+        <li>3 análisis de CV al día</li>
+        <li>Interfaz RU · EN · ES</li>
+        <li class="inactive">Entrevista en inglés</li>
+        <li class="inactive">Entrada por voz</li>
+        <li class="inactive">Auditoría de LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Probar gratis</a>
+    </div>
+
+    <div class="plan featured">
+      <span class="plan-badge">Popular</span>
+      <p class="plan-name">Premium</p>
+      <div class="plan-price">€20<span class="plan-stars">1250 ⭐</span></div>
+      <p class="plan-period">al mes</p>
+      <ul class="plan-features">
+        <li>Sesiones ilimitadas</li>
+        <li>5 análisis de CV al día</li>
+        <li>Interfaz RU · EN · ES</li>
+        <li>Entrevista en inglés</li>
+        <li>Entrada por voz (STT)</li>
+        <li>Auditoría de LinkedIn</li>
+      </ul>
+      <a href="https://t.me/ITInterviewCoach_Bot" class="plan-cta">Obtener Premium</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <p class="section-label">// Preguntas y respuestas</p>
+  <h2>Preguntas<br>frecuentes</h2>
+  <p class="section-sub">Todo lo que necesitas saber antes de empezar a preparar tu entrevista técnica.</p>
+
+  <div class="faq-list fade-in">
+
+    <div class="faq-item">
+      <p class="faq-q">¿Qué es una entrevista simulada y para qué sirve?</p>
+      <p class="faq-a">Una entrevista simulada es un simulador de una entrevista técnica real. Respondes a las preguntas y la IA evalúa cada respuesta: qué está bien, qué es impreciso, qué se te escapó. Así detectas tus puntos débiles antes de que aparezcan en la entrevista de verdad. <a href="/es/mock-interview/" style="color:var(--accent);">Análisis detallado del formato — en un artículo aparte</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Para qué especializaciones sirve el bot?</p>
+      <p class="faq-a">IT Interview Coach cubre tres áreas: desarrollo Backend, ingeniería QA y ML/Data Science. Las preguntas se ajustan a tu nivel — Junior, Middle o Senior — y se adaptan al contenido de tu CV.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿En qué se diferencia prepararse con el bot de hacerlo con cursos y libros?</p>
+      <p class="faq-a">Los cursos dan conocimiento; el bot comprueba si sabes explicarlo bajo presión. La diferencia clave es la interactividad: la IA hace preguntas de aclaración, analiza tu respuesta concreta e indica qué necesitas mejorar. Nada de teoría sin práctica.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Sirve para preparar entrevistas en Mercado Libre, Globant, BigTech o FAANG?</p>
+      <p class="faq-a">Sí. El bot cubre los temas típicos de las entrevistas técnicas en grandes empresas: algoritmos, bases de datos, concurrencia, testing, sistemas de ML.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Cómo funciona el análisis de CV?</p>
+      <p class="faq-a">Subes un PDF o DOCX y el bot te da una puntuación ATS de 0 a 100, una lista de problemas concretos (falta de contacto, formulaciones débiles, páginas de más) y recomendaciones. Tras el análisis puedes pasar al modo de revisión conversacional del CV, donde la IA te ayuda a reformular cada punto de tu experiencia.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Cuánto dura una sesión?</p>
+      <p class="faq-a">Una sesión de práctica estándar dura 15–30 minutos. El live coding, de 20 minutos a una hora. El análisis profundo de un puesto, unos 10–15 minutos. Todo funciona en Telegram — puedes entrenar en los descansos, en el transporte, desde el móvil.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Cómo prepararse para una entrevista de Backend con Python?</p>
+      <p class="faq-a">En el modo «Preparación por temas» eliges Backend y el tema que quieras: bases de datos, concurrencia, REST API, seguridad, observabilidad. La IA genera preguntas según tu nivel y analiza cada respuesta — explica qué se te escapó y cómo responder con más precisión. Si subes tu CV, el bot adapta las preguntas a tu stack real. <a href="/es/backend-interview/" style="color:var(--accent);">Guía completa de la entrevista de Backend</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Qué preguntan en una entrevista de ML y cómo prepararse?</p>
+      <p class="faq-a">En la entrevista de ML evalúan matemáticas (álgebra lineal, estadística, probabilidad), algoritmos clásicos de ML, comprensión de redes neuronales, trabajo con datos y visión de producto. El bot cubre todos estos temas, incluidos LLM y NLP, series temporales y sistemas de ML en producción. Las preguntas se adaptan al nivel Middle o Senior. <a href="/es/ml-interview/" style="color:var(--accent);">Guía completa de la entrevista de ML</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Qué preguntan en una entrevista de ingeniero QA?</p>
+      <p class="faq-a">En la entrevista de QA son típicas las preguntas sobre diseño de pruebas, tipos de testing, gestión de defectos, testing de API y automatización. El bot cubre todas estas áreas, incluidos el testing mobile, el contract testing, el testing de seguridad y el trabajo con datos de prueba. Las preguntas se ajustan al nivel y al stack de tu CV. <a href="/es/qa-interview/" style="color:var(--accent);">Guía completa de la entrevista de QA</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Cómo resolver ejercicios de live coding en una entrevista?</p>
+      <p class="faq-a">El live coding en el bot funciona en cuatro fases: primero aclaras el enunciado (como en una entrevista real), luego escribes la solución, recibes un análisis con los edge cases y después discutes el enfoque con la IA. Al terminar, un debrief: qué salió bien, dónde están los riesgos, qué entrenar. Es exactamente el formato que usan las grandes empresas. <a href="/es/live-coding/" style="color:var(--accent);">Análisis completo del formato live coding</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Qué es un ATS y por qué mi CV no pasa el filtro automático?</p>
+      <p class="faq-a">Un ATS (Applicant Tracking System) es el sistema que clasifica los CV antes de que los vea un reclutador. Causas típicas de una puntuación baja: encabezados de sección no estándar, maquetación a varias columnas, falta de datos de contacto, puestos genéricos, clichés en el texto. El bot revisa el CV con 9 detectores y devuelve una lista concreta de problemas con una puntuación de 0 a 100. <a href="/es/resume-analysis/" style="color:var(--accent);">Análisis de las 9 comprobaciones — en un artículo aparte</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Qué es el «análisis profundo de experiencia» y para qué sirve?</p>
+      <p class="faq-a">El análisis profundo de experiencia es un modo en el que la IA hace preguntas exigentes sobre cada puesto de tu CV: qué hiciste exactamente, qué resultado obtuviste, cómo tomaste las decisiones, a qué dificultades te enfrentaste. Es entrenar la entrevista conductual sobre tu experiencia real — la parte más difícil, para la que la mayoría de candidatos no se prepara. <a href="/es/experience-deep-dive/" style="color:var(--accent);">Más sobre el formato</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Se puede practicar en inglés?</p>
+      <p class="faq-a">Sí, en el plan Premium puedes cambiar todo el proceso al inglés — preguntas, evaluación y feedback. Es útil si te preparas para una entrevista en una empresa internacional o quieres practicar inglés técnico. En Free y Basic el proceso está disponible en español y ruso.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Cómo funciona la entrada por voz?</p>
+      <p class="faq-a">En el plan Premium puedes responder a las preguntas por voz directamente en Telegram. El bot transcribe la voz y envía el texto a la IA para su evaluación — así entrenas no solo el conocimiento, sino también la capacidad de formular respuestas en voz alta, como en una entrevista real. Disponible en los modos de práctica de entrevista, preparación por temas y análisis profundo de experiencia.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">¿Para qué sirve la auditoría de LinkedIn y qué revisa?</p>
+      <p class="faq-a">LinkedIn es el canal principal de contactos entrantes de reclutadores. La auditoría del bot analiza la estructura del perfil, el titular, la experiencia y las aptitudes, hace seguimiento de métricas (SSI, visitas al perfil, apariciones en búsquedas) y da recomendaciones concretas. Disponible en Premium. También incluye una revisión del tono de tus publicaciones — útil si tienes actividad en la plataforma.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es una entrevista simulada y para qué sirve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una entrevista simulada es un simulador de una entrevista técnica real. La IA evalúa cada respuesta: qué está bien, qué es impreciso, qué se te escapó. Así detectas tus puntos débiles antes de la entrevista real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué especializaciones sirve IT Interview Coach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El bot cubre tres áreas: desarrollo Backend, ingeniería QA y ML/Data Science. Las preguntas se ajustan al nivel — Junior, Middle o Senior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia prepararse con el bot de hacerlo con cursos y libros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los cursos dan conocimiento; el bot comprueba si sabes explicarlo. La IA hace preguntas de aclaración, analiza tu respuesta concreta e indica qué necesitas mejorar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve para preparar entrevistas en Mercado Libre, Globant, BigTech o FAANG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El bot cubre los temas típicos de las entrevistas técnicas en grandes empresas: algoritmos, bases de datos, concurrencia, testing, sistemas de ML."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona el análisis de CV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subes un PDF o DOCX y el bot te da una puntuación ATS de 0 a 100, una lista de problemas concretos y recomendaciones. Después puedes pasar a la revisión conversacional del CV con la IA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura una sesión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una sesión de práctica estándar dura 15–30 minutos. El live coding, de 20 minutos a una hora. El análisis profundo de un puesto, unos 10–15 minutos. Todo en Telegram, desde el móvil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo prepararse para una entrevista de Backend con Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En el modo «Preparación por temas» eliges Backend y el tema: bases de datos, concurrencia, REST API, seguridad. La IA genera preguntas según tu nivel y las adapta al stack de tu CV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué preguntan en una entrevista de ML y cómo prepararse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la entrevista de ML evalúan matemáticas, algoritmos clásicos de ML, redes neuronales y trabajo con datos. El bot cubre todos estos temas, incluidos LLM, NLP y series temporales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué preguntan en una entrevista de ingeniero QA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la entrevista de QA son típicas las preguntas sobre diseño de pruebas, testing de API y automatización. El bot cubre testing mobile, contract testing, testing de seguridad y datos de prueba."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo resolver ejercicios de live coding en una entrevista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El live coding en el bot funciona en cuatro fases: aclarar el enunciado, resolver, analizar los edge cases y discutir el enfoque con la IA. Al final, un debrief con riesgos y recomendaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un ATS y por qué mi CV no pasa el filtro automático?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un ATS es el sistema que descarta CV antes de llegar al reclutador. Problemas típicos: encabezados no estándar, maquetación a varias columnas, falta de contacto, clichés. El bot revisa con 9 detectores y da una puntuación de 0 a 100."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el «análisis profundo de experiencia» y para qué sirve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un modo donde la IA hace preguntas exigentes sobre cada puesto del CV: qué hiciste, qué resultado, cómo tomaste las decisiones. Entrena la entrevista conductual sobre tu experiencia real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede practicar en inglés?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, en el plan Premium puedes cambiar todo el proceso al inglés — preguntas, evaluación y feedback. Útil al preparar una entrevista en una empresa internacional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la entrada por voz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En Premium puedes responder por voz en Telegram. El bot transcribe la voz y envía el texto a la IA. Disponible en los modos de práctica, preparación por temas y análisis profundo de experiencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve la auditoría de LinkedIn y qué revisa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La auditoría analiza el perfil de LinkedIn, hace seguimiento de métricas (SSI, visitas, apariciones en búsquedas) y da recomendaciones. Incluye revisión del tono de las publicaciones. Disponible en Premium."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
