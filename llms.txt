@@ -36,6 +36,7 @@ Russian:
 - [Подготовка к собеседованию ML](https://itinterviewcoach.com/ru/ml-interview/) — statistics, classical ML, neural networks, LLM/NLP; Middle and Senior questions
 - [Live coding на собеседовании](https://itinterviewcoach.com/ru/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
 - [Прожарка опыта: поведенческое интервью](https://itinterviewcoach.com/ru/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
+- [Поведенческое интервью: метод STAR](https://itinterviewcoach.com/ru/behavioral-interview/) — what a behavioural interview is, what it evaluates, the STAR framework with sample answers, question categories and common mistakes
 
 Spanish:
 
@@ -46,6 +47,7 @@ Spanish:
 - [Preparación para la entrevista de ML](https://itinterviewcoach.com/es/ml-interview/) — statistics, classical ML, neural networks, LLM/NLP; Middle and Senior questions
 - [Live coding en la entrevista](https://itinterviewcoach.com/es/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
 - [Análisis profundo de experiencia: entrevista conductual](https://itinterviewcoach.com/es/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
+- [Entrevista conductual: método STAR](https://itinterviewcoach.com/es/behavioral-interview/) — what a behavioural interview is, what it evaluates, the STAR framework with sample answers, question categories and common mistakes
 
 ## Pricing
 

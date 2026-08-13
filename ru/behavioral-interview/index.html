@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поведенческое интервью: что это, как проходит и метод STAR | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Поведенческое интервью проверяет soft skills на примерах из твоего опыта. Что это, как проходит, метод STAR с примерами ответов и разбор типичных вопросов и ошибок.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/behavioral-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/behavioral-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/behavioral-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/behavioral-interview/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="поведенческое интервью, метод STAR, поведенческие вопросы на собеседовании, soft skills интервью, behavioral interview, примеры ответов STAR, вопросы про провалы, интервью по компетенциям">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/behavioral-interview/">
+<meta property="og:title" content="Поведенческое интервью: что это, как проходит и метод STAR">
+<meta property="og:description" content="Что такое поведенческое интервью, что на нём оценивают, метод STAR с примерами ответов, категории вопросов и типичные ошибки кандидатов.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Поведенческое интервью: что это, как проходит и метод STAR",
+  "description": "Что такое поведенческое интервью, что на нём оценивают, как работает метод STAR, категории вопросов и типичные ошибки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/behavioral-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style></head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/es/behavioral-interview/" style="color:var(--muted);font-size:13px;">ES</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / Поведенческое интервью</div>
+  <h1>Поведенческое интервью: <em>что это, как проходит и метод STAR</em></h1>
+  <p class="article-lead">Технические навыки можно проверить задачей. Но нанимают не только за них — на поведенческом интервью компания смотрит, как ты действуешь в реальных ситуациях: в конфликте, под дедлайном, после провала. Разбираем формат, метод STAR и вопросы, к которым стоит подготовиться заранее.</p>
+</div>
+
+<article>
+
+<h2>Что такое поведенческое интервью</h2>
+
+<p><strong>Поведенческое интервью</strong> (behavioral interview) — формат собеседования, на котором кандидата просят рассказать о конкретных ситуациях из прошлого опыта, чтобы оценить его soft skills: коммуникацию, работу в команде, реакцию на конфликты и провалы, ответственность и способность принимать решения.</p>
+
+<p>Ключевая идея формата — <strong>прошлое поведение предсказывает будущее</strong>. Вместо гипотетического «как бы ты поступил, если…» интервьюер спрашивает «расскажи о ситуации, когда ты…». Реальная история проверяется уточняющими вопросами, а выдумать её на ходу под перекрёстным допросом почти невозможно.</p>
+
+<p>Поведенческую часть проводят почти во всех крупных компаниях — от неё финальное решение зависит не меньше, чем от технической секции. Кандидат с сильным техническим бэкграундом регулярно получает отказ именно здесь: он не готовился, считая, что «о своём опыте расскажу и так».</p>
+
+<h2>Что оценивает интервьюер</h2>
+
+<p>За рассказами об опыте интервьюер считывает конкретные сигналы:</p>
+
+<ul>
+  <li><strong>Личный вклад.</strong> Что сделал именно ты, а не абстрактная команда. Формулировки в «мы» без выделения своей роли снижают оценку.</li>
+  <li><strong>Зрелость и рефлексия.</strong> Способность признавать ошибки, извлекать уроки, честно говорить о провалах без перекладывания вины.</li>
+  <li><strong>Коммуникация и работа с людьми.</strong> Как ты ведёшь себя в разногласиях, как даёшь и принимаешь обратную связь, как договариваешься.</li>
+  <li><strong>Принятие решений.</strong> Как расставляешь приоритеты при нехватке времени и ресурсов, как взвешиваешь компромиссы.</li>
+  <li><strong>Соответствие ценностям компании.</strong> В части компаний поведенческие вопросы напрямую привязаны к внутренним принципам, и ответы оценивают по ним.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Важно:</strong> на поведенческом интервью нет «правильного» ответа в том смысле, в каком он есть у технического вопроса. Оценивают не сам факт (был конфликт или нет), а как ты в нём действовал и что из него вынес.</p>
+</div>
+
+<h2>Как проходит поведенческое интервью</h2>
+
+<p>Формат варьируется, но структура обычно такая:</p>
+
+<ul>
+  <li><strong>Открывающий вопрос.</strong> «Расскажи о проекте, которым гордишься» или «Опиши сложную ситуацию в команде». Широкий заход, от которого интервьюер отталкивается.</li>
+  <li><strong>Уточняющие вопросы (follow-up).</strong> Главная часть. «А какая роль была у тебя?», «Почему выбрал такой путь?», «Что бы сделал иначе?». Здесь проверяется, реальная ли история и насколько глубоко ты в ней участвовал.</li>
+  <li><strong>Проверка на противоречия.</strong> Интервьюер сверяет рассказ с резюме и с ранее сказанным. Расхождения подрывают доверие.</li>
+</ul>
+
+<p>Один вопрос обычно разворачивается в 5–10-минутный диалог. За стандартную секцию (45–60 минут) успевают разобрать 4–6 ситуаций.</p>
+
+<h2>Метод STAR: структура сильного ответа</h2>
+
+<p><strong>STAR</strong> — фреймворк, который превращает сумбурный рассказ в структурированный ответ. Аббревиатура из четырёх шагов:</p>
+
+<ol class="steps-list">
+  <li><strong>S — Situation (ситуация).</strong> Кратко: контекст, проект, команда, твоя роль. 1–2 предложения — только чтобы слушатель понял обстановку. Здесь чаще всего перебарщивают, раздувая вступление.</li>
+  <li><strong>T — Task (задача).</strong> Что конкретно нужно было сделать и почему это было нетривиально. В чём заключался вызов: сроки, неопределённость, конфликт интересов.</li>
+  <li><strong>A — Action (действие).</strong> Ядро ответа, около 60% времени. Что сделал именно ты: какие решения принял, какие альтернативы рассмотрел, как действовал. Говори «я», а не «мы».</li>
+  <li><strong>R — Result (результат).</strong> Измеримый итог: цифры, эффект, что изменилось. Плюс короткий вывод — чему научился. Ответ без результата звучит незавершённым.</li>
+</ol>
+
+<h3>Пример: слабый и сильный ответ</h3>
+
+<p>Вопрос: «Расскажи о ситуации, когда проект был под угрозой срыва».</p>
+
+<p><strong>Слабо:</strong> «У нас был проект с горящими сроками, мы напряглись и всё успели». — Нет контекста, нет твоей роли, нет результата в цифрах. Такой ответ ничего не говорит о кандидате.</p>
+
+<p><strong>По STAR:</strong> «Мы запускали платёжный сервис, до релиза оставалась неделя, и выяснилось, что интеграция с провайдером не держит нагрузку <em>(S)</em>. Мне как ответственному за бэкенд нужно было решить: переносить релиз или искать обход за 5 дней <em>(T)</em>. Я профилировал узкое место, нашёл N+1 в обработке вебхуков, переписал батчингом и добавил очередь на пиковые всплески; параллельно согласовал с провайдером временный лимит <em>(A)</em>. Релиз вышел в срок, сервис держал 3× плановой нагрузки, а найденный паттерн я вынес в чек-лист команды <em>(R)</em>».</p>
+
+<h2>Категории поведенческих вопросов</h2>
+
+<p>Вопросы группируются по проверяемым компетенциям. Стоит заранее иметь по 1–2 истории на каждую:</p>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Достижения и результаты</h4>
+    <p>«Проект, которым гордишься», «Твой самый значимый вклад».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Конфликты и разногласия</h4>
+    <p>«Спор с коллегой или руководителем», «Несогласие с решением команды».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Провалы и ошибки</h4>
+    <p>«Твоя ошибка и её последствия», «Что бы сделал иначе».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Работа под давлением</h4>
+    <p>«Жёсткий дедлайн», «Несколько приоритетов одновременно».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Лидерство и влияние</h4>
+    <p>«Как убедил команду», «Как повёл за собой без формальной власти».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Обратная связь и рост</h4>
+    <p>«Как принял критику», «Как дал сложный фидбек».</p>
+  </div>
+</div>
+
+<h3>Примеры вопросов и что за ними проверяют</h3>
+
+<div class="example-q">
+  <span class="q-label">Конфликты</span>
+  Расскажи о ситуации, когда ты не согласился с решением команды. Как поступил?
+  <span class="q-hint">умение отстаивать позицию, не разрушая отношения; принцип disagree &amp; commit.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Провалы</span>
+  Опиши свой самый серьёзный провал и что ты из него вынес.
+  <span class="q-hint">зрелость и рефлексия; способность признать ошибку без перекладывания вины.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Давление</span>
+  Ситуация, когда пришлось уложиться в жёсткий срок с ограниченными ресурсами.
+  <span class="q-hint">приоритизация, компромиссы, действия под стрессом.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Лидерство</span>
+  Как ты убедил команду пойти твоим путём, не имея формальной власти?
+  <span class="q-hint">влияние через аргументы, а не через должность.</span>
+</div>
+
+<h2>Типичные ошибки кандидатов</h2>
+
+<ul>
+  <li><strong>«Мы» вместо «я».</strong> Интервьюер не может понять твой личный вклад. «Мы внедрили» — а ты что делал?</li>
+  <li><strong>Гипотетический ответ вместо реальной истории.</strong> «Я бы сделал…» вместо «я сделал…». Формат требует конкретного случая из прошлого.</li>
+  <li><strong>Раздутый контекст, скомканное действие.</strong> Половина ответа уходит на предысторию, а на самое важное — твои действия — не остаётся времени.</li>
+  <li><strong>Нет результата или цифр.</strong> История без итога выглядит незавершённой и не запоминается.</li>
+  <li><strong>«Провалов не было».</strong> Красный флаг: либо нет рефлексии, либо нет опыта сложных задач.</li>
+  <li><strong>Негатив о бывших.</strong> Критика коллег и работодателей читается как сигнал, что так же ты будешь говорить и о них.</li>
+  <li><strong>История не бьётся с резюме.</strong> Расхождение между рассказом и CV подрывает доверие ко всему резюме сразу.</li>
+</ul>
+
+<h2>Как подготовиться</h2>
+
+<ol>
+  <li><strong>Собери банк историй.</strong> 6–8 ситуаций, покрывающих категории выше. Одна история часто закрывает несколько компетенций.</li>
+  <li><strong>Упакуй каждую в STAR письменно.</strong> Особенно Action и Result — именно там теряются баллы.</li>
+  <li><strong>Проговори вслух.</strong> Формулировать под давлением сложнее, чем на бумаге. <a href="/ru/experience-deep-dive/" style="color:var(--accent);">Прожарка опыта</a> задаёт follow-up по твоему реальному CV — это ближе всего к настоящему поведенческому интервью.</li>
+  <li><strong>Сверь истории с резюме</strong>, чтобы не было расхождений.</li>
+</ol>
+
+<p>Поведенческая часть почти всегда идёт в связке с технической. Тренировать стоит обе: <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседование</a> закрывает техническую, прожарка — поведенческую.</p>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Чем поведенческое интервью отличается от технического?</p>
+    <p class="faq-a">Техническое проверяет знания и навыки — у вопросов есть правильные ответы. Поведенческое проверяет soft skills на примерах из опыта: как ты действуешь в конфликте, под давлением, после ошибки. Оценивают не факт, а твоё поведение и выводы.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что такое метод STAR простыми словами?</p>
+    <p class="faq-a">STAR — шаблон ответа из четырёх частей: Situation (контекст), Task (задача), Action (что сделал ты), Result (результат). Он помогает рассказать историю структурно и не растеряться: большая часть времени — на Action и Result.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Сколько историй нужно подготовить?</p>
+    <p class="faq-a">Оптимально 6–8 историй, которые покрывают основные категории: достижение, конфликт, провал, работа под давлением, лидерство. Одна сильная история обычно подходит под несколько вопросов сразу.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Что отвечать на вопрос о самом большом провале?</p>
+    <p class="faq-a">Выбери реальную историю, где была твоя ответственность, и построй ответ по STAR с акцентом на выводы: что пошло не так, какова была твоя роль, что ты изменил после. Главное — показать рост, а не просто пересказать неудачу.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Задают ли поведенческие вопросы джуниорам?</p>
+    <p class="faq-a">Да, но с поправкой на опыт. От джуниора не ждут историй про лидерство над командой, но вполне могут спросить про учебный проект, конфликт в команде на стажировке или ситуацию, когда пришлось быстро разобраться в новом.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Как готовиться, если мало опыта?</p>
+    <p class="faq-a">Сгодятся учебные и пет-проекты, стажировки, командная работа в учёбе. Важна не масштабность, а структура: реальная ситуация, твои действия, результат и вывод. Прогони их через прожарку, чтобы привыкнуть к follow-up.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/experience-deep-dive/">
+    <span class="rc-label">Прожарка опыта</span>
+    <span class="rc-title">Тренировка поведенческого интервью по твоему CV</span>
+  </a>
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/resume-analysis/">
+    <span class="rc-label">Анализ резюме</span>
+    <span class="rc-title">ATS-оценка резюме: как пройти скрининг</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Прогони свои истории до реального интервью</h3>
+  <p>Загрузи резюме, выбери позицию — и Прожарка опыта задаст те самые follow-up вопросы по твоему опыту, что и на настоящем поведенческом интервью.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать в Telegram</a>
+</div>
+
+</article>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чем поведенческое интервью отличается от технического?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Техническое проверяет знания и навыки — у вопросов есть правильные ответы. Поведенческое проверяет soft skills на примерах из опыта: как ты действуешь в конфликте, под давлением, после ошибки." }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое метод STAR простыми словами?",
+      "acceptedAnswer": { "@type": "Answer", "text": "STAR — шаблон ответа из четырёх частей: Situation (контекст), Task (задача), Action (что сделал ты), Result (результат). Большая часть ответа — на Action и Result." }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько историй нужно подготовить?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Оптимально 6–8 историй, покрывающих основные категории: достижение, конфликт, провал, работа под давлением, лидерство. Одна история часто подходит под несколько вопросов." }
+    },
+    {
+      "@type": "Question",
+      "name": "Что отвечать на вопрос о самом большом провале?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Выбери реальную историю, где была твоя ответственность, и построй ответ по STAR: что пошло не так, какова была твоя роль, что ты изменил после. Главное — показать рост." }
+    },
+    {
+      "@type": "Question",
+      "name": "Задают ли поведенческие вопросы джуниорам?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, но с поправкой на опыт. От джуниора не ждут историй про лидерство, но могут спросить про учебный проект, конфликт на стажировке или быстрое освоение нового." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как готовиться, если мало опыта?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Сгодятся учебные и пет-проекты, стажировки, командная работа в учёбе. Важна не масштабность, а структура: реальная ситуация, твои действия, результат и вывод." }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

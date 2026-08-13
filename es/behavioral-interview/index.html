@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrevista conductual: qué es, cómo transcurre y el método STAR | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="La entrevista conductual evalúa tus soft skills con ejemplos de tu experiencia. Qué es, cómo transcurre, el método STAR con ejemplos de respuestas y un análisis de las preguntas y errores típicos.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/behavioral-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/behavioral-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/behavioral-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/behavioral-interview/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="entrevista conductual, método STAR, preguntas conductuales, soft skills entrevista, behavioral interview, ejemplos de respuestas STAR, preguntas sobre fracasos, entrevista por competencias">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/behavioral-interview/">
+<meta property="og:title" content="Entrevista conductual: qué es, cómo transcurre y el método STAR">
+<meta property="og:description" content="Qué es la entrevista conductual, qué evalúa, el método STAR con ejemplos de respuestas, categorías de preguntas y errores típicos de los candidatos.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Entrevista conductual: qué es, cómo transcurre y el método STAR",
+  "description": "Qué es la entrevista conductual, qué evalúa, cómo funciona el método STAR, categorías de preguntas y errores típicos de los candidatos.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/behavioral-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .steps-list {
+    counter-reset: step;
+    list-style: none;
+    margin-left: 0 !important;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 20px 24px 20px 64px;
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+
+  .steps-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style></head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/behavioral-interview/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Entrevista conductual</div>
+  <h1>Entrevista conductual: <em>qué es, cómo transcurre y el método STAR</em></h1>
+  <p class="article-lead">Las habilidades técnicas se pueden comprobar con un problema. Pero no se contrata solo por ellas: en la entrevista conductual la empresa observa cómo actúas en situaciones reales — en un conflicto, bajo un plazo ajustado, tras un fracaso. Analizamos el formato, el método STAR y las preguntas para las que conviene prepararse de antemano.</p>
+</div>
+
+<article>
+
+<h2>Qué es la entrevista conductual</h2>
+
+<p>La <strong>entrevista conductual</strong> (behavioral interview) es un formato en el que se pide al candidato que cuente situaciones concretas de su experiencia pasada, para evaluar sus soft skills: comunicación, trabajo en equipo, reacción ante conflictos y fracasos, responsabilidad y capacidad de tomar decisiones.</p>
+
+<p>La idea central del formato es que <strong>el comportamiento pasado predice el futuro</strong>. En lugar del hipotético «cómo actuarías si…», el entrevistador pregunta «cuéntame una situación en la que tú…». Una historia real se comprueba con preguntas de seguimiento, y es casi imposible inventarla sobre la marcha bajo ese interrogatorio.</p>
+
+<p>La parte conductual se realiza en casi todas las grandes empresas — de ella depende la decisión final tanto como de la sección técnica. Un candidato con un sólido bagaje técnico recibe rechazos precisamente aquí: no se preparó, pensando que «sobre mi experiencia ya sabré hablar sin más».</p>
+
+<h2>Qué evalúa el entrevistador</h2>
+
+<p>Detrás de los relatos sobre la experiencia, el entrevistador lee señales concretas:</p>
+
+<ul>
+  <li><strong>Aportación personal.</strong> Qué hiciste tú, y no un equipo abstracto. Las formulaciones en «nosotros» sin destacar tu papel bajan la evaluación.</li>
+  <li><strong>Madurez y reflexión.</strong> Capacidad de reconocer errores, extraer lecciones y hablar de los fracasos con honestidad, sin trasladar la culpa.</li>
+  <li><strong>Comunicación y trato con las personas.</strong> Cómo te comportas en los desacuerdos, cómo das y recibes feedback, cómo negocias.</li>
+  <li><strong>Toma de decisiones.</strong> Cómo priorizas cuando falta tiempo y recursos, cómo sopesas los compromisos.</li>
+  <li><strong>Encaje con los valores de la empresa.</strong> En algunas empresas las preguntas conductuales están directamente ligadas a sus principios internos, y las respuestas se evalúan según ellos.</li>
+</ul>
+
+<div class="info-block">
+  <p><strong>Importante:</strong> en la entrevista conductual no hay una respuesta «correcta» en el sentido en que la tiene una pregunta técnica. No se evalúa el hecho en sí (si hubo un conflicto o no), sino cómo actuaste en él y qué aprendiste.</p>
+</div>
+
+<h2>Cómo transcurre la entrevista conductual</h2>
+
+<p>El formato varía, pero la estructura suele ser esta:</p>
+
+<ul>
+  <li><strong>Pregunta de apertura.</strong> «Cuéntame un proyecto del que estés orgulloso» o «Describe una situación difícil en el equipo». Un planteamiento amplio del que parte el entrevistador.</li>
+  <li><strong>Preguntas de seguimiento (follow-up).</strong> La parte principal. «¿Y cuál fue tu papel?», «¿Por qué elegiste ese camino?», «¿Qué harías distinto?». Aquí se comprueba si la historia es real y cuán profundamente participaste en ella.</li>
+  <li><strong>Comprobación de contradicciones.</strong> El entrevistador contrasta el relato con el CV y con lo dicho antes. Las discrepancias socavan la confianza.</li>
+</ul>
+
+<p>Una sola pregunta suele convertirse en un diálogo de 5–10 minutos. En una sección estándar (45–60 minutos) da tiempo a analizar 4–6 situaciones.</p>
+
+<h2>Método STAR: la estructura de una respuesta fuerte</h2>
+
+<p><strong>STAR</strong> es un marco que convierte un relato desordenado en una respuesta estructurada. Es un acrónimo de cuatro pasos:</p>
+
+<ol class="steps-list">
+  <li><strong>S — Situation (situación).</strong> Breve: contexto, proyecto, equipo, tu papel. 1–2 frases — solo para que quien escucha entienda el escenario. Aquí es donde más se suelen exceder, inflando la introducción.</li>
+  <li><strong>T — Task (tarea).</strong> Qué había que hacer en concreto y por qué no era trivial. En qué consistía el reto: plazos, incertidumbre, conflicto de intereses.</li>
+  <li><strong>A — Action (acción).</strong> El núcleo de la respuesta, alrededor del 60% del tiempo. Qué hiciste tú: qué decisiones tomaste, qué alternativas consideraste, cómo actuaste. Di «yo», no «nosotros».</li>
+  <li><strong>R — Result (resultado).</strong> El resultado medible: cifras, efecto, qué cambió. Más una conclusión breve: qué aprendiste. Una respuesta sin resultado suena inconclusa.</li>
+</ol>
+
+<h3>Ejemplo: respuesta débil y respuesta fuerte</h3>
+
+<p>Pregunta: «Cuéntame una situación en la que el proyecto estuvo a punto de descarrilar».</p>
+
+<p><strong>Débil:</strong> «Teníamos un proyecto con plazos muy ajustados, nos esforzamos y lo sacamos todo a tiempo». — Sin contexto, sin tu papel, sin resultado en cifras. Una respuesta así no dice nada del candidato.</p>
+
+<p><strong>Con STAR:</strong> «Estábamos lanzando un servicio de pagos, faltaba una semana para el release y descubrimos que la integración con el proveedor no aguantaba la carga <em>(S)</em>. Como responsable del backend, tenía que decidir: aplazar el release o buscar una solución en 5 días <em>(T)</em>. Perfilé el cuello de botella, encontré un N+1 en el procesamiento de los webhooks, lo reescribí con batching y añadí una cola para los picos; en paralelo acordé con el proveedor un límite temporal <em>(A)</em>. El release salió a tiempo, el servicio aguantó 3× la carga prevista y el patrón que encontré lo llevé al checklist del equipo <em>(R)</em>».</p>
+
+<h2>Categorías de preguntas conductuales</h2>
+
+<p>Las preguntas se agrupan por las competencias que comprueban. Conviene tener de antemano 1–2 historias para cada una:</p>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Logros y resultados</h4>
+    <p>«Un proyecto del que estés orgulloso», «Tu aportación más significativa».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Conflictos y desacuerdos</h4>
+    <p>«Una discusión con un compañero o con tu responsable», «Desacuerdo con una decisión del equipo».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Fracasos y errores</h4>
+    <p>«Tu error y sus consecuencias», «Qué harías distinto».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Trabajo bajo presión</h4>
+    <p>«Un plazo muy ajustado», «Varias prioridades a la vez».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Liderazgo e influencia</h4>
+    <p>«Cómo convenciste al equipo», «Cómo lideraste sin autoridad formal».</p>
+  </div>
+  <div class="topic-card">
+    <h4>Feedback y crecimiento</h4>
+    <p>«Cómo encajaste una crítica», «Cómo diste un feedback difícil».</p>
+  </div>
+</div>
+
+<h3>Ejemplos de preguntas y qué evalúan</h3>
+
+<div class="example-q">
+  <span class="q-label">Conflictos</span>
+  Cuéntame una situación en la que no estuviste de acuerdo con una decisión del equipo. ¿Cómo actuaste?
+  <span class="q-hint">saber defender tu postura sin romper la relación; el principio disagree &amp; commit.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Fracasos</span>
+  Describe tu fracaso más serio y qué aprendiste de él.
+  <span class="q-hint">madurez y reflexión; capacidad de reconocer el error sin trasladar la culpa.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Presión</span>
+  Una situación en la que tuviste que cumplir un plazo ajustado con recursos limitados.
+  <span class="q-hint">priorización, compromisos, actuación bajo estrés.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Liderazgo</span>
+  ¿Cómo convenciste al equipo de seguir tu camino sin tener autoridad formal?
+  <span class="q-hint">influencia por argumentos, no por el cargo.</span>
+</div>
+
+<h2>Errores típicos de los candidatos</h2>
+
+<ul>
+  <li><strong>«Nosotros» en lugar de «yo».</strong> El entrevistador no logra ver tu aportación personal. «Implementamos» — ¿y tú qué hiciste?</li>
+  <li><strong>Respuesta hipotética en lugar de una historia real.</strong> «Yo haría…» en vez de «yo hice…». El formato exige un caso concreto del pasado.</li>
+  <li><strong>Contexto inflado, acción comprimida.</strong> La mitad de la respuesta se va en los antecedentes y para lo más importante — tus acciones — no queda tiempo.</li>
+  <li><strong>Sin resultado ni cifras.</strong> Una historia sin desenlace parece inconclusa y no se recuerda.</li>
+  <li><strong>«No tuve fracasos».</strong> Bandera roja: o falta reflexión, o falta experiencia con tareas difíciles.</li>
+  <li><strong>Negatividad sobre los anteriores.</strong> Criticar a compañeros y empleadores se lee como una señal de que igual hablarás de ellos.</li>
+  <li><strong>La historia no cuadra con el CV.</strong> La discrepancia entre el relato y el CV socava la confianza en todo el currículum de golpe.</li>
+</ul>
+
+<h2>Cómo prepararse</h2>
+
+<ol>
+  <li><strong>Arma un banco de historias.</strong> 6–8 situaciones que cubran las categorías de arriba. Una misma historia suele cubrir varias competencias.</li>
+  <li><strong>Empaqueta cada una en STAR por escrito.</strong> Sobre todo Action y Result — ahí es donde se pierden los puntos.</li>
+  <li><strong>Dilo en voz alta.</strong> Formular bajo presión es más difícil que sobre el papel. El <a href="/es/experience-deep-dive/" style="color:var(--accent);">análisis profundo de experiencia</a> hace preguntas de seguimiento sobre tu CV real — es lo más parecido a una entrevista conductual de verdad.</li>
+  <li><strong>Contrasta las historias con el CV</strong>, para que no haya discrepancias.</li>
+</ol>
+
+<p>La parte conductual casi siempre va junto a la técnica. Conviene entrenar ambas: la <a href="/es/mock-interview/" style="color:var(--accent);">entrevista simulada</a> cubre la técnica; el análisis profundo de experiencia, la conductual.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿En qué se diferencia la entrevista conductual de la técnica?</p>
+    <p class="faq-a">La técnica comprueba conocimientos y habilidades — las preguntas tienen respuestas correctas. La conductual evalúa soft skills con ejemplos de tu experiencia: cómo actúas en un conflicto, bajo presión, tras un error. No se evalúa el hecho, sino tu comportamiento y tus conclusiones.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Qué es el método STAR en palabras sencillas?</p>
+    <p class="faq-a">STAR es una plantilla de respuesta de cuatro partes: Situation (contexto), Task (tarea), Action (qué hiciste tú), Result (resultado). Ayuda a contar la historia de forma estructurada y sin perderte: la mayor parte del tiempo va en Action y Result.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cuántas historias hay que preparar?</p>
+    <p class="faq-a">Lo óptimo son 6–8 historias que cubran las categorías principales: logro, conflicto, fracaso, trabajo bajo presión, liderazgo. Una historia fuerte suele servir para varias preguntas a la vez.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Qué responder a la pregunta sobre tu mayor fracaso?</p>
+    <p class="faq-a">Elige una historia real en la que tuvieras responsabilidad y constrúyela con STAR, con énfasis en las conclusiones: qué salió mal, cuál fue tu papel, qué cambiaste después. Lo importante es mostrar crecimiento, no solo narrar el fallo.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Se hacen preguntas conductuales a los junior?</p>
+    <p class="faq-a">Sí, pero ajustadas a la experiencia. A un junior no se le esperan historias de liderar un equipo, pero sí pueden preguntar por un proyecto de aprendizaje, un conflicto en unas prácticas o una situación en la que tuviste que ponerte al día con algo nuevo rápido.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cómo prepararse si tienes poca experiencia?</p>
+    <p class="faq-a">Sirven los proyectos de aprendizaje y personales, las prácticas, el trabajo en equipo durante los estudios. No importa la escala, sino la estructura: situación real, tus acciones, resultado y conclusión. Pásalas por el análisis profundo de experiencia para acostumbrarte a las preguntas de seguimiento.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/experience-deep-dive/">
+    <span class="rc-label">Análisis de experiencia</span>
+    <span class="rc-title">Entrenamiento de la entrevista conductual sobre tu CV</span>
+  </a>
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/resume-analysis/">
+    <span class="rc-label">Análisis de CV</span>
+    <span class="rc-title">Puntuación ATS del CV: cómo pasar el filtro</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Pon a prueba tus historias antes de la entrevista real</h3>
+  <p>Sube tu CV, elige un puesto — y el análisis profundo de experiencia te hará las mismas preguntas de seguimiento sobre tu experiencia que en una entrevista conductual de verdad.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Empezar en Telegram</a>
+</div>
+
+</article>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia la entrevista conductual de la técnica?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La técnica comprueba conocimientos y habilidades — las preguntas tienen respuestas correctas. La conductual evalúa soft skills con ejemplos de tu experiencia: cómo actúas en un conflicto, bajo presión, tras un error." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el método STAR en palabras sencillas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "STAR es una plantilla de respuesta de cuatro partes: Situation (contexto), Task (tarea), Action (qué hiciste tú), Result (resultado). La mayor parte del tiempo va en Action y Result." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas historias hay que preparar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lo óptimo son 6–8 historias que cubran las categorías principales: logro, conflicto, fracaso, trabajo bajo presión, liderazgo. Una historia fuerte suele servir para varias preguntas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué responder a la pregunta sobre tu mayor fracaso?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Elige una historia real con responsabilidad tuya y constrúyela con STAR: qué salió mal, cuál fue tu papel, qué cambiaste después. Lo importante es mostrar crecimiento." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se hacen preguntas conductuales a los junior?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero ajustadas a la experiencia. Pueden preguntar por un proyecto de aprendizaje, un conflicto en unas prácticas o una situación en la que tuviste que ponerte al día rápido." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo prepararse si tienes poca experiencia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sirven los proyectos de aprendizaje y personales, las prácticas y el trabajo en equipo durante los estudios. No importa la escala, sino la estructura: situación, acciones, resultado y conclusión." }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

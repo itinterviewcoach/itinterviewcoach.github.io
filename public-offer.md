@@ -146,7 +146,7 @@ Neither party shall be liable for failure to perform obligations caused by force
 
 ## 9\. Privacy
 
-Personal data is processed in accordance with the Privacy Policy published at [**https://itinterviewcoach.github.io/legal/privacy-policy**](https://itinterviewcoach.github.io/legal/privacy-policy), which forms an integral part of this Agreement.
+Personal data is processed in accordance with the Privacy Policy published at [**https://itinterviewcoach.com/legal/privacy-policy**](https://itinterviewcoach.com/legal/privacy-policy), which forms an integral part of this Agreement.
 
 ---
 
@@ -318,7 +318,7 @@ This Agreement is governed by the laws of **Georgia**. Disputes shall be resolve
 
 ## 9\. Конфиденциальность
 
-Обработка персональных данных Заказчика осуществляется в соответствии с Политикой конфиденциальности Сервиса, опубликованной по адресу [**https://itinterviewcoach.github.io/legal/privacy-policy**](https://itinterviewcoach.github.io/legal/privacy-policy), которая является неотъемлемой частью настоящего Договора.
+Обработка персональных данных Заказчика осуществляется в соответствии с Политикой конфиденциальности Сервиса, опубликованной по адресу [**https://itinterviewcoach.com/legal/privacy-policy**](https://itinterviewcoach.com/legal/privacy-policy), которая является неотъемлемой частью настоящего Договора.
 
 ---
 

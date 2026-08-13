@@ -19,7 +19,8 @@ All plans give access to the IT Interview Coach Telegram bot. Subscriptions are 
 - 3 interview practice sessions per month  
 - 5 questions per session  
 - 1 CV analysis per day  
-- Russian interface only  
+- Russian / Spanish / English interface
+- Russian / Spanish interview
 - No voice input  
 - No LinkedIn audit
 
@@ -34,7 +35,8 @@ All plans give access to the IT Interview Coach Telegram bot. Subscriptions are 
 - 20 interview practice sessions per month  
 - 10 questions per session  
 - 3 CV analyses per day  
-- Russian interface only  
+- Russian / Spanish / English interface
+- Russian / Spanish interview
 - No voice input  
 - No LinkedIn audit
 
@@ -47,7 +49,8 @@ All plans give access to the IT Interview Coach Telegram bot. Subscriptions are 
 - Unlimited interview practice sessions  
 - 15 questions per session  
 - 5 CV analyses per day  
-- Russian \+ English interface  
+- Russian / Spanish / English interface
+- Russian / Spanish /+ English interview
 - ✅ Voice input (speech-to-text)  
 - ✅ LinkedIn profile audit  
 - ✅ LinkedIn metrics tracking  
@@ -75,7 +78,7 @@ Cancel your subscription at any time through the payment portal. Access continue
 
 Refunds are available within 7 days of payment if you have used fewer than 3 sessions. Contact [itinterviewcoach@outlook.com](mailto:itinterviewcoach@outlook.com) to request a refund.
 
-Full details: [Terms of Service](https://itinterviewcoach.github.io/legal/terms-of-service)
+Full details: [Terms of Service](https://itinterviewcoach.com/legal/terms-of-service)
 
 ---
 
@@ -150,4 +153,4 @@ Full details: [Terms of Service](https://itinterviewcoach.github.io/legal/terms-
 
 Возврат возможен в течение 7 дней с момента оплаты при использовании менее 3 сессий. Напишите на [itinterviewcoach@outlook.com](mailto:itinterviewcoach@outlook.com) для оформления возврата.
 
-Подробнее: [Условия использования](https://itinterviewcoach.github.io/legal/terms-of-service) | [Договор-оферта](https://itinterviewcoach.github.io/legal/public-offer)  
+Подробнее: [Условия использования](https://itinterviewcoach.com/legal/terms-of-service/terms-of-service) | [Договор-оферта](https://itinterviewcoach.com/legal/public-offer)  

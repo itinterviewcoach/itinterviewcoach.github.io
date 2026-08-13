@@ -1,7 +1,5 @@
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 Sitemap: https://itinterviewcoach.com/sitemap.xml
-LLMs: https://itinterviewcoach.com/llms.txt
-
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
