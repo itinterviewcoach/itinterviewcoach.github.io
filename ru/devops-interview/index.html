@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подготовка к DevOps-собеседованию: темы, вопросы по уровням, стратегия | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Как подготовиться к собеседованию DevOps-инженера: какие темы спрашивают — Linux, CI/CD, Kubernetes, IaC, облака, observability, примеры вопросов для Junior, Middle и Senior и типичные ошибки кандидатов.">
+<link rel="canonical" href="https://itinterviewcoach.com/ru/devops-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/devops-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/devops-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/devops-interview/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="devops собеседование, вопросы devops интервью, kubernetes собеседование, ci/cd вопросы, terraform интервью, sre собеседование, подготовка devops инженера, observability вопросы">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/ru/devops-interview/">
+<meta property="og:title" content="Подготовка к DevOps-собеседованию: темы, вопросы по уровням, стратегия">
+<meta property="og:description" content="Какие темы спрашивают на интервью DevOps-инженера: Linux, CI/CD, Kubernetes, IaC, облака, observability. Примеры вопросов по уровням и типичные ошибки.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Подготовка к DevOps-собеседованию: темы, вопросы по уровням, стратегия",
+  "description": "Какие темы спрашивают на техническом интервью DevOps-инженера, примеры вопросов по уровням Junior/Middle/Senior, типичные ошибки кандидатов и стратегия подготовки.",
+  "inLanguage": "ru",
+  "url": "https://itinterviewcoach.com/ru/devops-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Что проверяет: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style></head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/ru/#features">Возможности</a></li>
+    <li><a href="/ru/#pricing">Тарифы</a></li>
+    <li><a href="/ru/#faq">FAQ</a></li>
+    <li><a href="/es/devops-interview/" style="color:var(--muted);font-size:13px;">ES</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/ru/">IT Interview Coach</a> / DevOps-собеседование</div>
+  <h1>Подготовка к DevOps-собеседованию: <em>темы, вопросы, стратегия</em></h1>
+  <p class="article-lead">DevOps-интервью проверяет не знание отдельных инструментов, а понимание того, как система живёт целиком: от коммита до продакшена и дежурства в 3 часа ночи. Разбираем, что спрашивают, как меняется глубина по уровням и на чём срезаются кандидаты с сильным резюме.</p>
+</div>
+
+<article>
+
+<h2>Из чего состоит DevOps-собеседование</h2>
+
+<p>Интервью DevOps-инженера обычно охватывает четыре блока:</p>
+
+<ul>
+  <li><strong>Основы: Linux и сети.</strong> Процессы, права, systemd, DNS, TCP/IP, отладка сетевых проблем. Фундамент, который спрашивают на любом уровне — без него всё остальное разваливается.</li>
+  <li><strong>Пайплайн доставки.</strong> CI/CD, контейнеризация, оркестрация, инфраструктура как код. Ядро повседневной работы и основной объём вопросов.</li>
+  <li><strong>Эксплуатация и надёжность.</strong> Observability, инциденты, дежурства, SLI/SLO. Как система ведёт себя в проде и что делать, когда она падает.</li>
+  <li><strong>Практика и опыт.</strong> Разбор реальных ситуаций из твоего опыта: как чинил инцидент, как проектировал пайплайн, как принимал решения. Тренировать этот блок помогает <a href="/ru/experience-deep-dive/" style="color:var(--accent);">прожарка опыта</a>.</li>
+</ul>
+
+<h2>Темы DevOps-интервью</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>Linux и сети</h4>
+    <p>Процессы и сигналы, права и владельцы, systemd, DNS, TCP/IP, маршрутизация, iptables, отладка соединений и портов.</p>
+  </div>
+  <div class="topic-card">
+    <h4>CI/CD</h4>
+    <p>Стадии пайплайна, стратегии деплоя (rolling, blue-green, canary), артефакты и версионирование, GitOps, откаты.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Контейнеры и оркестрация</h4>
+    <p>Docker, слои образов, multi-stage build, Kubernetes (pod, deployment, service, ingress), Helm, ресурсы и лимиты.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Инфраструктура как код</h4>
+    <p>Terraform (state, модули, drift), Ansible, идемпотентность, иммутабельная инфраструктура, управление окружениями.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Облака</h4>
+    <p>Модели сервисов, сети и VPC, IAM и доступы, managed-сервисы, автоскейлинг, контроль стоимости.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Observability и надёжность</h4>
+    <p>Метрики, логи, трейсы, SLI/SLO и error budget, алертинг, разбор инцидентов, дежурства on-call.</p>
+  </div>
+</div>
+
+<h2>Как меняются вопросы по уровням</h2>
+
+<h3>Junior — «что это и зачем»</h3>
+
+<div class="example-q">
+  <span class="q-label">Контейнеры · Junior</span>
+  Чем образ (image) отличается от контейнера? Что такое слои образа и зачем они нужны?
+  <span class="q-hint">понимание базовой модели Docker: образ — шаблон, контейнер — запущенный экземпляр; слои и их кэширование.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Linux · Junior</span>
+  Сервис не отвечает на порту 8080. Как проверишь, слушает ли кто-то этот порт и какой процесс его занял?
+  <span class="q-hint">владение базовым инструментарием: ss/netstat, lsof, systemctl, чтение логов — а не угадывание.</span>
+</div>
+
+<h3>Middle — «как применить в реальной ситуации»</h3>
+
+<div class="example-q">
+  <span class="q-label">Kubernetes · Middle</span>
+  Под в статусе CrashLoopBackOff. Опиши по шагам, как будешь искать причину.
+  <span class="q-hint">системная диагностика: describe, logs (в т.ч. предыдущего контейнера), probes, ресурсы, права — а не рестарт наугад.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">CI/CD · Middle</span>
+  Как устроить деплой новой версии сервиса без даунтайма? Какие стратегии знаешь и когда какую выбрать?
+  <span class="q-hint">rolling vs blue-green vs canary, healthcheck'и, готовность к откату, совместимость миграций БД.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">IaC · Middle</span>
+  Что такое Terraform state и почему его нельзя потерять? Как организовать работу со state в команде?
+  <span class="q-hint">понимание роли state, remote backend с блокировкой, опасность ручных правок, drift.</span>
+</div>
+
+<h3>Senior — «стратегия и компромиссы»</h3>
+
+<div class="example-q">
+  <span class="q-label">Надёжность · Senior</span>
+  Как связать надёжность сервиса с темпом релизов? Что такое error budget и как он влияет на решения команды?
+  <span class="q-hint">SLI/SLO/error budget как инструмент переговоров между скоростью и стабильностью, а не просто метрики.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Инциденты · Senior</span>
+  3 часа ночи, ключевой сервис лежит, ты на дежурстве. Опиши, как ведёшь диагностику и коммуникацию.
+  <span class="q-hint">приоритет на восстановление, а не на поиск виноватого; гипотезы по сигналам, эскалация, статус-апдейты, постмортем без обвинений.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Архитектура · Senior</span>
+  Проектируешь CI/CD для десятков сервисов в монорепозитории. Какие ключевые решения примешь и какие компромиссы взвесишь?
+  <span class="q-hint">переиспользуемые пайплайны, сборка только изменённого, изоляция окружений, управление секретами, скорость vs контроль.</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Особенность DevOps-интервью:</strong> проверяют не столько знание конкретного инструмента, сколько <strong>отладочное мышление</strong> и понимание принципов — идемпотентности, иммутабельности, наблюдаемости. Кандидат, который на вопрос об упавшем сервисе выстраивает гипотезы по сигналам системы, выигрывает у того, кто помнит наизусть флаги команд, но не умеет локализовать проблему.</p>
+</div>
+
+<h2>На чём срезаются кандидаты</h2>
+
+<ul>
+  <li><strong>Инструменты без принципов.</strong> «Умею писать terraform apply», но не может объяснить, что такое state и почему его теряют. Знание команд без модели под ними читается как потолок роста.</li>
+  <li><strong>Нет отладочного мышления.</strong> На ситуационный вопрос «сервис лёг» — растерянность вместо системного перебора гипотез. Для DevOps это ключевой навык, и его проверяют почти всегда.</li>
+  <li><strong>Игнор безопасности.</strong> Секреты в переменных пайплайна открытым текстом, образы с тегом latest в проде, права по принципу «дать всё, чтобы заработало». Красный флаг для любой команды.</li>
+  <li><strong>«Заскриптую всё».</strong> Энтузиазм автоматизации без вопроса о поддерживаемости и цене сопровождения. Senior-ответ включает компромисс: что автоматизировать, а что оставить ручным осознанно.</li>
+  <li><strong>Путаница в observability.</strong> Не различает, когда нужны метрики, когда логи, а когда трейсы. Для Middle+ это база диагностики продакшена.</li>
+</ul>
+
+<h2>Как построить подготовку</h2>
+
+<ol>
+  <li><strong>Диагностика.</strong> 2–3 <a href="/ru/mock-interview/" style="color:var(--accent);">мок-собеседования</a> по DevOps-треку покажут реальные пробелы — часто это не Kubernetes, а базовые Linux и сети под ним.</li>
+  <li><strong>Проработка слабых тем.</strong> Режим «Подготовка по темам»: выбираешь конкретный кластер — CI/CD, оркестрация, IaC, observability — и тренируешь до уверенности.</li>
+  <li><strong>Ситуационные вопросы.</strong> «Сервис лёг», «деплой сломал прод» — отрабатываются через разбор реального опыта. Прожарка опыта задаёт follow-up по твоим проектам инфраструктуры.</li>
+  <li><strong>Под конкретную вакансию.</strong> Прочитай требования: если стек на Kubernetes и конкретном облаке — прогони сессии именно по ним, а не по абстрактному DevOps.</li>
+</ol>
+
+<h2>Вопросы и ответы</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">Нужно ли DevOps-инженеру программировать для собеседования?</p>
+    <p class="faq-a">Скриптинг — да: Bash и Python на уровне автоматизации задач спрашивают почти всегда. Алгоритмические секции как у разработчиков встречаются реже, но умение написать или разобрать скрипт обработки логов, обёртку над API или простой оператор — обязательный навык для Middle+.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Обязателен ли Kubernetes для DevOps-вакансий?</p>
+    <p class="faq-a">Для большинства Middle+ позиций — де-факто стандарт, и его спрашивают глубоко: от базовых объектов до сетей, ресурсов и отладки. Но есть компании на других платформах (managed-сервисы, Nomad, чистые VM), поэтому смотри на стек конкретной вакансии. Понимание принципов оркестрации переносимо между платформами.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Спрашивают конкретное облако или общие принципы?</p>
+    <p class="faq-a">И то, и другое. Принципы (сети, IAM, автоскейлинг, managed vs self-hosted) переносимы между провайдерами, и их проверяют в первую очередь. Но под конкретную вакансию стоит подтянуть именно её облако — специфику сервисов и терминологию AWS, GCP или Azure.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Чем DevOps-интервью отличается от SRE?</p>
+    <p class="faq-a">Границы размыты и зависят от компании, но тенденция: у SRE больше акцента на надёжности (SLI/SLO, error budget), инцидентах и кодинге, ближе к разработке. У DevOps — больше на пайплайне доставки и инфраструктуре. Ядро — Linux, контейнеры, CI/CD, observability — общее для обеих ролей.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Реально ли пройти на Junior DevOps без коммерческого опыта?</p>
+    <p class="faq-a">Да, если есть что показать: домашняя лаба, pet-проект с настроенным CI/CD, поднятый кластер, вклад в open source. На Junior-уровне вопросы в боте калибруются на базу — Linux, Docker, основы CI/CD, — которую можно освоить на учебных проектах. Важнее показать отладочное мышление, чем перечислить модные инструменты.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Как готовиться к ситуационным вопросам про инциденты?</p>
+    <p class="faq-a">Ситуационные вопросы («сервис лёг, твои действия») тренируются разбором реального опыта: прожарка опыта задаёт углубляющие follow-up по твоим проектам, а мок-сессии отрабатывают формулировки под давлением. Ключевое — показать структуру: восстановление, диагностика по сигналам, коммуникация, выводы.</p>
+  </div>
+</div>
+
+<h2>Смотри также</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/ru/mock-interview/">
+    <span class="rc-label">Мок-собеседование</span>
+    <span class="rc-title">Что такое мок-интервью и как оно проходит</span>
+  </a>
+  <a class="related-card" href="/ru/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Подготовка к Backend-собеседованию</span>
+  </a>
+  <a class="related-card" href="/ru/qa-interview/">
+    <span class="rc-label">QA</span>
+    <span class="rc-title">Подготовка к QA-собеседованию</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>Проверь себя на реальных вопросах</h3>
+  <p>Выбери DevOps-специализацию и уровень — получи первый вопрос через минуту. Оценка каждого ответа и разбор слабых тем после сессии. Бесплатный старт.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Начать тренировку</a>
+</div>
+
+</article>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужно ли DevOps-инженеру программировать для собеседования?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Скриптинг — да: Bash и Python на уровне автоматизации спрашивают почти всегда. Алгоритмические секции встречаются реже, но написать или разобрать скрипт обработки логов — обязательный навык для Middle+." }
+    },
+    {
+      "@type": "Question",
+      "name": "Обязателен ли Kubernetes для DevOps-вакансий?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Для большинства Middle+ позиций — де-факто стандарт, и его спрашивают глубоко. Но есть компании на других платформах, поэтому смотри на стек вакансии. Понимание принципов оркестрации переносимо." }
+    },
+    {
+      "@type": "Question",
+      "name": "Спрашивают конкретное облако или общие принципы?",
+      "acceptedAnswer": { "@type": "Answer", "text": "И то, и другое. Принципы (сети, IAM, автоскейлинг, managed vs self-hosted) переносимы и проверяются в первую очередь. Но под конкретную вакансию стоит подтянуть именно её облако." }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем DevOps-интервью отличается от SRE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Границы размыты. У SRE больше акцента на надёжности (SLI/SLO, error budget) и кодинге; у DevOps — на пайплайне доставки и инфраструктуре. Ядро — Linux, контейнеры, CI/CD, observability — общее." }
+    },
+    {
+      "@type": "Question",
+      "name": "Реально ли пройти на Junior DevOps без коммерческого опыта?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, если есть что показать: домашняя лаба, pet-проект с CI/CD, вклад в open source. Junior-вопросы калибруются на базу — Linux, Docker, основы CI/CD. Важнее показать отладочное мышление." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как готовиться к ситуационным вопросам про инциденты?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Разбором реального опыта: прожарка опыта задаёт follow-up по твоим проектам, мок-сессии отрабатывают формулировки. Ключевое — структура: восстановление, диагностика по сигналам, коммуникация, выводы." }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Александр Нифонтов · Индивидуальный предприниматель · Грузия · ИН 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Политика конфиденциальности</a>
+    <a href="/legal/terms-of-service">Условия использования</a>
+    <a href="/legal/public-offer">Публичная оферта</a>
+    <a href="/legal/pricing">Тарифы</a>
+  </div>
+</footer>
+
+</body>
+</html>

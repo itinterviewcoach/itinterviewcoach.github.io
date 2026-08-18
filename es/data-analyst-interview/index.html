@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparación para la entrevista de Data Analyst: temas, preguntas por nivel, estrategia | IT Interview Coach</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Cómo prepararse para la entrevista de Data Analyst: qué temas se preguntan — SQL, estadística, tests A/B, métricas de producto, visualización, ejemplos de preguntas para Junior, Middle y Senior y errores típicos.">
+<link rel="canonical" href="https://itinterviewcoach.com/es/data-analyst-interview/">
+<link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/data-analyst-interview/">
+<link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/data-analyst-interview/">
+<link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/data-analyst-interview/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="entrevista data analyst, entrevista analista de datos, preguntas sql entrevista, tests ab entrevista, métricas de producto, preparación analista de datos, preguntas data analyst">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://itinterviewcoach.com/es/data-analyst-interview/">
+<meta property="og:title" content="Preparación para la entrevista de Data Analyst: temas, preguntas por nivel, estrategia">
+<meta property="og:description" content="Qué temas se preguntan en la entrevista de un analista de datos: SQL, estadística, tests A/B, métricas de producto, visualización. Ejemplos de preguntas por nivel y errores típicos.">
+<meta property="og:image" content="https://itinterviewcoach.com/og-image.png">
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Preparación para la entrevista de Data Analyst: temas, preguntas por nivel, estrategia",
+  "description": "Qué temas se preguntan en la entrevista técnica de un analista de datos, ejemplos de preguntas por nivel Junior/Middle/Senior, errores típicos de los candidatos y estrategia de preparación.",
+  "inLanguage": "es",
+  "url": "https://itinterviewcoach.com/es/data-analyst-interview/",
+  "author": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Interview Coach",
+    "url": "https://itinterviewcoach.com"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #1d242b;
+    --bg2: #232e38;
+    --bg3: #2a3646;
+    --border: #2e3d4e;
+    --text: #f9fafb;
+    --muted: #8899bb;
+    --accent: #5065b9;
+    --accent2: #afcbfd;
+    --warn: #ff6b35;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,12,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .article-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 48px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--accent2); }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .article-lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  article h2 {
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px;
+  }
+
+  article h2::before {
+    content: '// ';
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7em;
+  }
+
+  article h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  article p {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+
+  article strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  article ul, article ol {
+    margin: 0 0 18px 22px;
+    max-width: 700px;
+  }
+
+  article li {
+    font-size: 15px;
+    color: #c5cede;
+    margin-bottom: 10px;
+  }
+
+  article li::marker {
+    color: var(--accent);
+  }
+
+  .info-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 28px 0;
+    max-width: 720px;
+  }
+
+  .info-block p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  /* TOPIC GRID */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    max-width: 720px;
+  }
+
+  .topic-card {
+    background: var(--bg);
+    padding: 22px 24px;
+    transition: background 0.2s;
+  }
+
+  .topic-card:hover { background: var(--bg2); }
+
+  .topic-card h4 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .topic-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .example-q {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    margin: 16px 0;
+    max-width: 720px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .example-q .q-label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .example-q .q-hint {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .example-q .q-hint::before {
+    content: '→ Qué evalúa: ';
+    color: var(--accent2);
+  }
+
+  .cta-block {
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin: 56px 0 0;
+    max-width: 720px;
+  }
+
+  .cta-block h3 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .cta-block p {
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,101,185,0.35); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--bg2); }
+
+  .faq-q {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-q::before {
+    content: 'Q: ';
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    max-width: 720px;
+  }
+
+  .related-card {
+    background: var(--bg);
+    padding: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .related-card:hover { background: var(--bg3); }
+
+  .related-card .rc-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .related-card .rc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .article-hero, article { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; }
+    h1 { font-size: 32px; }
+  }
+</style></head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo">IT_INTERVIEW_COACH</a>
+  <ul class="nav-links">
+    <li><a href="/es/#features">Funciones</a></li>
+    <li><a href="/es/#pricing">Precios</a></li>
+    <li><a href="/es/#faq">FAQ</a></li>
+    <li><a href="/ru/data-analyst-interview/" style="color:var(--muted);font-size:13px;">RU</a></li>
+    <li><a href="/" style="color:var(--muted);font-size:13px;">EN</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumbs"><a href="/es/">IT Interview Coach</a> / Data Analyst</div>
+  <h1>Preparación para la entrevista de Data Analyst: <em>temas, preguntas, estrategia</em></h1>
+  <p class="article-lead">La entrevista de un analista de datos no evalúa solo SQL y estadística, sino también el pensamiento de negocio: saber traducir una pregunta de negocio en un análisis y explicar el resultado de forma comprensible. Analizamos qué se pregunta, cómo cambia la profundidad según el nivel y dónde fallan los candidatos.</p>
+</div>
+
+<article>
+
+<div class="info-block">
+  <p><strong>Próximamente:</strong> el track de Data Analyst está a punto de lanzarse en IT Interview Coach. Esta página ya describe a qué prepararte; las prácticas del track de DA llegarán en breve. Por ahora, en el bot están disponibles los tracks de Backend, QA, ML/Data Science y DevOps.</p>
+</div>
+
+<h2>De qué se compone la entrevista de Data Analyst</h2>
+
+<p>La entrevista de un analista de datos suele abarcar cuatro bloques:</p>
+
+<ul>
+  <li><strong>SQL y manejo de datos.</strong> La habilidad técnica principal: consultas, agregaciones, joins, funciones de ventana. Se pregunta casi siempre y en cualquier nivel.</li>
+  <li><strong>Estadística y métricas.</strong> Estadística descriptiva, distribuciones, correlación y causalidad, intervalos de confianza, fundamentos de tests A/B.</li>
+  <li><strong>Pensamiento de producto y de negocio.</strong> Cómo elegir la métrica adecuada, cómo medir el éxito de una funcionalidad, cómo traducir una pregunta difusa de negocio en un análisis concreto.</li>
+  <li><strong>Práctica y experiencia.</strong> Análisis de tareas reales de tu experiencia: qué análisis hiciste, qué conclusiones sacaste, cómo se lo explicaste a los stakeholders. Para entrenar este bloque ayuda el <a href="/es/experience-deep-dive/" style="color:var(--accent);">análisis profundo de experiencia</a>.</li>
+</ul>
+
+<h2>Temas de la entrevista de Data Analyst</h2>
+
+<div class="topic-grid">
+  <div class="topic-card">
+    <h4>SQL</h4>
+    <p>Joins, agregaciones, GROUP BY y HAVING, subconsultas, funciones de ventana, totales acumulados, optimización de consultas.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Estadística</h4>
+    <p>Media, mediana y distribuciones, varianza, correlación vs causalidad, intervalos de confianza, contraste de hipótesis.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Tests A/B</h4>
+    <p>Diseño del experimento, p-value y potencia, duración del test, el problema del peeking, comparaciones múltiples.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Métricas de producto</h4>
+    <p>Embudos, retención y análisis de cohortes, DAU/MAU, unit economics, elección de la métrica north star.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Visualización y BI</h4>
+    <p>Elección del tipo de gráfico, dashboards, herramientas (Tableau, Power BI, Looker), storytelling con datos.</p>
+  </div>
+  <div class="topic-card">
+    <h4>Python para análisis</h4>
+    <p>pandas, limpieza de datos, EDA, manejo de valores nulos y outliers, automatización básica de informes.</p>
+  </div>
+</div>
+
+<h2>Cómo cambian las preguntas según el nivel</h2>
+
+<h3>Junior — «qué es y para qué»</h3>
+
+<div class="example-q">
+  <span class="q-label">SQL · Junior</span>
+  ¿En qué se diferencia WHERE de HAVING? Da una consulta donde hagan falta ambos.
+  <span class="q-hint">entender el orden de ejecución en SQL: WHERE filtra filas antes de agregar, HAVING filtra grupos después.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Estadística · Junior</span>
+  ¿En qué se diferencia la mediana de la media y cuándo describe la mediana los datos de forma más honesta?
+  <span class="q-hint">entender el efecto de los outliers: la mediana es robusta frente a valores extremos (salarios, tickets de compra).</span>
+</div>
+
+<h3>Middle — «cómo aplicarlo en una situación real»</h3>
+
+<div class="example-q">
+  <span class="q-label">A/B · Middle</span>
+  El product quiere parar un test A/B al tercer día tras ver un resultado significativo. ¿Qué respondes?
+  <span class="q-hint">el problema del peeking: parar antes de tiempo dispara los falsos positivos; hace falta una duración fijada o un test secuencial.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">SQL · Middle</span>
+  ¿Cómo calcularías el crecimiento de ingresos mes a mes en una sola consulta? ¿Qué función de ventana usas?
+  <span class="q-hint">dominio de las window functions: LAG para el periodo anterior y cálculo del cambio relativo.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Producto · Middle</span>
+  Habéis lanzado una funcionalidad nueva. ¿Cómo medirías si tiene éxito? ¿Qué métricas eliges y por qué?
+  <span class="q-hint">conectar las métricas con el objetivo de la funcionalidad, no «mirarlo todo»: métricas líderes y rezagadas, control de la canibalización.</span>
+</div>
+
+<h3>Senior — «estrategia y negocio»</h3>
+
+<div class="example-q">
+  <span class="q-label">Analítica · Senior</span>
+  Una métrica clave sube un 20% en una semana. ¿Cómo distingues si es un efecto real o ruido, estacionalidad o un cambio en la composición de usuarios?
+  <span class="q-hint">comprobación sistemática: segmentación, comparación con periodos anteriores, control de factores externos, significancia del cambio.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Producto · Senior</span>
+  ¿Cómo elegir la métrica north star de un producto? ¿Qué compromisos sopesas?
+  <span class="q-hint">una métrica que refleje el valor para el usuario y ligada a los ingresos; riesgo de optimizar lo que no es, resistencia al gaming.</span>
+</div>
+
+<div class="example-q">
+  <span class="q-label">Comunicación · Senior</span>
+  Los datos contradicen la hipótesis de un stakeholder que insiste en ella. ¿Cómo actúas?
+  <span class="q-hint">argumentar con datos sin confrontación: revisar tu propio análisis, mostrarlo con claridad, proponer un experimento en lugar de discutir.</span>
+</div>
+
+<div class="info-block">
+  <p><strong>Particularidad de la entrevista de Data Analyst:</strong> la base técnica (SQL, estadística) no basta — se evalúa el <strong>pensamiento de negocio y la comunicación</strong>: saber traducir una pregunta de negocio en un análisis y explicar el resultado a una persona no técnica. A menudo dan un caso o una prueba con datos reales, donde importa no solo la respuesta, sino el razonamiento.</p>
+</div>
+
+<h2>Dónde fallan los candidatos</h2>
+
+<ul>
+  <li><strong>Hay SQL, pero no hay traducción al negocio.</strong> El candidato escribe consultas complejas, pero no logra convertir una pregunta difusa como «por qué cayeron los ingresos» en un plan de análisis concreto.</li>
+  <li><strong>Correlación = causalidad.</strong> El error clásico: ver una relación entre dos métricas y concluir la causa sin controlar los factores de confusión.</li>
+  <li><strong>Gráfico bonito sin insight.</strong> Un dashboard por el dashboard: mucho visual, pero sin respuesta a «¿y qué hago con esto?».</li>
+  <li><strong>No comprueba la calidad de los datos.</strong> Calcula sobre datos sucios, sin mirar nulos, duplicados ni outliers — y obtiene un resultado erróneo con total seguridad.</li>
+  <li><strong>Una cifra sin interpretación.</strong> «Conversión del 3,2%» — y punto. Un senior añade: con qué compararla, si es buena o mala, qué hacer a continuación.</li>
+  <li><strong>Interpretación errónea de la significancia.</strong> Explicar el p-value como «la probabilidad de que la hipótesis sea cierta» — un error frecuente incluso en candidatos con experiencia.</li>
+</ul>
+
+<h2>Cómo estructurar la preparación</h2>
+
+<p>Cuando el track de DA esté disponible en el bot, la preparación podrá organizarse así:</p>
+
+<ol>
+  <li><strong>Diagnóstico.</strong> Varias <a href="/es/mock-interview/" style="color:var(--accent);">entrevistas simuladas</a> del track de DA mostrarán las lagunas reales — a menudo no es SQL, sino la estadística y el pensamiento de producto.</li>
+  <li><strong>Trabajar los temas débiles.</strong> Modo «Preparación por temas»: eliges un cluster — SQL, tests A/B, métricas de producto — y lo entrenas hasta la seguridad.</li>
+  <li><strong>Casos y comunicación.</strong> El análisis profundo de experiencia hace preguntas de seguimiento sobre tus proyectos de análisis: qué pregunta resolviste, qué datos, qué conclusiones, cómo explicaste el resultado.</li>
+  <li><strong>Para una vacante concreta.</strong> Lee los requisitos: en unas pesa más SQL y BI, en otras la analítica de producto y los A/B — enfoca las sesiones según eso.</li>
+</ol>
+
+<p>Y mientras el track de DA está en desarrollo, puedes entrenar en tracks adyacentes: <a href="/es/ml-interview/" style="color:var(--accent);">ML/Data Science</a> se solapa en estadística y tests A/B, y SQL y bases de datos, con <a href="/es/backend-interview/" style="color:var(--accent);">Backend</a>.</p>
+
+<h2>Preguntas y respuestas</h2>
+
+<div class="faq-list">
+  <div class="faq-item">
+    <p class="faq-q">¿Ya está disponible el track de DA en el bot?</p>
+    <p class="faq-a">Todavía no — el track de Data Analyst está en desarrollo y llegará en breve. Ahora en IT Interview Coach están disponibles Backend, QA, ML/Data Science y DevOps. Esta página ya describe los temas y el formato para que puedas empezar a prepararte con antelación.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿En qué se diferencia un Data Analyst de un Data Scientist en la entrevista?</p>
+    <p class="faq-a">Los límites son difusos, pero la tendencia: el analista tiene más SQL, visualización, métricas de producto y comunicación de negocio; el data scientist, más ML, modelado y estadística en profundidad. El núcleo — SQL y estadística — es común a ambos.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Hace falta Python para el puesto de analista?</p>
+    <p class="faq-a">SQL es obligatorio siempre. Python (pandas) se pregunta cada vez más, sobre todo en Middle+, pero hay puestos donde basta con SQL y una herramienta de BI. Mira el stack de la vacante: si menciona Python, refuerza pandas y la limpieza de datos.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Ponen una prueba técnica o un caso?</p>
+    <p class="faq-a">Con frecuencia. Puede ser un take-home con un dataset (calcular métricas, encontrar un insight) o un caso en vivo en la entrevista. Evalúan no solo la respuesta correcta, sino el razonamiento: cómo estructuras el problema y compruebas los datos.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Es realista entrar como Junior Data Analyst sin experiencia comercial?</p>
+    <p class="faq-a">Sí, si tienes portfolio: pet-projects con análisis de datos reales, estudios de datasets, dashboards, ejercicios de Kaggle. En el nivel Junior se valora un SQL sólido, el cuidado con los datos y saber explicar las conclusiones con palabras sencillas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cómo prepararse para las preguntas sobre métricas de producto?</p>
+    <p class="faq-a">Analiza productos reales: cuál es su métrica north star, cómo es el embudo, qué es la retención y la unit economics. En la entrevista importa ligar la métrica al objetivo de negocio, no enumerarlas todas. El análisis profundo de experiencia ayuda a ensayar ese razonamiento.</p>
+  </div>
+</div>
+
+<h2>Ver también</h2>
+
+<div class="related-grid">
+  <a class="related-card" href="/es/mock-interview/">
+    <span class="rc-label">Entrevista simulada</span>
+    <span class="rc-title">Qué es una entrevista simulada y cómo transcurre</span>
+  </a>
+  <a class="related-card" href="/es/ml-interview/">
+    <span class="rc-label">ML / Data Science</span>
+    <span class="rc-title">Preparación para la entrevista de ML</span>
+  </a>
+  <a class="related-card" href="/es/backend-interview/">
+    <span class="rc-label">Backend</span>
+    <span class="rc-title">Preparación para la entrevista de Backend</span>
+  </a>
+</div>
+
+<div class="cta-block">
+  <h3>El track de Data Analyst — próximamente</h3>
+  <p>Ya estamos preparando el track de DA: entrevistas simuladas y preguntas de SQL, estadística, tests A/B y métricas de producto. Por ahora puedes entrenar en los tracks adyacentes — Backend, QA, ML/Data Science y DevOps — directamente en Telegram.</p>
+  <a href="https://t.me/ITInterviewCoach_Bot" class="btn-primary">▶ Abrir el bot</a>
+</div>
+
+</article>
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Ya está disponible el track de DA en el bot?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Todavía no — el track de Data Analyst está en desarrollo y llegará en breve. Ahora están disponibles Backend, QA, ML/Data Science y DevOps. La página ya describe los temas y el formato para prepararte con antelación." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia un Data Analyst de un Data Scientist en la entrevista?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El analista tiene más SQL, visualización, métricas de producto y comunicación de negocio; el data scientist, más ML, modelado y estadística en profundidad. El núcleo — SQL y estadística — es común." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hace falta Python para el puesto de analista?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SQL es obligatorio siempre. Python (pandas) se pregunta cada vez más, sobre todo en Middle+, pero hay puestos donde basta con SQL y una herramienta de BI. Mira el stack de la vacante." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ponen una prueba técnica o un caso?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Con frecuencia. Un take-home con un dataset o un caso en vivo. Evalúan no solo la respuesta, sino el razonamiento: cómo estructuras el problema y compruebas los datos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es realista entrar como Junior Data Analyst sin experiencia comercial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, si tienes portfolio: pet-projects con análisis de datos reales, dashboards, ejercicios de Kaggle. En Junior se valora un SQL sólido, el cuidado con los datos y saber explicar las conclusiones." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo prepararse para las preguntas sobre métricas de producto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Analiza productos reales: métrica north star, embudo, retención, unit economics. Importa ligar la métrica al objetivo de negocio, no enumerarlas todas." }
+    }
+  ]
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    IT Interview Coach<br>
+    Aleksandr Nifontov · Empresario individual · Georgia · NIF 300455148<br>
+    itinterviewcoach@outlook.com · @ITInterviewCoachSupport_bot
+  </div>
+  <div class="footer-links">
+    <a href="/legal/privacy-policy">Política de privacidad</a>
+    <a href="/legal/terms-of-service">Términos de servicio</a>
+    <a href="/legal/public-offer">Oferta pública</a>
+    <a href="/legal/pricing">Precios</a>
+  </div>
+</footer>
+
+</body>
+</html>

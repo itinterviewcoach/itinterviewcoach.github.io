@@ -157,6 +157,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://itinterviewcoach.com/ru/devops-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/devops-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/devops-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/devops-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/devops-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/devops-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/devops-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/devops-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/ru/data-analyst-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/data-analyst-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/data-analyst-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/data-analyst-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://itinterviewcoach.com/es/data-analyst-interview/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itinterviewcoach.com/ru/data-analyst-interview/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://itinterviewcoach.com/es/data-analyst-interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itinterviewcoach.com/ru/data-analyst-interview/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://itinterviewcoach.com/legal/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

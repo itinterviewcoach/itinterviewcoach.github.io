@@ -6,7 +6,7 @@ Website: https://itinterviewcoach.com
 
 ## What it does
 
-- Mock interviews with AI evaluation — Backend, QA, ML/Data Science
+- Mock interviews with AI evaluation — Backend, QA, ML/Data Science, DevOps, DA soon.
 - CV/resume analysis with ATS scoring (0–100) and 9 penalty detectors
 - Experience Deep-Dive — behavioural interview on your actual CV positions
 - Live Coding — 4-phase sessions with debrief
@@ -21,7 +21,8 @@ Website: https://itinterviewcoach.com
 
 ## Supported specializations
 
-Backend, QA, ML — Junior / Middle / Senior levels
+Backend, QA, ML, DevOps — Junior / Middle / Senior levels
+DA soon
 
 ## Languages
 

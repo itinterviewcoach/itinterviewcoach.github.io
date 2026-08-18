@@ -22,6 +22,8 @@ IT Interview Coach is a Telegram bot that simulates technical job interviews and
 - Backend (Python, databases, concurrency, REST, observability, security, event-driven architecture)
 - QA (test design, API testing, automation, mobile, contract testing, security testing)
 - ML / Data Science (statistics, classical ML, neural networks, LLM/NLP, time series, production systems)
+- DevOps (Linux, Docker, Kubernetes, CI/CD, cloud, Terraform, monitoring, logging, networking, infrastructure as code, SRE)
+- DA soon (SQL, BI, data visualization, exploratory data analysis, statistics, ETL/ELT, data modeling, dashboards, experimentation, business metrics) 
 
 ## Guides and content pages
 
@@ -37,6 +39,8 @@ Russian:
 - [Live coding на собеседовании](https://itinterviewcoach.com/ru/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
 - [Прожарка опыта: поведенческое интервью](https://itinterviewcoach.com/ru/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
 - [Поведенческое интервью: метод STAR](https://itinterviewcoach.com/ru/behavioral-interview/) — what a behavioural interview is, what it evaluates, the STAR framework with sample answers, question categories and common mistakes
+- [Подготовка к DevOps-собеседованию](https://itinterviewcoach.com/ru/devops-interview/) — DevOps interview topics (Linux, CI/CD, Kubernetes, IaC, cloud, observability), example questions by level and common mistakes
+- [Подготовка к собеседованию Data Analyst](https://itinterviewcoach.com/ru/data-analyst-interview/) — Data Analyst interview topics (SQL, statistics, A/B testing, product metrics, visualization); the DA practice track is coming soon
 
 Spanish:
 
@@ -48,6 +52,8 @@ Spanish:
 - [Live coding en la entrevista](https://itinterviewcoach.com/es/live-coding/) — how the format works, the 4 phases, what the interviewer evaluates, common mistakes
 - [Análisis profundo de experiencia: entrevista conductual](https://itinterviewcoach.com/es/experience-deep-dive/) — behavioural interview based on your CV, why candidates fail experience questions, STAR structure
 - [Entrevista conductual: método STAR](https://itinterviewcoach.com/es/behavioral-interview/) — what a behavioural interview is, what it evaluates, the STAR framework with sample answers, question categories and common mistakes
+- [Preparación para la entrevista de DevOps](https://itinterviewcoach.com/es/devops-interview/) — DevOps interview topics (Linux, CI/CD, Kubernetes, IaC, cloud, observability), example questions by level and common mistakes
+- [Preparación para la entrevista de Data Analyst](https://itinterviewcoach.com/es/data-analyst-interview/) — Data Analyst interview topics (SQL, statistics, A/B testing, product metrics, visualization); the DA practice track is coming soon
 
 ## Pricing
 
