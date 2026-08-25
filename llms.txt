@@ -1,6 +1,6 @@
 # IT Interview Coach
 
-> AI-powered Telegram bot for technical interview preparation. Targets Russian-speaking IT professionals (CIS market) and Spanish-speaking IT professionals. Available at https://t.me/ITInterviewCoach_Bot
+> AI-powered Telegram bot for technical interview preparation. Targets Russian-speaking IT professionals (CIS market) and Spanish-speaking IT professionals. Available at https://t.me/ITInterviewCoach_Bot?start=src_llmstxt_root
 
 ## Product
 
@@ -71,7 +71,7 @@ Payment methods: card via Dodo Payments (EUR), Telegram Stars (XTR).
 
 ## Links
 
-- Bot: https://t.me/ITInterviewCoach_Bot
+- Bot: https://t.me/ITInterviewCoach_Bot?start=src_llmstxt_root
 - Website: https://itinterviewcoach.com
 - Russian landing page: https://itinterviewcoach.com/ru/
 - Spanish landing page: https://itinterviewcoach.com/es/

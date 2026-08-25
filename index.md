@@ -1,7 +1,7 @@
 # IT Interview Coach
 
 AI-powered Telegram bot for technical interview preparation.
-Bot: https://t.me/ITInterviewCoach_Bot
+Bot: https://t.me/ITInterviewCoach_Bot?start=src_llmstxt_indexmd
 Website: https://itinterviewcoach.com
 
 ## What it does
